@@ -22,7 +22,6 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AccountButton from './AccountButton';
-import mvLogo from '../../assets/img/MINIVERSELOGO.png';
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -33,12 +32,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    color: '#322f32',
-    'background-color': 'rgba(44, 62, 80,0.65) !important',
-    'webkit-backdrop-filter': 'blur(8px);backdrop-filter: blur(8px)',
-
-    borderBottom: '1px solid RGBA(52, 152, 219, 0.65)',
-
+    color: '#e0e3bd',
+    'background-color': '#121212',
+    // borderBottom: `1px solid ${theme.palette.divider}`,
     padding: '10px',
     marginBottom: '3rem',
   },
@@ -56,20 +52,18 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   toolbarTitle: {
-    fontFamily: 'monospace',
-    fontSize: '28px',
+    fontFamily: '"IBM Plex Mono", monospace',
+    fontSize: '30px',
     flexGrow: 1,
   },
   link: {
     textTransform: 'uppercase',
-    color: '#fff',
-    fontSize: '18px',
-    marginTop: '15px',
-    margin: theme.spacing(10, 1, 1, 2),
+    color: '#e0e3bd',
+    fontSize: '14px',
+    margin: theme.spacing(1, 2),
     textDecoration: 'none',
     '&:hover': {
       textDecoration: 'none',
-      color: '#BBA14F',
     },
   },
   brandLink: {
@@ -103,10 +97,13 @@ const Nav = () => {
             <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
               {/* <a className={ classes.brandLink } href="/">2omb Finance</a> */}
               <Link to="/" color="inherit" className={classes.brandLink}>
-                  <img alt="MiniVerse" src={mvLogo} height="60px" style={{marginTop: '20px'}} />
-                </Link>
+                2omb Finance
+              </Link>
             </Typography>
-
+            <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+              <a className={ classes.link } target="_blank" href="https://github.com/2omb/audit/blob/main/2omb_Audit_Jan2022.pdf">Audited by</a>
+              <img width="125px" height="30px" src="https://spadetech.io/wp-content/uploads/elementor/thumbs/logo-2-p6mxojhv426tba93lpzfx3ft1m3dvq0k2hu2abrgi4.png"></img>
+            </Typography>
             <Box mr={5}>
               <Link color="textPrimary" to="/" className={classes.link}>
                 Home
@@ -132,12 +129,24 @@ const Nav = () => {
               <Link color="textPrimary" to="/regulations" className={classes.link}>
                 Regulations
               </Link> */}
-             
-  
-              <a target="_blank" href="https://miniversefinance.gitbook.io/docs/" className={classes.link}>
+              <a target="_blank" href="https://3omb.finance/rebates" className={classes.link}>
+                3DAO
+              </a>
+              <a target="_blank" href="https://linktr.ee/2ombvaults" className={classes.link}>
+                Vaults
+              </a>
+              <a target="_blank" href="https://snapshot.org/#/forgiving.forg.eth" className={classes.link}>
+                Governance
+              </a>
+              {/* <a target="_blank" href="https://docs.2omb.finance/contracts/tokens" className={classes.link}>
+                Contracts
+              </a> */}
+              <a target="_blank" href="https://docs.2omb.finance" className={classes.link}>
                 Docs
               </a>
-
+              <a target="_blank" href="https://3omb.finance/" className={classes.link}>
+                3omb
+              </a>
             </Box>
             <AccountButton text="Connect" />
           </>
@@ -153,7 +162,7 @@ const Nav = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              MiniVerse Finance
+              2omb Finance
             </Typography>
 
             <Drawer
@@ -182,7 +191,7 @@ const Nav = () => {
                 {/* <ListItemLink primary="SBS" to="/sbs" />
                 <ListItemLink primary="Liquidity" to="/liquidity" />
                 <ListItemLink primary="Regulations" to="/regulations" /> */}
-                <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
+                <ListItem button component="a" href="https://docs.2omb.finance">
                   <ListItemText>DOCS</ListItemText>
                 </ListItem>
                 <ListItem style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
