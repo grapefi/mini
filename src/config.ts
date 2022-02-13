@@ -4,7 +4,7 @@ import { Configuration } from './tomb-finance/config';
 import { BankInfo } from './tomb-finance';
 
 const configurations: { [env: string]: Configuration } = {
-  development: {
+ /* development: {
     chainId: ChainId.FTMTESTNET,
     networkName: 'Fantom Opera Testnet',
     ftmscanUrl: 'https://testnet.ftmscan.com',
@@ -25,7 +25,7 @@ const configurations: { [env: string]: Configuration } = {
     bondLaunchesAt: new Date('2020-12-03T15:00:00Z'),
     masonryLaunchesAt: new Date('2020-12-11T00:00:00Z'),
     refreshInterval: 10000,
-  },
+  },*/
   production: {
     chainId: ChainId.MAINNET,
     networkName: 'Fantom Opera Mainnet',
