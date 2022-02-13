@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Page from '../../components/Page';
-import HomeImage from '../../assets/img/background.png';
-import CashImage from '../../assets/img/t_2OMB-01.png';
+
+import CashImage from '../../assets/img/MvDOLLAR.png';
 import Image from 'material-ui-image';
 import styled from 'styled-components';
 import { Alert } from '@material-ui/lab';
@@ -30,8 +30,7 @@ import useTombFinance from '../../hooks/useTombFinance';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background: url(${HomeImage}) no-repeat !important;
-    background-size: cover !important;
+    background-color: #1D2951;
   }
 `;
 
@@ -40,6 +39,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('415')]: {
       marginTop: '10px',
     },
+  },
+  card: {
+    borderRadius: 0,
+    backgroundColor: '#2c3e50',
+    color: theme.palette.primary.contrastText,
+    boxShadow: 'none',
   },
 }));
 
@@ -139,20 +144,43 @@ const Home = () => {
       <BackgroundImage />
       <Grid container spacing={3}>
         {/* Logo */}
-        <Grid container item xs={12} sm={4} justify="center">
-          {/* <Paper>xs=6 sm=3</Paper> */}
-          <Image color="none" style={{ width: "164px", height: "164px", objectFit: "contain", paddingTop: '100px' }} src={CashImage} />
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          style={{display: 'flex', justifyContent: 'center', verticalAlign: 'middle', overflow: 'hidden'}}
+        >
+          <img src={CashImage} style={{maxHeight: '180px', marginTop: '40px'}} />
         </Grid>
         {/* Explanation text */}
         <Grid item xs={12} sm={8}>
           <Paper>
-            <Box p={4}>
-              <h2>Welcome to 2omb Finance!</h2>
-              <p>Pegged to the price of 1 FTM via seigniorage.</p>
-              <p>
-              <StyledLink href="/farms">Stake</StyledLink> your 2OMB-FTM LP tokens to earn 2SHARE seigniorage rewards.
+            <Box p={4} style={{textAlign: 'center'}}>
+            <h2>Welcome to MiniVerse</h2>
+              <p style={{fontSize: '17px'}}>
+                <b>MvDOLLAR is an algorithmic stable coin designed to maintain a 1:1 peg to USDC.</b>
               </p>
-              <p>To maximize profits, stake your harvested 2SHAREs in the <StyledLink href="/boardroom">Boardroom</StyledLink> to earn more 2OMB!</p>
+              <p style={{fontSize: '17px'}}>
+                The protocol incentivizes the peg through high daily yields normally only found with volatile risk
+                assets but with MvDOLLAR you get this by staking a USD pegged coin instead!
+
+              </p>
+              <p>
+                Join our{' '}
+                <a href="https://discord.com/invite/CxRWUGSyRv" rel="noopener noreferrer" target="_blank" style={{color: '#BBA14F'}}>
+                  Discord
+                </a>{' '}
+                & {' '}
+                <a
+                  href="https://miniversefinance.gitbook.io/docs/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  style={{color: '#BBA14F'}}
+                >
+                  read our Docs
+                </a>{' '}
+                to find out more!
+              </p>
             </Box>
           </Paper>
 
@@ -160,13 +188,13 @@ const Home = () => {
 
         </Grid>
 
-        <Grid container justify="center">
+        {/*<Grid container justify="center">
             <Box mt={3} style={{ width: '1000px' }}>
             <Alert variant="filled" severity="warning">
-                Do your own research before investing. Investing is risky and may result in monetary loss. 2omb is beta software and may contain bugs. By using 2omb, you agree that the 2omb and 3omb team is not responsible for any financial losses from investing in 2omb or 3omb.
+                Do your own research before investing. Investing is risky and may result in monetary loss. MiniVerse is beta software and may contain bugs. By using MiniVerse, you agree that the MiniVerse team is not responsible for any financial losses from investing in MiniVerse.
             </Alert>
             </Box>
-        </Grid>
+  </Grid>*/}
 
         {/* TVL */}
         <Grid item xs={12} sm={4}>
@@ -181,39 +209,36 @@ const Home = () => {
         {/* Wallet */}
         <Grid item xs={12} sm={8}>
           <Card style={{ height: '100%' }}>
-            <CardContent align="center" style={{ marginTop: '2.5%' }}>
-              {/* <h2 style={{ marginBottom: '20px' }}>Wallet Balance</h2> */}
-              {/* <Button color="primary" href="/masonry" variant="contained" style={{ marginRight: '25px' }}>
-                Stake Now
-              </Button> */}
-              {/* <Button href="/cemetery" variant="contained" style={{ marginRight: '25px' }}>
-                Stake Now
-              </Button> */}
-              <Button color="primary" href="/farms" variant="contained" style={{ marginRight: '25px' }}>
-                Farms
+            <CardContent align="center" style={{ marginTop: '2.5%', backgroundColor: '#2c3e50' }}>
+
+              <Button color="primary" href="/cemetery" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
+                Stake NOW
+              </Button>
+              <Button color="primary" href="/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
+                Farm NOW
               </Button>
               <Button
                 color="primary"
                 target="_blank"
                 href={buyTombAddress}
                 variant="contained"
-                style={{ marginRight: '25px' }}
-                className={classes.button}
+                style={{ marginRight: '10px' }}
+                className={'shinyButton ' + classes.button}
               >
-                Buy 2OMB
+                Buy MvDOLLAR
               </Button>
               {/* <Button variant="contained" target="_blank" href={buyTShareAddress} className={classes.button}>
                 Buy 2SHARE
               </Button> */}
-              <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0xc54a1684fd1bef1f077a336e6be4bd9a3096a6ca" variant="contained" style={{ marginRight: '25px' }}>
-                Buy 2SHARES
+              <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0xc54a1684fd1bef1f077a336e6be4bd9a3096a6ca" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+                Buy MvSHARES
               </Button>
-              <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xbdc7dfb7b88183e87f003ca6b5a2f81202343478" variant="contained" style={{ marginRight: '25px' }}>
-                2OMB Chart
+              {/*<Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xbdc7dfb7b88183e87f003ca6b5a2f81202343478" variant="contained" style={{ marginRight: '25px' }}>
+              MvDOLLAR Chart
               </Button>
               <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xc54A1684fD1bef1f077a336E6be4Bd9a3096a6Ca" variant="contained" style={{ marginRight: '25px' }}>
-                2SHARES Chart
-              </Button>
+              MvSHARES Chart
+            </Button>*/}
             </CardContent>
           </Card>
         </Grid>
@@ -222,22 +247,17 @@ const Home = () => {
         <Grid item xs={12} sm={4}>
           <Card>
             <CardContent align="center" style={{ position: 'relative' }}>
-              <h2>2OMB</h2>
+              <h2>MvDOLLAR</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="TOMB" />
                 </CardIcon>
-              </Box>
-              Current Price
-              <Box>
-                <span style={{ fontSize: '30px' }}>{tombPriceInFTM ? tombPriceInFTM : '-.----'} FTM</span>
-              </Box>
-              <Box>
-                <span style={{ fontSize: '16px', alignContent: 'flex-start' }}>
+
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>
                   ${tombPriceInDollars ? tombPriceInDollars : '-.--'}
                 </span>
               </Box>
-              <span style={{ fontSize: '12px' }}>
+              <span style={{ fontSize: '17px' }}>
                 Market Cap: ${(tombCirculatingSupply * tombPriceInDollars).toFixed(2)} <br />
                 Circulating Supply: {tombCirculatingSupply} <br />
                 Total Supply: {tombTotalSupply-140000}
@@ -277,23 +297,18 @@ const Home = () => {
         <Grid item xs={12} sm={4}>
           <Card>
             <CardContent align="center" style={{ position: 'relative' }}>
-              <h2>2SHARES</h2>
+              <h2>MvSHARES</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="TSHARE" />
                 </CardIcon>
+
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
               </Box>
-              Current Price
-              <Box>
-                <span style={{ fontSize: '30px' }}>{tSharePriceInFTM ? tSharePriceInFTM : '-.----'} FTM</span>
-              </Box>
-              <Box>
-                <span style={{ fontSize: '16px' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
-              </Box>
-              <span style={{ fontSize: '12px' }}>
+              <span style={{ fontSize: '17px' }}>
                 Market Cap: ${(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tShareCirculatingSupply-balance} <br />
-                Total Supply: {tShareTotalSupply-balance}
+                Circulating Supply: {tShareCirculatingSupply-balance.toFixed(2)} <br />
+                Total Supply: {tShareTotalSupply-balance.toFixed(2)}
               </span>
             </CardContent>
           </Card>
@@ -303,20 +318,15 @@ const Home = () => {
         <Grid item xs={12} sm={4}>
           <Card>
             <CardContent align="center" style={{ position: 'relative' }}>
-              <h2>2BOND</h2>
+              <h2>MvBOND</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="TBOND" />
                 </CardIcon>
+
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
               </Box>
-              Current Price
-              <Box>
-                <span style={{ fontSize: '30px' }}>{tBondPriceInFTM ? tBondPriceInFTM : '-.----'} FTM</span>
-              </Box>
-              <Box>
-                <span style={{ fontSize: '16px' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
-              </Box>
-              <span style={{ fontSize: '12px' }}>
+              <span style={{ fontSize: '17px' }}>
                 Market Cap: $-.-- <br />
                 Circulating Supply: ------ <br />
                 Total Supply: ------
@@ -332,25 +342,25 @@ const Home = () => {
         <Grid item xs={12} sm={6}>
           <Card>
             <CardContent align="center">
-              <h2>2OMB-WFTM Spooky LP</h2>
+              <h2>MvDOLLAR-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="2OMB-FTM-LP" />
                 </CardIcon>
               </Box>
-              <Box mt={2}>
+             {/* <Box mt={2}>
                 <Button color="primary" disabled={false} onClick={onPresentTombZap} variant="contained">
                   Zap In!
                 </Button>
-              </Box>
+            </Box>*/}
               <Box mt={2}>
-                <span style={{ fontSize: '26px' }}>
-                  {tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'} 2OMB /{' '}
-                  {tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'} FTM
+                <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
+                  {tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'} MvDOLLAR /{' '}
+                  {tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'} USDC
                 </span>
               </Box>
               <Box>${tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'}</Box>
-              <span style={{ fontSize: '12px' }}>
+              <span style={{ fontSize: '17px' }}>
                 Liquidity: ${tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'} <br />
                 Total supply: {tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'}
               </span>
@@ -360,25 +370,25 @@ const Home = () => {
         <Grid item xs={12} sm={6}>
           <Card>
             <CardContent align="center">
-              <h2>2SHARES-WFTM Spooky LP</h2>
+              <h2>MvSHARES-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="2SHARE-FTM-LP" />
                 </CardIcon>
               </Box>
-              <Box mt={2}>
+             {/* <Box mt={2}>
                 <Button color="primary" onClick={onPresentTshareZap} variant="contained">
                   Zap In!
                 </Button>
-              </Box>
+          </Box>*/}
               <Box mt={2}>
-                <span style={{ fontSize: '26px' }}>
-                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} 2SHARES /{' '}
-                  {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} FTM
+                <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
+                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} MvSHARES /{' '}
+                  {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} USDC
                 </span>
               </Box>
               <Box>${tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'}</Box>
-              <span style={{ fontSize: '12px' }}>
+              <span style={{ fontSize: '17px' }}>
                 Liquidity: ${tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'}
                 <br />
                 Total supply: {tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'}
