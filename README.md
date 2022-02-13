@@ -1,5 +1,4 @@
-# Welcome to MiniVerse Finance
-[
+# Welcome to MiniVerse
 Thanks for taking the time to contribute!
 You can start by reading our [Contribution guidelines](CONTRIBUTING.md) first.](url)
 
@@ -29,4 +28,5 @@ npx prettier --write .
 - **contexts** contains global contexts.
 - **hooks** contains generic hooks.
 - **utils** contains generic utilities functions.
+
 
