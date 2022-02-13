@@ -28,7 +28,7 @@ const StyledCardTitle = styled.div`
 `;
 
 const StyledDesc = styled.span`
-  color: ${(props) => props.theme.color.grey[400]};
+  color: #fff;
 `;
 
 const StyledIcon = styled.span`

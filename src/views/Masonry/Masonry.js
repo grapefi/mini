@@ -26,13 +26,12 @@ import useTotalStakedOnMasonry from '../../hooks/useTotalStakedOnMasonry';
 import useClaimRewardCheck from '../../hooks/masonry/useClaimRewardCheck';
 import useWithdrawCheck from '../../hooks/masonry/useWithdrawCheck';
 import ProgressCountdown from './components/ProgressCountdown';
-import MasonryImage from '../../assets/img/background.png';
+
 import { createGlobalStyle } from 'styled-components';
 
 const BackgroundImage = createGlobalStyle`
   body, html {
-    background: url(${MasonryImage}) no-repeat !important;
-    background-size: cover !important;
+    background-color: #1D2951;
   }
 `;
 
@@ -64,9 +63,7 @@ const Masonry = () => {
       <BackgroundImage />
       {!!account ? (
         <>
-          <Typography color="textPrimary" align="center" variant="h3" gutterBottom>
-            Boardroom
-          </Typography>
+         <h2 style={{ fontSize: '80px', textAlign:'center' }}>Boardroom</h2>
           <Box mt={5}>
             <Grid container justify="center" spacing={3}>
               <Grid item xs={12} md={2} lg={2} className={classes.gridItem}>
@@ -89,7 +86,7 @@ const Masonry = () => {
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
                     <Typography>
-                      2OMB Price<small>(TWAP)</small>
+                      MvDOLLAR Price<small>(TWAP)</small>
                     </Typography>
                     <Typography>{scalingFactor}</Typography>
                   </CardContent>
@@ -106,7 +103,7 @@ const Masonry = () => {
               <Grid item xs={12} md={2} lg={2}>
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
-                    <Typography>2SHARES Staked</Typography>
+                    <Typography>MvSHARES Staked</Typography>
                     <Typography>{getDisplayBalance(totalStaked)}</Typography>
                   </CardContent>
                 </Card>
@@ -116,7 +113,7 @@ const Masonry = () => {
             <Grid container justify="center">
               <Box mt={3} style={{ width: '600px' }}>
                 <Alert variant="filled" severity="warning">
-                  Staked 2SHAREs can only be withdrawn after 2 epochs (12 hours) since deposit. Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
+                  Staked MvSHARE can only be withdrawn after 2 epochs (12 hours) since deposit. Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
                 </Alert>
               </Box>
             </Grid>

@@ -5,16 +5,18 @@ const newTheme = createMuiTheme({
   palette: {
     type: 'dark',
     text: {
-      primary: '#FFF',
+      primary: '#dddfee',
+      secondary: 'white',
+      yellow: '#d19aff',
     },
     background: {
-      default: '#121212',
-      paper: 'rgba(255, 255, 255, 0.9)',
+      default: '#222f3e',
+      paper: '#2c3e50',
     },
     primary: {
-      light: '#757ce8',
-      main: '#571eb1',
-      dark: '#2c2560',
+      light: '#ffe066',
+      main: '#2c2560',
+      dark: '#b38f00',
       contrastText: '#000',
     },
     secondary: {
@@ -31,7 +33,7 @@ const newTheme = createMuiTheme({
   },
   typography: {
     color: '#2c2560',
-    fontFamily: ['"IBM Plex Mono"', 'monospace'].join(','),
+    fontFamily: ['"monospace"', 'sans-serif'].join(','),
   },
 });
 

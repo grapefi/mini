@@ -11,15 +11,14 @@ import UnlockWallet from '../../components/UnlockWallet';
 import CountDownTimer from '../../components/Countdown';
 import Page from '../../components/Page';
 import CemeteryCard from './CemeteryCard';
-import CemeteryImage from '../../assets/img/background.png';
+
 import { createGlobalStyle } from 'styled-components';
 
 import useBanks from '../../hooks/useBanks';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background: url(${CemeteryImage}) no-repeat !important;
-    background-size: cover !important;
+    background-color: #1D2951;
   }
 `;
 
@@ -35,18 +34,16 @@ const Cemetery = () => {
           <BackgroundImage />
           {!!account ? (
             <Container maxWidth="lg">
-              <Typography color="textPrimary" align="center" variant="h2" gutterBottom>
+              <h2 style={{textAlign: 'center', fontSize: '80px'}}>
                 Farms
-              </Typography>
+              </h2>
 
               <Box mt={5}>
                 <div hidden={activeBanks.filter((bank) => bank.sectionInUI === 2).length === 0}>
                   <Typography color="textPrimary" variant="h4" gutterBottom>
-                    Earn 2SHARE by staking LP
+                    MvSHARE REWARD POOLS
                   </Typography>
-                  <Alert variant="filled" severity="success">
-                    2SHARE incentives have started! Good luck!
-                  </Alert>
+
                   <Grid container spacing={3} style={{ marginTop: '20px' }}>
                     {activeBanks
                       .filter((bank) => bank.sectionInUI === 2)

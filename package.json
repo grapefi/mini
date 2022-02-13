@@ -1,5 +1,5 @@
 {
-  "name": "tomb.finance",
+  "name": "miniverse.finance",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -76,3 +76,4 @@
     "prettier": "2.3.1"
   }
 }
+
