@@ -18,7 +18,7 @@ import useBanks from '../../hooks/useBanks';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background: url(${CemeteryImage}) no-repeat !important;
+    background-color: #1D2951;
     background-size: cover !important;
   }
 `;
@@ -35,18 +35,16 @@ const Cemetery = () => {
           <BackgroundImage />
           {!!account ? (
             <Container maxWidth="lg">
-              <Typography color="textPrimary" align="center" variant="h2" gutterBottom>
+              <h2 style={{textAlign: 'center', fontSize: '80px'}}>
                 Farms
-              </Typography>
+              </h2>
 
               <Box mt={5}>
                 <div hidden={activeBanks.filter((bank) => bank.sectionInUI === 2).length === 0}>
                   <Typography color="textPrimary" variant="h4" gutterBottom>
-                    Earn 2SHARE by staking LP
+                    MvSHARE Rewards Pools
                   </Typography>
-                  <Alert variant="filled" severity="success">
-                    2SHARE incentives have started! Good luck!
-                  </Alert>
+                  
                   <Grid container spacing={3} style={{ marginTop: '20px' }}>
                     {activeBanks
                       .filter((bank) => bank.sectionInUI === 2)
