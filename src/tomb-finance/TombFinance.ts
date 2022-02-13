@@ -273,16 +273,16 @@ export class TombFinance {
     poolContract: Contract,
     depositTokenName: string,
   ) {
-    if (earnTokenName === '2OMB') {
+    if (earnTokenName === 'MvDOLLAR') {
       if (!contractName.endsWith('TombRewardPool')) {
         const rewardPerSecond = (await poolContract.two_ombPerSecond()).mul(20);
         if (depositTokenName === 'WFTM') {
           return rewardPerSecond.mul(6000).div(11000).div(24); // 6000
-        } else if (depositTokenName === 'WETH') {
+        } else if (depositTokenName === 'MVDOLLAR-USDC-LP') {
           return rewardPerSecond.mul(3000).div(11000).div(24); // 2500
-        } else if (depositTokenName === 'TOMB') {
+        } else if (depositTokenName === 'FANG') {
           return rewardPerSecond.mul(6000).div(11000).div(24); // 1000
-        } else if (depositTokenName === 'MIM') {
+        } else if (depositTokenName === 'USDC') {
           return rewardPerSecond.mul(1500).div(11000).div(24); // 1000
         }
         return rewardPerSecond.div(24);

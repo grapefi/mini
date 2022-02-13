@@ -116,7 +116,7 @@ const Masonry = () => {
             <Grid container justify="center">
               <Box mt={3} style={{ width: '600px' }}>
                 <Alert variant="filled" severity="warning">
-                  Staked MvSHARES can only be withdrawn after 2 epochs (12 hours) since deposit. Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
+                  Staked MvSHARES can only be withdrawn after 4 epochs (24hrs) since deposit and claims made every 2 epochs (12hrs). Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
                 </Alert>
               </Box>
             </Grid>

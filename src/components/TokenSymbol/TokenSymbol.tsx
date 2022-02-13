@@ -1,11 +1,11 @@
 import React from 'react';
 
 //Graveyard ecosystem logos
-import tombLogo from '../../assets/img/t_2OMB-01.png';
-import tShareLogo from '../../assets/img/t_2SHARE-01.png';
+import tombLogo from '../../assets/img/MvDOLLAR.png';
+import tShareLogo from '../../assets/img/MvSHARE.png';
 import tombLogoPNG from '../../assets/img/2omb-01.png';
 import tShareLogoPNG from '../../assets/img/t_2SHARE-01.png';
-import tBondLogo from '../../assets/img/2BOND-01.png';
+import tBondLogo from '../../assets/img/MvBOND.png';
 
 // import tombLogo from '../../assets/img/crypto_tomb_cash.svg';
 // import tShareLogo from '../../assets/img/crypto_tomb_share.svg';
@@ -29,7 +29,7 @@ const logosBySymbol: { [title: string]: string } = {
   //Real tokens
   //=====================
   TOMB: tombLogo,
-  TOMBPNG: tombLogoPNG,
+  TOMBPNG: tombLogo,
   TSHAREPNG: tShareLogoPNG,
   TSHARE: tShareLogo,
   TBOND: tBondLogo,
@@ -50,10 +50,15 @@ type LogoProps = {
 
 const TokenSymbol: React.FC<LogoProps> = ({ symbol, size = 64 }) => {
   if (!logosBySymbol[symbol]) {
-    return <img src={logosBySymbol["TOMB"]} alt={`Tomb Logo`} width={size} height={size} />;
+    return <img src={logosBySymbol["TOMB"]} alt={`MvDOLLAR Logo`} width={size} height={size} />;
     // throw new Error(`Invalid Token Logo symbol: ${symbol}`);
   }
-  return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={size} height={size} />;
+  if(symbol === 'TOMB' || symbol === 'TOMBPNG'){
+    return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={70} height={55} />;
+  }else{
+    return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={size} height={size} />;
+  }
+  
 };
 
 export default TokenSymbol;
