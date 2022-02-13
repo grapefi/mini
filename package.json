@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@davatar/react": "^1.8.1",
     "@babel/helper-environment-visitor": "^7.16.7",
     "@ethersproject/providers": "^5.4.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",

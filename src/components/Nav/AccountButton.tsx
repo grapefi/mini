@@ -4,6 +4,13 @@ import { useWallet } from 'use-wallet';
 import useModal from '../../hooks/useModal';
 import WalletProviderModal from '../WalletProviderModal';
 import AccountModal from './AccountModal';
+import {useENS} from '../../hooks/useENS';
+import Davatar from '@davatar/react';
+
+function shorten(str: string) {
+  if (str.length < 10) return str;
+  return `${str.slice(0, 6)}...${str.slice(str.length - 4)}`;
+}
 
 interface AccountButtonProps {
   text?: string;
@@ -12,7 +19,7 @@ interface AccountButtonProps {
 const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
   const { account } = useWallet();
   const [onPresentAccountModal] = useModal(<AccountModal />);
-
+  const {ensName} = useENS(account);
   const [isWalletProviderOpen, setWalletProviderOpen] = useState(false);
 
   const handleWalletProviderOpen = () => {
@@ -33,7 +40,10 @@ const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
         </Button>
       ) : (
         <Button variant="contained" onClick={onPresentAccountModal}>
-          My Wallet
+          <div className="account">
+            <Davatar size={20} address={account} />
+            <span>{ensName || shorten(account)}</span>
+          </div>
         </Button>
       )}
 
