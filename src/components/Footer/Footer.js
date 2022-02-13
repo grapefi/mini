@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15px',
     width: '100%',
     color: 'white',
-    backgroundColor: '#121212',
+    backgroundColor: 'rgba(0,0,0,0)',
     textAlign: 'center',
     height: '1.3rem',
     [theme.breakpoints.down('xs')]: {
@@ -44,31 +44,31 @@ const Footer = () => {
           <Grid item xs={6}>
             <Typography variant="body2" color="textSecondary" align="left">
               <Link color="inherit" href="/">
-                2omb
+                MiniVerse
               </Link>
             </Typography>
           </Grid>
-          <Grid item xs={6} style={{ textAlign: 'right' }}>
+          <Grid item xs={6} style={{ textAlign: 'right', color: '#fff' }}>
             <a
-              href="https://twitter.com/_2omb"
+              href="https://twitter.com/miniverse_fin"
               rel="noopener noreferrer"
               target="_blank"
               className={classes.link}
             >
               <img alt="twitter" src={TwitterImage} className={classes.img} />
             </a>
-            <a href="https://bit.ly/3AUcaBI" rel="noopener noreferrer" target="_blank" className={classes.link}>
+            {/*<a href="https://bit.ly/3AUcaBI" rel="noopener noreferrer" target="_blank" className={classes.link}>
               <img alt="telegram" src={TelegramImage} className={classes.img} />
-            </a>
+  </a>*/}
             <a
-              href="https://github.com/2omb"
+              href="https://github.com/miniversefinance"
               rel="noopener noreferrer"
               target="_blank"
               className={classes.link}
             >
               <img alt="github" src={GithubImage} className={classes.img} />
             </a>
-            <a href="https://discord.gg/2omb" rel="noopener noreferrer" target="_blank" className={classes.link}>
+            <a href="https://discord.com/invite/CxRWUGSyRv" rel="noopener noreferrer" target="_blank" className={classes.link}>
               <img alt="discord" src={DiscordImage} className={classes.img} />
             </a>
           </Grid>

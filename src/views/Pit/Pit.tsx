@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
 import Page from '../../components/Page';
-import PitImage from '../../assets/img/background.png';
+
 import { createGlobalStyle } from 'styled-components';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useWallet } from 'use-wallet';
@@ -21,8 +21,7 @@ import { BOND_REDEEM_PRICE, BOND_REDEEM_PRICE_BN } from '../../tomb-finance/cons
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background: url(${PitImage}) no-repeat !important;
-    background-size: cover !important;
+    background-color: #1D2951;
   }
 `;
 
@@ -41,7 +40,7 @@ const Pit: React.FC = () => {
     async (amount: string) => {
       const tx = await tombFinance.buyBonds(amount);
       addTransaction(tx, {
-        summary: `Buy ${Number(amount).toFixed(2)} TBOND with ${amount} TOMB`,
+        summary: `Buy ${Number(amount).toFixed(2)} MvBOND with ${amount} MvDOLLAR`,
       });
     },
     [tombFinance, addTransaction],
@@ -50,7 +49,7 @@ const Pit: React.FC = () => {
   const handleRedeemBonds = useCallback(
     async (amount: string) => {
       const tx = await tombFinance.redeemBonds(amount);
-      addTransaction(tx, { summary: `Redeem ${amount} TBOND` });
+      addTransaction(tx, { summary: `Redeem ${amount} MvBOND` });
     },
     [tombFinance, addTransaction],
   );
@@ -71,28 +70,28 @@ const Pit: React.FC = () => {
                 <ExchangeCard
                   action="Purchase"
                   fromToken={tombFinance.TOMB}
-                  fromTokenName="2OMB"
+                  fromTokenName="MvDOLLAR"
                   toToken={tombFinance.TBOND}
-                  toTokenName="2BOND"
+                  toTokenName="MvBOND"
                   priceDesc={
                     !isBondPurchasable
-                      ? '2OMB is over peg'
-                      : getDisplayBalance(bondsPurchasable, 18, 4) + ' 2BOND available for purchase'
+                      ? 'MvDOLLAR is over peg'
+                      : getDisplayBalance(bondsPurchasable, 18, 4) + ' MvDOLLAR available for purchase'
                   }
                   onExchange={handleBuyBonds}
-                  disabled={!bondStat || isBondRedeemable}
+                  disabled={!bondStat}
                 />
               </StyledCardWrapper>
               <StyledStatsWrapper>
                 <ExchangeStat
-                  tokenName="2OMB"
+                  tokenName="MvDOLLAR"
                   description="Last-Hour TWAP Price"
                   price={getDisplayBalance(cashPrice, 18, 4)}
                 />
                 <Spacer size="md" />
                 <ExchangeStat
-                  tokenName="2BOND"
-                  description="Current Price: (2OMB)^2"
+                  tokenName="MvBOND"
+                  description="Current Price: (MvDOLLAR)^2"
                   price={Number(bondStat?.tokenInFtm).toFixed(2) || '-'}
                 />
               </StyledStatsWrapper>
@@ -100,13 +99,13 @@ const Pit: React.FC = () => {
                 <ExchangeCard
                   action="Redeem"
                   fromToken={tombFinance.TBOND}
-                  fromTokenName="2BOND"
+                  fromTokenName="MvBOND"
                   toToken={tombFinance.TOMB}
-                  toTokenName="2OMB"
-                  priceDesc={`${getDisplayBalance(bondBalance)} 2BOND Available in wallet`}
+                  toTokenName="MvDOLLAR"
+                  priceDesc={`${getDisplayBalance(bondBalance)} MvBOND Available in wallet`}
                   onExchange={handleRedeemBonds}
-                  disabled={!bondStat || bondBalance.eq(0) || !isBondRedeemable}
-                  disabledDescription={!isBondRedeemable ? `Enabled when 2OMB > ${BOND_REDEEM_PRICE} FTM` : null}
+                  disabled={!bondStat}
+                  disabledDescription={!isBondRedeemable ? `Enabled when MvDOLLAR > ${BOND_REDEEM_PRICE} USDC` : null}
                 />
               </StyledCardWrapper>
             </StyledBond>
