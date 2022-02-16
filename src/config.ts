@@ -146,7 +146,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 1,
-    closedForStaking: true,
+    closedForStaking: false,
     genesisFinished: false
   },
   TombWethRewardPool: {
@@ -159,7 +159,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "50x",
     finished: false,
     sort: 2,
-    closedForStaking: true,
+    closedForStaking: false,
     genesisFinished: false
   },
   TombShibaRewardPool: {
@@ -172,7 +172,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "25x",
     finished: false,
     sort: 3,
-    closedForStaking: true,
+    closedForStaking: false,
     genesisFinished: false
   },
   TombTombRewardPool: {
@@ -185,7 +185,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 4,
-    closedForStaking: true,
+    closedForStaking: false,
     genesisFinished: false
   },
   TombFtmLPTombRewardPool: {
@@ -196,9 +196,9 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: '2OMB-FTM-LP',
     earnTokenName: 'MvDOLLAR',
     multiplier: "1000x",
-    finished: false,
+    finished: true,
     sort: 5,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   TombFtmLPTombRewardPoolOld: {
     name: 'Earn TOMB by TOMB-FTM LP',
@@ -247,6 +247,19 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     finished: true,
     sort: 8,
     closedForStaking: true,
+  },
+  MiniGuineas: {
+    name: 'Stake Mini, earn MvDOLLAR',
+    poolId: 0,
+    sectionInUI: 10,
+    contract: 'MiniGuineas',
+    depositTokenName: 'WFTM',
+    earnTokenName: 'MvDOLLAR',
+    multiplier: "100x",
+    finished: false,
+    sort: 1,
+    closedForStaking: false,
+    genesisFinished: false
   },
   // TshareDividends: {
   //   name: 'Earn USDC dividends by staking 2SHARES',

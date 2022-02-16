@@ -62,19 +62,9 @@ footer .a:hover {
   color: #e0e3bd;
 }
 
-.MuiButton-containedPrimary,
-.MuiButton-containedPrimary:hover,
-.MuiListItem-button:hover,
-.MuiButtonBase-root:hover {
-  color: #fff !important;
-}
-.MuiButton-containedPrimary{
-  background: #BBA14F !important;
-}
 
-.MuiButton-containedPrimary:hover{
-  background: #1D2951 !important;
-}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
@@ -87,6 +77,7 @@ code {
   text-align: left !important;
   justify-content: flex-start !important;
   text-transform: none !important;
+  
 }
 .wallet-button:hover {
   color: #BBA14F !important;
@@ -136,6 +127,8 @@ code {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
 }
 
+
+
 .MuiAlert-filledWarning{
   background-color: #BBA14F !important;
 
@@ -181,3 +174,35 @@ code {
 .walletconnecttitle:hover {
   color: #BBA14F;
 }
+.MuiButton-containedPrimary,
+.MuiButton-containedPrimary:hover,
+.MuiListItem-button:hover,
+.MuiButtonBase-root:hover {
+  color: #fff !important;
+}
+.MuiButton-containedPrimary{
+  background: #BBA14F !important;
+}
+
+.MuiButton-containedPrimary:hover{
+  background: #1D2951 !important;
+}
+
+.wallet-button {
+  color: #fff;
+  font-family: 'monospace', sans-serif !important;
+  font-size: 1.2rem !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+  text-transform: none !important;
+}
+.wallet-button:hover {
+  color: #BBA14F !important;
+}
+.walletconnecttitle {
+  color: #322f32;
+}
+.walletconnecttitle:hover {
+  color: #BBA14F;
+}
+

@@ -39,7 +39,7 @@ const AccountButton: React.FC<AccountButtonProps> = ({ text }) => {
           {buttonText}
         </Button>
       ) : (
-        <Button variant="contained" onClick={onPresentAccountModal}>
+        <Button onClick={onPresentAccountModal}>
           <div className="account">
             <Davatar size={20} address={account} />
             <span>{ensName || shorten(account)}</span>

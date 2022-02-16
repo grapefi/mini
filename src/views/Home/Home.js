@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import Page from '../../components/Page';
 
-import CashImage from '../../assets/img/MvDOLLAR.png';
+import CashImage from '../../assets/img/MV.png';
 import Image from 'material-ui-image';
 import styled from 'styled-components';
 import { Alert } from '@material-ui/lab';
@@ -150,7 +150,7 @@ const Home = () => {
           sm={4}
           style={{display: 'flex', justifyContent: 'center', verticalAlign: 'middle', overflow: 'hidden'}}
         >
-          <img src={CashImage} style={{maxHeight: '180px', marginTop: '40px'}} />
+          <img src={CashImage} style={{maxHeight: '160px', marginTop: '60px'}} />
         </Grid>
         {/* Explanation text */}
         <Grid item xs={12} sm={8}>
@@ -158,11 +158,10 @@ const Home = () => {
             <Box p={4} style={{textAlign: 'center'}}>
             <h2>Welcome to MiniVerse</h2>
               <p style={{fontSize: '17px'}}>
-                <b>MvDOLLAR is an algorithmic stable coin designed to maintain a 1:1 peg to USDC.</b>
+                <b>MvDOLLAR is an algorithmic stable coin designed to maintain a 1:1 peg to USDC</b>
               </p>
               <p style={{fontSize: '17px'}}>
-                The protocol incentivizes the peg through high daily yields normally only found with volatile risk
-                assets but with MvDOLLAR you get this by staking a USD pegged coin instead!
+              The protocol incentivizes the peg through high daily yields normally only found with volatile risk assets but with MvDOLLAR you get this by staking a USD pegged coin instead! Through utilizing MvDOLLAR in our NFT GameFi, holders will be able to earn rewards/prizes, breed the next generation, and much more!
 
               </p>
               <p>

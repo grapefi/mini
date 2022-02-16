@@ -25,7 +25,7 @@ const Pit = lazy(() => import('./views/Pit'));
 const SBS = lazy(() => import('./views/Sbs'));
 const Liquidity = lazy(() => import('./views/Liquidity'));
 const Dividends = lazy(() => import('./views/Dividends'));
-
+const NFTSTake = lazy(() => import('./views/NFTStake'));
 const NoMatch = () => (
   <h3 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
     URL Not Found. <a href="/">Go back home.</a>
@@ -61,6 +61,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/dividends">
               <Dividends />
+            </Route>
+            <Route path="/nftstake">
+              <NFTSTake />
             </Route>
             {/* <Route path="/sbs">
               <SBS />
