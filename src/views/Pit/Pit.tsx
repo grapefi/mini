@@ -55,7 +55,7 @@ const Pit: React.FC = () => {
     [tombFinance, addTransaction],
   );
   const isBondRedeemable = useMemo(() => cashPrice.gt(BOND_REDEEM_PRICE_BN), [cashPrice]);
-  const isBondPurchasable = useMemo(() => Number(bondStat?.tokenInFtm) < 1.01, [bondStat]);
+  const isBondPurchasable = useMemo(() => Number(bondStat?.priceInDollars) < 1.01, [bondStat]);
 
   return (
     <Switch>
@@ -93,7 +93,7 @@ const Pit: React.FC = () => {
                 <ExchangeStat
                   tokenName="MvBOND"
                   description="Current Price: (MvDOLLAR)^2"
-                  price={Number(bondStat?.tokenInFtm).toFixed(2) || '-'}
+                  price={Number(bondStat?.priceInDollars).toFixed(2) || '-'}
                 />
               </StyledStatsWrapper>
               <StyledCardWrapper>
