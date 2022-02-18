@@ -36,7 +36,7 @@ interface StakeProps {
 
 const Stake: React.FC<StakeProps> = ({ bank }) => {
   const [approveStatus, approve] = useApprove(bank.depositToken, bank.address);
-
+  console.log(bank);
   const { color: themeColor } = useContext(ThemeContext);
   const tokenBalance = useTokenBalance(bank.depositToken);
   const stakedBalance = useStakedBalance(bank.contract, bank.poolId);
@@ -108,7 +108,7 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
                 disabled={
                   bank.closedForStaking ||
                   approveStatus === ApprovalState.PENDING ||
-                  approveStatus === ApprovalState.UNKNOWN
+                  approveStatus === ApprovalState.UNKNOWN 
                 }
                 onClick={approve}
                 color="primary"
@@ -123,14 +123,7 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
                   <RemoveIcon />
                 </IconButton>
                 <StyledActionSpacer />
-                {/* <StyledActionSpacer />
-                <IconButton
-                  disabled={bank.closedForStaking || bank.depositTokenName === '2OMB-FTM-LP'}
-                  onClick={() => (bank.closedForStaking ? null : onPresentZap())}
-                >
-                  <FlashOnIcon style={{ color: themeColor.grey[400] }} />
-                </IconButton>
-                <StyledActionSpacer /> */}
+ 
                 <IconButton
                   disabled={bank.closedForStaking}
                   onClick={() => (bank.closedForStaking ? null : onPresentDeposit())}

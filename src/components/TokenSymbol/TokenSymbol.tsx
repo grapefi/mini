@@ -14,7 +14,7 @@ import wftmLogo from '../../assets/img/ftm_logo_blue.svg';
 import wethLogo from '../../assets/img/weth.png';
 import rtombLogo from '../../assets/img/crypto_tomb_cash.svg';
 import shibaLogo from '../../assets/img/mimlogo.png';
-
+import fang from '../../assets/img/FANG.png';
 import tombtshares from '../../assets/img/2OMB-2SHARES.png';
 
 import usdc from '../../assets/img/USDC.png';
@@ -34,7 +34,7 @@ const logosBySymbol: { [title: string]: string } = {
   WFTM: wftmLogo,
   WETH: wethLogo,
   MIM: shibaLogo,
-  FANG: shibaLogo,
+  FANG: fang,
   
   // RTOMB: rtombLogo,
   '2OMB-FTM-LP': tombFtmLpLogo,

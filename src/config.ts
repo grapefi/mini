@@ -23,6 +23,7 @@ const configurations: { [env: string]: Configuration } = {
       '2SHARE-FTM-LP': ['0x20bc90bB41228cb9ab412036F80CE4Ef0cAf1BD5', 18],
       '2OMB-2SHARE-LP': ['0xd9B5f00d183df52D717046521152303129F088DD', 18],
       'MVDOLLAR-USDC-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
+      'MG': ['0x323fA706Ed9925b56F2e5f3487e6D3069ABa4E52', 18]
 
     },
     baseLaunchDate: new Date('2021-06-02 13:00:00Z'),
@@ -48,6 +49,7 @@ const configurations: { [env: string]: Configuration } = {
       '2SHARE-FTM-LP': ['0x6398ACBBAB2561553a9e458Ab67dCFbD58944e52', 18],
       '2OMB-2SHARE-LP': ['0xd9B5f00d183df52D717046521152303129F088DD', 18],
       'MVDOLLAR-USDC-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
+      'MG': ['0x323fA706Ed9925b56F2e5f3487e6D3069ABa4E52', 18]
     },
     baseLaunchDate: new Date('2021-06-02 13:00:00Z'),
     bondLaunchesAt: new Date('2020-12-03T15:00:00Z'),
@@ -253,7 +255,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     poolId: 0,
     sectionInUI: 10,
     contract: 'MiniGuineas',
-    depositTokenName: 'WFTM',
+    depositTokenName: 'MG',
     earnTokenName: 'MvDOLLAR',
     multiplier: "100x",
     finished: false,
