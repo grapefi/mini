@@ -83,7 +83,7 @@ export const genesisDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 1,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   TombWethRewardPool: {
     name: 'Stake USDC, earn MvDOLLAR',
@@ -95,7 +95,7 @@ export const genesisDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "50x",
     finished: false,
     sort: 2,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   TombShibaRewardPool: {
     name: 'Stake FANG, earn MvDOLLAR',
@@ -107,7 +107,7 @@ export const genesisDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "25x",
     finished: false,
     sort: 3,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   TombTombRewardPool: {
     name: 'Stake MvDOLLAR-USDC LP, earn MvDOLLAR',
@@ -119,7 +119,7 @@ export const genesisDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 4,
-    closedForStaking: false,
+    closedForStaking: true,
   },
 }
 

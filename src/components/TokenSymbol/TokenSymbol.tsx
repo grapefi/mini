@@ -38,7 +38,7 @@ const logosBySymbol: { [title: string]: string } = {
   
   // RTOMB: rtombLogo,
   '2OMB-FTM-LP': tombFtmLpLogo,
-  '2SHARE-FTM-LP': tombFtmLpLogo,
+  '2SHARE-FTM-LP': tshareFtmLpLogo,
   '2OMB-2SHARE-LP': tombFtmLpLogo,
   'MVDOLLAR-USDC-LP': tombFtmLpLogo,
   'USDC': usdc,
