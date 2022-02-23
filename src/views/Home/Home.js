@@ -200,7 +200,8 @@ const Home = () => {
           <Card>
             <CardContent align="center">
               <h2>Total Value Locked</h2>
-              <CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />
+              -.--
+              {/*<CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />*/}
             </CardContent>
           </Card>
         </Grid>
@@ -210,7 +211,7 @@ const Home = () => {
           <Card style={{ height: '100%' }}>
             <CardContent align="center" style={{ marginTop: '2.5%', backgroundColor: '#2c3e50' }}>
 
-              <Button color="primary" href="/cemetery" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
+              <Button color="primary" href="/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
                 Stake NOW
               </Button>
               <Button color="primary" href="/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
@@ -253,13 +254,13 @@ const Home = () => {
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>
-                  ${tombPriceInDollars ? tombPriceInDollars : '-.--'}
+                  ${/*tombPriceInDollars ? tombPriceInDollars : '-.--'*/}-.--
                 </span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: ${(tombCirculatingSupply * tombPriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tombCirculatingSupply} <br />
-                Total Supply: {tombTotalSupply-140000}
+                Market Cap: ${/*(tombCirculatingSupply * tombPriceInDollars).toFixed(2)*/} -.--<br />
+                Circulating Supply: {/*tombCirculatingSupply*/} <br />
+                Total Supply: {/*tombTotalSupply*/}
               </span>
             </CardContent>
           </Card>
@@ -302,12 +303,12 @@ const Home = () => {
                   <TokenSymbol symbol="TSHARE" />
                 </CardIcon>
 
-                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tSharePriceInDollars ? tSharePriceInDollars : '-.--'*/}-.--</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: ${(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tShareCirculatingSupply-balance.toFixed(2)} <br />
-                Total Supply: {tShareTotalSupply-balance.toFixed(2)}
+                Market Cap: ${/*(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)*/} -.--<br />
+                Circulating Supply: {/*tShareCirculatingSupply-balance.toFixed(2)*/} -.--<br />
+                Total Supply: {/*tShareTotalSupply-balance.toFixed(2)*/} -.--
               </span>
             </CardContent>
           </Card>
@@ -323,7 +324,7 @@ const Home = () => {
                   <TokenSymbol symbol="TBOND" />
                 </CardIcon>
 
-                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tBondPriceInDollars ? tBondPriceInDollars : '-.--'*/}-.--</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
                 Market Cap: $-.-- <br />
@@ -354,14 +355,14 @@ const Home = () => {
             </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
-                  {tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'} MvDOLLAR /{' '}
-                  {tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'} USDC
+                  {/*tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'*/}-.-- MvDOLLAR /{' '}
+                  {/*tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'*/}-.-- USDC
                 </span>
               </Box>
-              <Box>${tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'}</Box>
+              <Box>${/*tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'*/}</Box>
               <span style={{ fontSize: '17px' }}>
-                Liquidity: ${tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'} <br />
-                Total supply: {tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'}
+                Liquidity: ${/*tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'*/}-.-- <br />
+                Total supply: {/*tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'*/}-.--
               </span>
             </CardContent>
           </Card>
@@ -382,15 +383,15 @@ const Home = () => {
           </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
-                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} MvSHARES /{' '}
-                  {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} USDC
+                  {/*tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'*/}-.-- MvSHARES /{' '}
+                  {/*tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'*/}-.-- USDC
                 </span>
               </Box>
-              <Box>${tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'}</Box>
+              <Box>${/*tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'*/}</Box>
               <span style={{ fontSize: '17px' }}>
-                Liquidity: ${tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'}
+                Liquidity: ${/*tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'*/}-.--
                 <br />
-                Total supply: {tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'}
+                Total supply: {/*tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'*/}-.--
               </span>
             </CardContent>
           </Card>

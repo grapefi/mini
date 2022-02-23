@@ -48,7 +48,7 @@ export class TombFinance {
     for (const [symbol, [address, decimal]] of Object.entries(externalTokens)) {
       this.externalTokens[symbol] = new ERC20(address, provider, symbol, decimal);
     }
-    this.TOMB = new ERC20(deployments.tomb.address, provider, '2OMB');
+    this.TOMB = new ERC20(deployments.tomb.address, provider, 'MvDOLLAR');
     this.TSHARE = new ERC20(deployments.tShare.address, provider, '2SHARES');
     this.TBOND = new ERC20(deployments.tBond.address, provider, '2BOND');
     this.FTM = this.externalTokens['WFTM'];
@@ -274,16 +274,16 @@ export class TombFinance {
     depositTokenName: string,
   ) {
     if (earnTokenName === 'MvDOLLAR') {
-      if (!contractName.endsWith('TombRewardPool')) {
+      if (!contractName.endsWith('RewardPool')) {
         const rewardPerSecond = (await poolContract.two_ombPerSecond()).mul(20);
         if (depositTokenName === 'WFTM') {
-          return rewardPerSecond.mul(6000).div(11000).div(24); // 6000
+          return rewardPerSecond.mul(430).div(4269).div(24); // 6000
         } else if (depositTokenName === 'MVDOLLAR-USDC-LP') {
-          return rewardPerSecond.mul(3000).div(11000).div(24); // 2500
+          return rewardPerSecond.mul(10).div(4269).div(24); // 2500
         } else if (depositTokenName === 'FANG') {
-          return rewardPerSecond.mul(6000).div(11000).div(24); // 1000
+          return rewardPerSecond.mul(150).div(4269).div(24); // 1000
         } else if (depositTokenName === 'USDC') {
-          return rewardPerSecond.mul(1500).div(11000).div(24); // 1000
+          return rewardPerSecond.mul(430).div(4269).div(24); // 1000
         }
         return rewardPerSecond.div(24);
       }
@@ -433,9 +433,9 @@ export class TombFinance {
   ): Promise<BigNumber> {
     const pool = this.contracts[poolName];
     try {
-      if (earnTokenName === '2OMB') {
+      if (earnTokenName === 'MvDOLLAR') {
         // problem is pending2OMB isnt a function since the abi still says pendingTOMB
-        return await pool.pending2OMB(poolId, account);
+        return await pool.pendingMvDOLLAR(poolId, account);
       } else {
         return await pool.pendingShare(poolId, account);
       }

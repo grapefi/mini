@@ -87,13 +87,13 @@ const Pit: React.FC = () => {
                 <ExchangeStat
                   tokenName="MvDOLLAR"
                   description="Last-Hour TWAP Price"
-                  price={getDisplayBalance(cashPrice, 18, 4)}
+                  price="-"
                 />
                 <Spacer size="md" />
                 <ExchangeStat
                   tokenName="MvBOND"
                   description="Current Price: (MvDOLLAR)^2"
-                  price={Number(bondStat?.priceInDollars).toFixed(2) || '-'}
+                  price="-"
                 />
               </StyledStatsWrapper>
               <StyledCardWrapper>
