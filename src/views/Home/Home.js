@@ -220,7 +220,7 @@ const Home = () => {
               <Button
                 color="primary"
                 target="_blank"
-                href={buyTombAddress}
+                href="#"
                 variant="contained"
                 style={{ marginRight: '10px' }}
                 className={'shinyButton ' + classes.button}
@@ -230,7 +230,7 @@ const Home = () => {
               {/* <Button variant="contained" target="_blank" href={buyTShareAddress} className={classes.button}>
                 Buy 2SHARE
               </Button> */}
-              <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0xc54a1684fd1bef1f077a336e6be4bd9a3096a6ca" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+              <Button color="primary" target="_blank" href="#" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MvSHARES
               </Button>
               {/*<Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xbdc7dfb7b88183e87f003ca6b5a2f81202343478" variant="contained" style={{ marginRight: '25px' }}>

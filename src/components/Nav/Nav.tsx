@@ -112,13 +112,13 @@ const Nav = () => {
               <a href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
                 Land Mint
               </a>
-              <a rel="noopener noreferrer" href="mvfinance.club/minichilla" className={classes.link}>
+              <a rel="noopener noreferrer" href="https://mvfinance.club/minichilla" className={classes.link}>
               Minichilla
               </a>
-              <a rel="noopener noreferrer" href="mvfinance.club/miniguinea" className={classes.link}>
+              <a rel="noopener noreferrer" href="https://mvfinance.club/miniguinea" className={classes.link}>
               Miniguinea
               </a>
-              <a rel="noopener noreferrer" href="mvfinance.club/miniland" className={classes.link}>
+              <a rel="noopener noreferrer" href="https://mvfinance.club/miniland" className={classes.link}>
               Miniland
               </a>      
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
