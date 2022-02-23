@@ -150,7 +150,7 @@ const Nav = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              2omb Finance
+              Miniverse Finance
             </Typography>
 
             <Drawer
