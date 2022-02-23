@@ -109,6 +109,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/farms" className={classes.link}>
                 Farms
               </Link>
+              <a target="_blank" href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
+                Land Mint
+              </a>
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
                 Boardroom
               </Link>
@@ -173,7 +176,10 @@ const Nav = () => {
               <List>
                 <ListItemLink primary="HOME" to="/" />
                 <ListItemLink primary="FARMS" to="/farms" />
-                <ListItemLink primary="BOARDROOM" to="/boardroom" />
+                <ListItemLink primary="Land Mint" to="/boardroom" />
+                <ListItem button component="a" href="https://miniverse-mint-dapp.vercel.app/">
+                  <ListItemText>Land Mint</ListItemText>
+                </ListItem>
                 <ListItemLink primary="BONDS" to="/bonds" />
                 {/* <ListItemLink primary="DIVIDENDS" to="/dividends" /> */}
                 {/* <ListItemLink primary="SBS" to="/sbs" />
