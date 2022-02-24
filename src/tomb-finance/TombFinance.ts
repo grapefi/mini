@@ -124,16 +124,20 @@ export class TombFinance {
    */
   async getLPStat(name: string): Promise<LPStat> {
     const lpToken = this.externalTokens[name];
-  
+    console.log('lp token', lpToken);
     const lpTokenSupplyBN = await lpToken.totalSupply();
+    console.log('lp token supply', lpTokenSupplyBN);
     const lpTokenSupply = getDisplayBalance(lpTokenSupplyBN, 18);
+    console.log('lp token supply BG' , lpTokenSupply);
     const token0 = name.startsWith('MvDOLLAR') ? this.TOMB : this.TSHARE;
+    console.log('token0' , token0);
     const isTomb = name.startsWith('MvDOLLAR');
     const tokenAmountBN = await token0.balanceOf(lpToken.address);
+    console.log('tokenAmountBN' , tokenAmountBN);
     const tokenAmount = getDisplayBalance(tokenAmountBN, 18);
-
+    console.log('tokenAmount' , tokenAmount);
     const ftmAmountBN = await this.USDC.balanceOf(lpToken.address);
-    
+    console.log('ftmAmountBN' , ftmAmountBN);
     const ftmAmount = getDisplayBalance(ftmAmountBN, 18);
     const tokenAmountInOneLP = Number(tokenAmount) / Number(lpTokenSupply);
     const ftmAmountInOneLP = Number(ftmAmount) / Number(lpTokenSupply);
@@ -545,12 +549,12 @@ export class TombFinance {
 
     const wftm = new Token(chainId, USDC[0], USDC[1]);
     const token = new Token(chainId, tokenContract.address, tokenContract.decimal, tokenContract.symbol);
-    console.log('pD', token);
+
     try {
       const wftmToToken = await Fetcher.fetchPairData(wftm, token, this.provider);
-      console.log('WFTMTOTOKEN', wftmToToken);
+  
       const priceInBUSD = new Route([wftmToToken], token);
-      console.log('PRICETOTOKEN', priceInBUSD.midPrice.toFixed(4));
+  
 
       return priceInBUSD.midPrice.toFixed(4);
     } catch (err) {
