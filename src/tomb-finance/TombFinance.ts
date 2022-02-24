@@ -129,9 +129,9 @@ export class TombFinance {
     console.log('lp token supply', lpTokenSupplyBN);
     const lpTokenSupply = getDisplayBalance(lpTokenSupplyBN, 18);
     console.log('lp token supply BG' , lpTokenSupply);
-    const token0 = name.startsWith('MvDOLLAR') ? this.TOMB : this.TSHARE;
+    const token0 = name.startsWith('MVDOLLAR') ? this.TOMB : this.TSHARE;
     console.log('token0' , token0);
-    const isTomb = name.startsWith('MvDOLLAR');
+    const isTomb = name.startsWith('MVDOLLAR');
     const tokenAmountBN = await token0.balanceOf(lpToken.address);
     console.log('tokenAmountBN' , tokenAmountBN);
     const tokenAmount = getDisplayBalance(tokenAmountBN, 18);
