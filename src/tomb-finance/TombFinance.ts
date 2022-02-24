@@ -276,13 +276,13 @@ export class TombFinance {
       if (!contractName.endsWith('ShareRewardPool')) {
         const rewardPerSecond = (await poolContract.MvDOLLARPerSecond());
         if (depositTokenName === 'WFTM') {
-          return rewardPerSecond.mul(430).div(4269).div(24);
+          return rewardPerSecond.mul(430).div(1010);
         } else if (depositTokenName === 'MVDOLLAR-USDC-LP') {
-          return rewardPerSecond.mul(10).div(4269).div(24); 
+          return rewardPerSecond.mul(10).div(2134); 
         } else if (depositTokenName === 'FANG') {
-          return rewardPerSecond.mul(150).div(4269).div(24); 
+          return rewardPerSecond.mul(150).div(1010); 
         } else if (depositTokenName === 'USDC') {
-          return rewardPerSecond.mul(430).div(4269).div(24); 
+          return rewardPerSecond.mul(430).div(1010); 
         }
         return rewardPerSecond.div(24);
       }
