@@ -250,7 +250,7 @@ const Home = () => {
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>
-                  ${/*tombPriceInDollars ? tombPriceInDollars : '-.--'*/}-.--
+                  ${tombPriceInDollars ? tombPriceInDollars : '-.--'}
                 </span>
               </Box>
               <span style={{ fontSize: '17px' }}>
