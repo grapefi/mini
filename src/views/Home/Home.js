@@ -17,7 +17,6 @@ import useBondStats from '../../hooks/useBondStats';
 import usetShareStats from '../../hooks/usetShareStats';
 import useBurned2SHARES from '../../hooks/useBurned2SHARES.js';
 import useTotalValueLocked from '../../hooks/useTotalValueLocked';
-import { tomb as tombTesting, tShare as tShareTesting } from '../../tomb-finance/deployments/deployments.testing.json';
 import { tomb as tombProd, tShare as tShareProd } from '../../tomb-finance/deployments/deployments.mainnet.json';
 
 import MetamaskFox from '../../assets/img/metamask-fox.svg';
@@ -57,17 +56,14 @@ const Home = () => {
   const tShareStats = usetShareStats();
   const tBondStats = useBondStats();
   const tombFinance = useTombFinance();
-  const { balance } = useBurned2SHARES();
+  //const { balance } = useBurned2SHARES();
 
   let tomb;
   let tShare;
-  if (!process.env.NODE_ENV || process.env.NODE_ENV === 'production') {
-    tomb = tombTesting;
-    tShare = tShareTesting;
-  } else {
+ 
     tomb = tombProd;
     tShare = tShareProd;
-  }
+  
 
   const buyTombAddress = 'https://spookyswap.finance/swap?outputCurrency=0x7a6e4e3cc2ac9924605dca4ba31d1831c84b44ae'
   const buyTShareAddress = 'https://spookyswap.finance/swap?outputCurrency=' + tShare.address;

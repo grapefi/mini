@@ -96,19 +96,18 @@ export class TombFinance {
   //===================================================================
 
   async getTombStat(): Promise<TokenStat> {
-    const { TombFtmRewardPool, TombFtmLpTombRewardPool, TombFtmLpTombRewardPoolOld } = this.contracts;
+    const { LPRewardPool} = this.contracts;
     const supply = await this.TOMB.totalSupply();
-    const tombRewardPoolSupply = await this.TOMB.balanceOf(TombFtmRewardPool.address);
-    const tombRewardPoolSupply2 = await this.TOMB.balanceOf(TombFtmLpTombRewardPool.address);
-    const tombRewardPoolSupplyOld = await this.TOMB.balanceOf(TombFtmLpTombRewardPoolOld.address);
+    const tombRewardPoolSupply = await this.TOMB.balanceOf(LPRewardPool.address);
     const tombCirculatingSupply = supply
       .sub(tombRewardPoolSupply)
-      .sub(tombRewardPoolSupply2)
-      .sub(tombRewardPoolSupplyOld);
-    const priceInFTM = await this.getTokenPriceFromPancakeswap(this.TOMB);
+      
+
+    const priceInFTM = await this.getTokenPriceFromPancakeswapUSDC(this.TOMB);
+    console.log('ftm',priceInFTM);
     const priceOfOneFTM = await this.getWFTMPriceFromPancakeswap();
     const priceOfTombInDollars = (Number(priceInFTM) * Number(priceOfOneFTM)).toFixed(2);
-
+  
     return {
       tokenInFtm: priceInFTM,
       priceInDollars: priceOfTombInDollars,
@@ -126,8 +125,8 @@ export class TombFinance {
     const lpToken = this.externalTokens[name];
     const lpTokenSupplyBN = await lpToken.totalSupply();
     const lpTokenSupply = getDisplayBalance(lpTokenSupplyBN, 18);
-    const token0 = name.startsWith('2OMB') ? this.TOMB : this.TSHARE;
-    const isTomb = name.startsWith('2OMB');
+    const token0 = name.startsWith('MvDOLLAR') ? this.TOMB : this.TSHARE;
+    const isTomb = name.startsWith('MvDOLLAR');
     const tokenAmountBN = await token0.balanceOf(lpToken.address);
     const tokenAmount = getDisplayBalance(tokenAmountBN, 18);
 
@@ -237,7 +236,7 @@ export class TombFinance {
     const stakeInPool = await depositToken.balanceOf(bank.address);
     console.log("stake in pool:", stakeInPool);
     const TVL = Number(depositTokenPrice) * Number(getDisplayBalance(stakeInPool, depositToken.decimal));
-    const stat = bank.earnTokenName === '2OMB' ? await this.getTombStat() : await this.getShareStat();
+    const stat = bank.earnTokenName === 'MvDOLLAR' ? await this.getTombStat() : await this.getShareStat();
     const tokenPerSecond = await this.getTokenPerSecond(
       bank.earnTokenName,
       bank.contract,
@@ -327,6 +326,8 @@ export class TombFinance {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
       } else if (tokenName === 'USDC') {
         tokenPrice = '1';
+      }else if (tokenName === 'MvDOLLAR') {
+        tokenPrice = await this.getTokenPriceFromPancakeswap(token);
       } else {
         tokenPrice = await this.getTokenPriceFromPancakeswap(token);
         tokenPrice = (Number(tokenPrice) * Number(priceOfOneFtmInDollars)).toString();
@@ -520,9 +521,33 @@ export class TombFinance {
 
     const wftm = new Token(chainId, WFTM[0], WFTM[1]);
     const token = new Token(chainId, tokenContract.address, tokenContract.decimal, tokenContract.symbol);
+    
     try {
       const wftmToToken = await Fetcher.fetchPairData(wftm, token, this.provider);
+      
       const priceInBUSD = new Route([wftmToToken], token);
+
+
+      return priceInBUSD.midPrice.toFixed(4);
+    } catch (err) {
+      console.error(`Failed to fetch token price of ${tokenContract.symbol}: ${err}`);
+    }
+  }
+
+  async getTokenPriceFromPancakeswapUSDC(tokenContract: ERC20): Promise<string> {
+    const ready = await this.provider.ready;
+    if (!ready) return;
+    const { chainId } = this.config;
+    const { USDC } = this.config.externalTokens;
+
+    const wftm = new Token(chainId, USDC[0], USDC[1]);
+    const token = new Token(chainId, tokenContract.address, tokenContract.decimal, tokenContract.symbol);
+    console.log('pD', token);
+    try {
+      const wftmToToken = await Fetcher.fetchPairData(wftm, token, this.provider);
+      console.log('WFTMTOTOKEN', wftmToToken);
+      const priceInBUSD = new Route([wftmToToken], token);
+      console.log('PRICETOTOKEN', priceInBUSD.midPrice.toFixed(4));
 
       return priceInBUSD.midPrice.toFixed(4);
     } catch (err) {
