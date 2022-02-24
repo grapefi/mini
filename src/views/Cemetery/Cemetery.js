@@ -79,7 +79,7 @@ const Cemetery = () => {
                     Genesis Pools
                   </Typography>
                   <Alert variant="filled" severity="warning">
-                    Genesis Pools start soon.
+                    Genesis Pools have started.
                   </Alert>
                   {/* <Typography color="textPrimary" variant="h4" gutterBottom>
                     Decentralized Initial Supply Distribution

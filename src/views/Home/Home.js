@@ -220,7 +220,7 @@ const Home = () => {
               <Button
                 color="primary"
                 target="_blank"
-                href="#"
+                href="https://spookyswap.finance/swap?outputCurrency=0x57976c467608983513c9355238dc6de1B1aBbcCA&inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75"
                 variant="contained"
                 style={{ marginRight: '10px' }}
                 className={'shinyButton ' + classes.button}
@@ -233,7 +233,7 @@ const Home = () => {
               <Button color="primary" target="_blank" href="#" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MvSHARES
               </Button>
-              {/*<Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xbdc7dfb7b88183e87f003ca6b5a2f81202343478" variant="contained" style={{ marginRight: '25px' }}>
+             {/* <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" style={{ marginRight: '25px' }}>
               MvDOLLAR Chart
               </Button>
               <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xc54A1684fD1bef1f077a336E6be4Bd9a3096a6Ca" variant="contained" style={{ marginRight: '25px' }}>

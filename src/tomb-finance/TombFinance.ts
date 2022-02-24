@@ -274,16 +274,16 @@ export class TombFinance {
     depositTokenName: string,
   ) {
     if (earnTokenName === 'MvDOLLAR') {
-      if (!contractName.endsWith('RewardPool')) {
-        const rewardPerSecond = (await poolContract.two_ombPerSecond()).mul(20);
+      if (!contractName.endsWith('ShareRewardPool')) {
+        const rewardPerSecond = (await poolContract.MvDOLLARPerSecond());
         if (depositTokenName === 'WFTM') {
-          return rewardPerSecond.mul(430).div(4269).div(24); // 6000
+          return rewardPerSecond.mul(430).div(4269).div(24);
         } else if (depositTokenName === 'MVDOLLAR-USDC-LP') {
-          return rewardPerSecond.mul(10).div(4269).div(24); // 2500
+          return rewardPerSecond.mul(10).div(4269).div(24); 
         } else if (depositTokenName === 'FANG') {
-          return rewardPerSecond.mul(150).div(4269).div(24); // 1000
+          return rewardPerSecond.mul(150).div(4269).div(24); 
         } else if (depositTokenName === 'USDC') {
-          return rewardPerSecond.mul(430).div(4269).div(24); // 1000
+          return rewardPerSecond.mul(430).div(4269).div(24); 
         }
         return rewardPerSecond.div(24);
       }
@@ -323,10 +323,10 @@ export class TombFinance {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
       } else if (tokenName === '2SHARE-FTM-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TSHARE, false);
-      } else if (tokenName === "2OMB-2SHARE-LP") {
+      } else if (tokenName === "MVDOLLAR-USDC-LP") {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
-      } else if (tokenName === 'SHIBA') {
-        tokenPrice = await this.getTokenPriceFromSpiritswap(token);
+      } else if (tokenName === 'USDC') {
+        tokenPrice = '1';
       } else {
         tokenPrice = await this.getTokenPriceFromPancakeswap(token);
         tokenPrice = (Number(tokenPrice) * Number(priceOfOneFtmInDollars)).toString();
@@ -415,6 +415,7 @@ export class TombFinance {
    */
   async getLPTokenPrice(lpToken: ERC20, token: ERC20, isTomb: boolean): Promise<string> {
     const totalSupply = getFullDisplayBalance(await lpToken.totalSupply(), lpToken.decimal);
+    console.log(totalSupply);
     //Get amount of tokenA
     const tokenSupply = getFullDisplayBalance(await token.balanceOf(lpToken.address), token.decimal);
     const stat = isTomb === true ? await this.getTombStat() : await this.getShareStat();
