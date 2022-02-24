@@ -110,7 +110,7 @@ export class TombFinance {
   
     return {
       tokenInFtm: priceInFTM,
-      priceInDollars: priceOfTombInDollars,
+      priceInDollars: priceInFTM,
       totalSupply: getDisplayBalance(supply, this.TOMB.decimal, 0),
       circulatingSupply: getDisplayBalance(tombCirculatingSupply, this.TOMB.decimal, 0),
     };
