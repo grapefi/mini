@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 const Home = () => {
   const classes = useStyles();
   const TVL = useTotalValueLocked();
-  const tombFtmLpStats = useLpStats('2OMB-FTM-LP');
+  const tombFtmLpStats = useLpStats('MVDOLLAR-USDC-LP');
   const tShareFtmLpStats = useLpStats('2SHARE-FTM-LP');
   const tombStats = useTombStats();
   const tShareStats = usetShareStats();
@@ -69,6 +69,7 @@ const Home = () => {
   const buyTShareAddress = 'https://spookyswap.finance/swap?outputCurrency=' + tShare.address;
 
   const tombLPStats = useMemo(() => (tombFtmLpStats ? tombFtmLpStats : null), [tombFtmLpStats]);
+  console.log(tombLPStats);
   const tshareLPStats = useMemo(() => (tShareFtmLpStats ? tShareFtmLpStats : null), [tShareFtmLpStats]);
   const tombPriceInDollars = useMemo(
     () => (tombStats ? Number(tombStats.priceInDollars).toFixed(2) : null),

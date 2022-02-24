@@ -34,6 +34,7 @@ export class TombFinance {
   TSHARE: ERC20;
   TBOND: ERC20;
   FTM: ERC20;
+  USDC: ERC20;
 
   constructor(cfg: Configuration) {
     const { deployments, externalTokens } = cfg;
@@ -52,9 +53,9 @@ export class TombFinance {
     this.TSHARE = new ERC20(deployments.tShare.address, provider, '2SHARES');
     this.TBOND = new ERC20(deployments.tBond.address, provider, '2BOND');
     this.FTM = this.externalTokens['WFTM'];
-
+    this.USDC = this.externalTokens['USDC'];
     // Uniswap V2 Pair
-    this.TOMBWFTM_LP = new Contract(externalTokens['2OMB-FTM-LP'][0], IUniswapV2PairABI, provider);
+    this.TOMBWFTM_LP = new Contract(externalTokens['MVDOLLAR-USDC-LP'][0], IUniswapV2PairABI, provider);
 
     this.config = cfg;
     this.provider = provider;
@@ -104,7 +105,7 @@ export class TombFinance {
       
 
     const priceInFTM = await this.getTokenPriceFromPancakeswapUSDC(this.TOMB);
-    console.log('ftm',priceInFTM);
+
     const priceOfOneFTM = await this.getWFTMPriceFromPancakeswap();
     const priceOfTombInDollars = (Number(priceInFTM) * Number(priceOfOneFTM)).toFixed(2);
   
@@ -123,6 +124,7 @@ export class TombFinance {
    */
   async getLPStat(name: string): Promise<LPStat> {
     const lpToken = this.externalTokens[name];
+  
     const lpTokenSupplyBN = await lpToken.totalSupply();
     const lpTokenSupply = getDisplayBalance(lpTokenSupplyBN, 18);
     const token0 = name.startsWith('MvDOLLAR') ? this.TOMB : this.TSHARE;
@@ -130,7 +132,8 @@ export class TombFinance {
     const tokenAmountBN = await token0.balanceOf(lpToken.address);
     const tokenAmount = getDisplayBalance(tokenAmountBN, 18);
 
-    const ftmAmountBN = await this.FTM.balanceOf(lpToken.address);
+    const ftmAmountBN = await this.USDC.balanceOf(lpToken.address);
+    
     const ftmAmount = getDisplayBalance(ftmAmountBN, 18);
     const tokenAmountInOneLP = Number(tokenAmount) / Number(lpTokenSupply);
     const ftmAmountInOneLP = Number(ftmAmount) / Number(lpTokenSupply);
@@ -229,12 +232,12 @@ export class TombFinance {
   async getPoolAPRs(bank: Bank): Promise<PoolStats> {
     if (this.myAccount === undefined) return;
     const depositToken = bank.depositToken;
-    console.log("deposit token:", depositToken);
+
     const poolContract = this.contracts[bank.contract];
     const depositTokenPrice = await this.getDepositTokenPriceInDollars(bank.depositTokenName, depositToken);
-    console.log("deposit token price:", depositTokenPrice);
+
     const stakeInPool = await depositToken.balanceOf(bank.address);
-    console.log("stake in pool:", stakeInPool);
+
     const TVL = Number(depositTokenPrice) * Number(getDisplayBalance(stakeInPool, depositToken.decimal));
     const stat = bank.earnTokenName === 'MvDOLLAR' ? await this.getTombStat() : await this.getShareStat();
     const tokenPerSecond = await this.getTokenPerSecond(
@@ -276,13 +279,13 @@ export class TombFinance {
       if (!contractName.endsWith('ShareRewardPool')) {
         const rewardPerSecond = (await poolContract.MvDOLLARPerSecond());
         if (depositTokenName === 'WFTM') {
-          return rewardPerSecond.mul(430).div(1010);
+          return rewardPerSecond.mul(430).div(4269);
         } else if (depositTokenName === 'MVDOLLAR-USDC-LP') {
-          return rewardPerSecond.mul(10).div(2134); 
+          return rewardPerSecond.mul(3244).div(4269); 
         } else if (depositTokenName === 'FANG') {
-          return rewardPerSecond.mul(150).div(1010); 
+          return rewardPerSecond.mul(171).div(4269); 
         } else if (depositTokenName === 'USDC') {
-          return rewardPerSecond.mul(430).div(1010); 
+          return rewardPerSecond.mul(430).div(4269); 
         }
         return rewardPerSecond.div(24);
       }
@@ -416,7 +419,7 @@ export class TombFinance {
    */
   async getLPTokenPrice(lpToken: ERC20, token: ERC20, isTomb: boolean): Promise<string> {
     const totalSupply = getFullDisplayBalance(await lpToken.totalSupply(), lpToken.decimal);
-    console.log(totalSupply);
+  
     //Get amount of tokenA
     const tokenSupply = getFullDisplayBalance(await token.balanceOf(lpToken.address), token.decimal);
     const stat = isTomb === true ? await this.getTombStat() : await this.getShareStat();

@@ -19,9 +19,9 @@ const configurations: { [env: string]: Configuration } = {
       USDC: ['0x04068da6c83afcfa0e13ba15a6696662335d5b75', 6], // SHIBA: 0x9ba3e4f84a34df4e08c112e1a0ff148b81655615 9
       FANG: ['0x49894fcc07233957c35462cfc3418ef0cc26129f', 18],
       'USDT-FTM-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
-      '2OMB-FTM-LP': ['0xbdc7dfb7b88183e87f003ca6b5a2f81202343478', 18], // 
-      '2SHARE-FTM-LP': ['0x6398ACBBAB2561553a9e458Ab67dCFbD58944e52', 18],
-      '2OMB-2SHARE-LP': ['0xd9B5f00d183df52D717046521152303129F088DD', 18],
+      '2OMB-FTM-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18], // 
+      '2SHARE-FTM-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
+      '2OMB-2SHARE-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MVDOLLAR-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MG': ['0x323fA706Ed9925b56F2e5f3487e6D3069ABa4E52', 18]
     },
@@ -91,9 +91,9 @@ export const genesisDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'MVDOLLAR-USDC-LP',
     earnTokenName: 'MvDOLLAR',
     multiplier: "100x",
-    finished: true,
+    finished: false,
     sort: 4,
-    closedForStaking: true,
+    closedForStaking: false,
   },
 }
 
@@ -156,9 +156,9 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'MVDOLLAR-USDC-LP',
     earnTokenName: 'MvDOLLAR',
     multiplier: "100x",
-    finished: true,
+    finished: false,
     sort: 4,
-    closedForStaking: true,
+    closedForStaking: false,
   },
 
 
