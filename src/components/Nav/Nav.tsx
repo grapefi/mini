@@ -185,7 +185,7 @@ const Nav = () => {
               <List>
                 <ListItemLink primary="HOME" to="/" />
                 <ListItemLink primary="FARMS" to="/farms" />
-                <ListItemLink primary="Land Mint" to="/boardroom" />
+                <ListItemLink primary="BOARDROOM" to="/boardroom" />
                 <ListItem button component="a" href="https://miniverse-mint-dapp.vercel.app/">
                   <ListItemText>LAND MINT</ListItemText>
                 </ListItem>
