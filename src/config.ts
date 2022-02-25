@@ -6,7 +6,7 @@ import { BankInfo } from './tomb-finance';
 const configurations: { [env: string]: Configuration } = {
 
   production: {
-    chainId: 250,
+    chainId: ChainId.MAINNET,
     networkName: 'Fantom Opera Mainnet',
     ftmscanUrl: 'https://ftmscan.com',
     defaultProvider: 'https://rpc.ftm.tools/',
