@@ -51,7 +51,7 @@ const Home = () => {
   const classes = useStyles();
   const TVL = useTotalValueLocked();
   const tombFtmLpStats = useLpStats('MVDOLLAR-USDC-LP');
-  const tShareFtmLpStats = useLpStats('2SHARE-FTM-LP');
+  const tShareFtmLpStats = useLpStats('MVSHARE-USDC-LP');
   const tombStats = useTombStats();
   const tShareStats = usetShareStats();
   const tBondStats = useBondStats();
@@ -247,7 +247,7 @@ const Home = () => {
               <h2>MvDOLLAR</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="TOMB" />
+                  <TokenSymbol symbol="MvDOLLAR" />
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>
@@ -297,7 +297,7 @@ const Home = () => {
               <h2>MvSHARES</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="TSHARE" />
+                  <TokenSymbol symbol="MvSHARE" />
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tSharePriceInDollars ? tSharePriceInDollars : '-.--'*/}-.--</span>
@@ -318,7 +318,7 @@ const Home = () => {
               <h2>MvBOND</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="TBOND" />
+                  <TokenSymbol symbol="MvBOND" />
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tBondPriceInDollars ? tBondPriceInDollars : '-.--'*/}-.--</span>
@@ -342,7 +342,7 @@ const Home = () => {
               <h2>MvDOLLAR-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="2OMB-FTM-LP" />
+                  <TokenSymbol symbol="MVDOLLAR-USDC-LP" />
                 </CardIcon>
               </Box>
              {/* <Box mt={2}>
@@ -370,7 +370,7 @@ const Home = () => {
               <h2>MvSHARES-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="2SHARE-FTM-LP" />
+                  <TokenSymbol symbol="MVSHARE-USDC-LP" />
                 </CardIcon>
               </Box>
              {/* <Box mt={2}>

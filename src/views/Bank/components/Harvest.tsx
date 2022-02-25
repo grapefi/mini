@@ -27,7 +27,7 @@ const Harvest: React.FC<HarvestProps> = ({ bank }) => {
   const { onReward } = useHarvest(bank);
   const tombStats = useTombStats();
   const tShareStats = useShareStats();
-
+console.log(bank.earnToken.symbol);
   const tokenName = bank.earnTokenName === 'MvSHARE' ? 'MvSHARE' : 'MvDOLLAR';
   const tokenStats = bank.earnTokenName === 'MvSHARE' ? tShareStats : tombStats;
   const tokenPriceInDollars = useMemo(

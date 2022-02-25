@@ -114,16 +114,16 @@ const LPTokenHelpText: React.FC<{ bank: BankEntity }> = ({ bank }) => {
   let pairName: string;
   let uniswapUrl: string;
   if (bank.depositTokenName.startsWith("MVDOLLAR-USDC")) {
-    pairName = 'MVDOLLAR-USDC LP pair';
+    pairName = 'MVDOLLAR-USDC pair';
     uniswapUrl = 'https://spookyswap.finance/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0x57976c467608983513c9355238dc6de1B1aBbcCA';
-  } else if (bank.depositTokenName.startsWith("2SHARE-FTM")) {
-    pairName = '2SHARE-FTM pair';
-    uniswapUrl = 'https://spookyswap.finance/add/FTM/' + tshareAddr;
+  } else if (bank.depositTokenName.startsWith("MVSHARE-USDC")) {
+    pairName = 'MVSHARE-USDC pair';
+    uniswapUrl = '#';
   } else {
-    pairName = "2OMB-2SHARE pair";
-    uniswapUrl = 'https://spookyswap.finance/add/' + tombAddr + '/' + tshareAddr;
+    pairName = "MVDOLLAR-MVSHARE pair";
+    uniswapUrl = '#';
   }
-  //waiting on jun LFG
+ 
   return (
     <Card>
       <CardContent>

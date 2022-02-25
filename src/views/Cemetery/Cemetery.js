@@ -44,7 +44,9 @@ const Cemetery = () => {
                   <Typography color="textPrimary" variant="h4" gutterBottom>
                     MvSHARE Rewards Pools
                   </Typography>
-                  
+                  <Alert variant="filled" severity="warning">
+                    Share reward pools start soon.
+                  </Alert>
                   <Grid container spacing={3} style={{ marginTop: '20px' }}>
                     {activeBanks
                       .filter((bank) => bank.sectionInUI === 2)

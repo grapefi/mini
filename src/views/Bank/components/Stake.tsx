@@ -21,7 +21,7 @@ import useStakedBalance from '../../../hooks/useStakedBalance';
 import useStakedTokenPriceInDollars from '../../../hooks/useStakedTokenPriceInDollars';
 import useTokenBalance from '../../../hooks/useTokenBalance';
 import useWithdraw from '../../../hooks/useWithdraw';
-
+import { getDisplayBalance1 } from '../../../utils/formatBalance1';
 import { getDisplayBalance } from '../../../utils/formatBalance';
 
 import DepositModal from './DepositModal';
@@ -98,7 +98,7 @@ const Stake: React.FC<StakeProps> = ({ bank }) => {
             <CardIcon>
               <TokenSymbol symbol={bank.depositToken.symbol} size={54} />
             </CardIcon>
-            <Value value={getDisplayBalance(stakedBalance, bank.depositToken.decimal)} />
+           {bank.depositTokenName === 'MVDOLLAR-USDC-LP'|| bank.depositTokenName === 'MVSHARE-USDC-LP' || bank.depositTokenName === 'MVDOLLAR-MVSHARE-LP' ? <Value value={getDisplayBalance1(stakedBalance, bank.depositToken.decimal)} /> : <Value value={getDisplayBalance(stakedBalance, bank.depositToken.decimal)} />}
             <Label text={`≈ $${earnedInDollars}`} />
             <Label text={`${bank.depositTokenName} Staked`} />
           </StyledCardHeader>

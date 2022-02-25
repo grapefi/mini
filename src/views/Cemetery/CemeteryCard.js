@@ -31,7 +31,7 @@ const CemeteryCard = ({ bank }) => {
             </Typography>
             <Typography color="textSecondary">
               {/* {bank.name} */}
-              Deposit {bank.depositTokenName.toUpperCase()} earn {bank.earnTokenName}
+              Earn {bank.earnTokenName}
             </Typography>
            {/* <Typography color="textSecondary">
               Multiplier: {bank.multiplier}

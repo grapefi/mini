@@ -19,12 +19,9 @@ const configurations: { [env: string]: Configuration } = {
       USDC: ['0x04068da6c83afcfa0e13ba15a6696662335d5b75', 6], // SHIBA: 0x9ba3e4f84a34df4e08c112e1a0ff148b81655615 9
       FANG: ['0x49894fcc07233957c35462cfc3418ef0cc26129f', 18],
       'USDT-FTM-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
-      '2OMB-FTM-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18], // 
-      '2SHARE-FTM-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
-      '2OMB-2SHARE-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MVDOLLAR-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MVSHARE-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
-      'MG': ['0x323fA706Ed9925b56F2e5f3487e6D3069ABa4E52', 18]
+      'MVDOLLAR-MVSHARE-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18]
     },
     baseLaunchDate: new Date('2021-06-02 13:00:00Z'),
     bondLaunchesAt: new Date('2020-12-03T15:00:00Z'),
@@ -97,6 +94,44 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     finished: false,
     sort: 4,
     closedForStaking: false,
+  },
+
+  /*shares*/
+  LPRewardPool1ShareRewardPool: {
+    name: 'Stake MvDOLLAR-USDC LP, earn MvSHARE',
+    poolId: 0,
+    sectionInUI: 2,
+    contract: 'LPRewardPool1ShareRewardPool',
+    depositTokenName: 'MVDOLLAR-USDC-LP',
+    earnTokenName: 'MvSHARE',
+    multiplier: "100x",
+    finished: false,
+    sort: 1,
+    closedForStaking: true,
+  },
+  LPRewardPool2ShareRewardPool: {
+    name: 'Stake MvDOLLAR-USDC LP, earn MvSHARE',
+    poolId: 1,
+    sectionInUI: 2,
+    contract: 'LPRewardPool2ShareRewardPool',
+    depositTokenName: 'MVSHARE-USDC-LP',
+    earnTokenName: 'MvSHARE',
+    multiplier: "100x",
+    finished: false,
+    sort: 2,
+    closedForStaking: true,
+  },
+  LPRewardPool3ShareRewardPool: {
+    name: 'Stake MvDOLLAR-MVSHARE LP, earn MvSHARE',
+    poolId: 2,
+    sectionInUI: 2,
+    contract: 'LPRewardPool3ShareRewardPool',
+    depositTokenName: 'MVDOLLAR-MVSHARE-LP',
+    earnTokenName: 'MvSHARE',
+    multiplier: "100x",
+    finished: false,
+    sort: 3,
+    closedForStaking: true,
   },
 
 

@@ -50,8 +50,8 @@ export class TombFinance {
       this.externalTokens[symbol] = new ERC20(address, provider, symbol, decimal);
     }
     this.TOMB = new ERC20(deployments.tomb.address, provider, 'MvDOLLAR');
-    this.TSHARE = new ERC20(deployments.tShare.address, provider, '2SHARES');
-    this.TBOND = new ERC20(deployments.tBond.address, provider, '2BOND');
+    this.TSHARE = new ERC20(deployments.tShare.address, provider, 'MvSHARE');
+    this.TBOND = new ERC20(deployments.tBond.address, provider, 'MvBOND');
     this.FTM = this.externalTokens['WFTM'];
     this.USDC = this.externalTokens['USDC'];
     // Uniswap V2 Pair
@@ -311,9 +311,9 @@ export class TombFinance {
       return await poolContract.epochTombPerSecond(0);
     }
     const rewardPerSecond = await poolContract.tSharePerSecond();
-    if (depositTokenName.startsWith('2OMB-FTM')) {
+    if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
       return rewardPerSecond.mul(30000).div(59500);
-    } else if (depositTokenName.startsWith('2SHARE-FTM')) {
+    } else if (depositTokenName.startsWith('MVSHARE-USDC')) {
       return rewardPerSecond.mul(24000).div(59500);
     } else {
       return rewardPerSecond.mul(5500).div(59500)

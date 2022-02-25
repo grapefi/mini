@@ -9,7 +9,7 @@ import tBondLogo from '../../assets/img/MvBOND.png';
 
 import tombFtmLpLogo from '../../assets/img/Mv-USDC.png';
 import tshareFtmLpLogo from '../../assets/img/MvS-USDC.png';
-
+import mvsmvd from '../../assets/img/MvD-MvS.png';
 import wftmLogo from '../../assets/img/ftm_logo_blue.svg';
 import wethLogo from '../../assets/img/weth.png';
 import rtombLogo from '../../assets/img/crypto_tomb_cash.svg';
@@ -24,23 +24,22 @@ const logosBySymbol: { [title: string]: string } = {
   //=====================
   TOMB: tombLogo,
   '2OMB': tombLogo,
-  '2SHARES': tombLogo,
-  '2BOND': tBondLogo,
+  '2SHARES': tShareLogoPNG,
+  MvBOND: tBondLogo,
   MvDOLLAR: tombLogo,
   TOMBPNG: tombLogo,
   TSHAREPNG: tShareLogoPNG,
   TSHARE: tShareLogo,
+  MvSHARE: tShareLogoPNG,
   TBOND: tBondLogo,
   WFTM: wftmLogo,
   WETH: wethLogo,
   MIM: shibaLogo,
   FANG: fang,
   
-  // RTOMB: rtombLogo,
-  '2OMB-FTM-LP': tombFtmLpLogo,
-  '2SHARE-FTM-LP': tshareFtmLpLogo,
-  '2OMB-2SHARE-LP': tombFtmLpLogo,
   'MVDOLLAR-USDC-LP': tombFtmLpLogo,
+  'MVSHARE-USDC-LP': tshareFtmLpLogo,
+  'MVDOLLAR-MVSHARE-LP': mvsmvd,
   'USDC': usdc,
 };
 
