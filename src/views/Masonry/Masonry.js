@@ -73,7 +73,7 @@ const Masonry = () => {
                 <Card className={classes.gridItem}>
                   <CardContent>
                     <Typography style={{ textAlign: 'center' }}>Next Epoch</Typography>
-                    {/*<ProgressCountdown base={moment().toDate()} hideBar={true} deadline={to} description="Next Epoch" />*/}
+                    <ProgressCountdown base={moment().toDate()} hideBar={true} deadline={to} description="Next Epoch" />
                   </CardContent>
                 </Card>
               </Grid>
@@ -81,7 +81,7 @@ const Masonry = () => {
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
                     <Typography>Current Epoch</Typography>
-                    <Typography>{/*Number(currentEpoch)*/}0</Typography>
+                    <Typography>{Number(currentEpoch)}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
@@ -91,7 +91,7 @@ const Masonry = () => {
                     <Typography>
                       MvDOLLAR (TWAP)
                     </Typography>
-                    <Typography>{/*scalingFactor*/}-.--</Typography>
+                    <Typography>{scalingFactor}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
@@ -99,7 +99,7 @@ const Masonry = () => {
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
                     <Typography>APR</Typography>
-                    <Typography>{/*masonryAPR.toFixed(2)*/}0%</Typography>
+                    <Typography>{masonryAPR.toFixed(2)}%</Typography>
                   </CardContent>
                 </Card>
               </Grid>
@@ -107,7 +107,7 @@ const Masonry = () => {
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
                     <Typography>MvSHARES Staked</Typography>
-                    <Typography>{/*getDisplayBalance(totalStaked)*/}0</Typography>
+                    <Typography>{getDisplayBalance(totalStaked)}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
