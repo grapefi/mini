@@ -1,6 +1,6 @@
 import { BigNumber } from 'ethers';
 
-export const getDisplayBalance = (
+export const getDisplayBalance1 = (
   balance: BigNumber,
   decimals = 18,
   fractionDigits = 6,
@@ -17,9 +17,8 @@ export const getDisplayBalance = (
   return ret;
 };
 
-export const getFullDisplayBalance = (balance: BigNumber, decimals = 18, isTruncated = false) => {
-  
-  return getDisplayBalance(balance, decimals, 6, isTruncated);
+export const getFullDisplayBalance1 = (balance: BigNumber, decimals = 18, isTruncated = false) => { 
+  return getDisplayBalance1(balance, decimals, 10, isTruncated);
 };
 
 export function getBalance(balance: BigNumber, decimals = 18): number {

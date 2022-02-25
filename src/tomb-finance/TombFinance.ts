@@ -11,7 +11,7 @@ import { getFullDisplayBalance, getDisplayBalance } from '../utils/formatBalance
 import { getDefaultProvider } from '../utils/provider';
 import IUniswapV2PairABI from './IUniswapV2Pair.abi.json';
 import config, { bankDefinitions } from '../config';
-import { genesisDefinitions } from '../config';
+
 
 import moment from 'moment';
 import { parseUnits } from 'ethers/lib/utils';
@@ -100,9 +100,17 @@ export class TombFinance {
     const { LPRewardPool} = this.contracts;
     const supply = await this.TOMB.totalSupply();
     const tombRewardPoolSupply = await this.TOMB.balanceOf(LPRewardPool.address);
+    const tombRewardPoolSupply1 = await this.TOMB.balanceOf('0x35bed1e2f3033395a05cd0b1b5900209ece42774');
+    const tombRewardPoolSupply2 = await this.TOMB.balanceOf('0xda2a4abc17a87f6f7b532a37ab8b707343a97334');
+    const tombRewardPoolSupply3 = await this.TOMB.balanceOf('0x4c5b4f27bc268594ecacc3dfce68ad70bd21487c');
+    const tombRewardPoolSupply4 = await this.TOMB.balanceOf('0x78ee91ea69132e5838699c42f0c07fa98da90161');
     const tombCirculatingSupply = supply
       .sub(tombRewardPoolSupply)
-      
+      .sub(tombRewardPoolSupply1)
+      .sub(tombRewardPoolSupply2)
+      .sub(tombRewardPoolSupply3)
+      .sub(tombRewardPoolSupply4)
+      console.log(tombCirculatingSupply);
 
     const priceInFTM = await this.getTokenPriceFromPancakeswapUSDC(this.TOMB);
 
@@ -124,21 +132,22 @@ export class TombFinance {
    */
   async getLPStat(name: string): Promise<LPStat> {
     const lpToken = this.externalTokens[name];
-    console.log('lp token', lpToken);
+
     const lpTokenSupplyBN = await lpToken.totalSupply();
-    console.log('lp token supply', lpTokenSupplyBN);
+
     const lpTokenSupply = getDisplayBalance(lpTokenSupplyBN, 18);
-    console.log('lp token supply BG' , lpTokenSupply);
+    
     const token0 = name.startsWith('MVDOLLAR') ? this.TOMB : this.TSHARE;
-    console.log('token0' , token0);
+    
     const isTomb = name.startsWith('MVDOLLAR');
     const tokenAmountBN = await token0.balanceOf(lpToken.address);
-    console.log('tokenAmountBN' , tokenAmountBN);
+    
     const tokenAmount = getDisplayBalance(tokenAmountBN, 18);
-    console.log('tokenAmount' , tokenAmount);
+    
     const ftmAmountBN = await this.USDC.balanceOf(lpToken.address);
-    console.log('ftmAmountBN' , ftmAmountBN);
-    const ftmAmount = getDisplayBalance(ftmAmountBN, 18);
+    
+    const ftmAmount = getDisplayBalance(ftmAmountBN, 6);
+    
     const tokenAmountInOneLP = Number(tokenAmount) / Number(lpTokenSupply);
     const ftmAmountInOneLP = Number(ftmAmount) / Number(lpTokenSupply);
     const lpTokenPrice = await this.getLPTokenPrice(lpToken, token0, isTomb);
@@ -327,7 +336,7 @@ export class TombFinance {
     } else {
       if (tokenName === '2OMB-FTM-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
-      } else if (tokenName === '2SHARE-FTM-LP') {
+      } else if (tokenName === 'MVSHARE-USDC-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TSHARE, false);
       } else if (tokenName === "MVDOLLAR-USDC-LP") {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
@@ -410,7 +419,7 @@ export class TombFinance {
     const masonrytShareBalanceOf = await this.TSHARE.balanceOf(this.currentMasonry().address);
     const masonryTVL = Number(getDisplayBalance(masonrytShareBalanceOf, this.TSHARE.decimal)) * Number(TSHAREPrice);
 
-    return totalValue + masonryTVL;
+    return totalValue;
   }
 
   /**

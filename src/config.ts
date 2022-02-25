@@ -6,7 +6,7 @@ import { BankInfo } from './tomb-finance';
 const configurations: { [env: string]: Configuration } = {
 
   production: {
-    chainId: ChainId.MAINNET,
+    chainId: 250,
     networkName: 'Fantom Opera Mainnet',
     ftmscanUrl: 'https://ftmscan.com',
     defaultProvider: 'https://rpc.ftm.tools/',
@@ -23,6 +23,7 @@ const configurations: { [env: string]: Configuration } = {
       '2SHARE-FTM-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       '2OMB-2SHARE-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MVDOLLAR-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
+      'MVSHARE-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MG': ['0x323fA706Ed9925b56F2e5f3487e6D3069ABa4E52', 18]
     },
     baseLaunchDate: new Date('2021-06-02 13:00:00Z'),
@@ -32,70 +33,7 @@ const configurations: { [env: string]: Configuration } = {
   },
 };
 
-export const genesisDefinitions: { [contractName: string]: BankInfo } = {
-  /*
-  Explanation:
-  name: description of the card
-  poolId: the poolId assigned in the contract
-  sectionInUI: way to distinguish in which of the 3 pool groups it should be listed
-        - 0 = Single asset stake pools
-        - 1 = LP asset staking rewarding TOMB
-        - 2 = LP asset staking rewarding TSHARE
-  contract: the contract name which will be loaded from the deployment.environmnet.json
-  depositTokenName : the name of the token to be deposited
-  earnTokenName: the rewarded token
-  finished: will disable the pool on the UI if set to true
-  sort: the order of the pool
-  */
-  TombFtmRewardPool: {
-    name: 'Stake WFTM, earn MvDOLLAR',
-    poolId: 1,
-    sectionInUI: 0,
-    contract: 'TombFtmRewardPool',
-    depositTokenName: 'WFTM',
-    earnTokenName: 'MvDOLLAR',
-    multiplier: "100x",
-    finished: false,
-    sort: 1,
-    closedForStaking: false,
-  },
-  USDCRewardPool: {
-    name: 'Stake USDC, earn MvDOLLAR',
-    poolId: 0,
-    sectionInUI: 0,
-    contract: 'USDCRewardPool',
-    depositTokenName: 'USDC',
-    earnTokenName: 'MvDOLLAR',
-    multiplier: "50x",
-    finished: false,
-    sort: 2,
-    closedForStaking: false,
-  },
-  FANGRewardPool: {
-    name: 'Stake FANG, earn MvDOLLAR',
-    poolId: 2,
-    sectionInUI: 0,
-    contract: 'FANGRewardPool',
-    depositTokenName: 'FANG',
-    earnTokenName: 'MvDOLLAR',
-    multiplier: "25x",
-    finished: false,
-    sort: 3,
-    closedForStaking: false,
-  },
-  LPRewardPool: {
-    name: 'Stake MvDOLLAR-USDC LP, earn MvDOLLAR',
-    poolId: 3,
-    sectionInUI: 0,
-    contract: 'LPRewardPool',
-    depositTokenName: 'MVDOLLAR-USDC-LP',
-    earnTokenName: 'MvDOLLAR',
-    multiplier: "100x",
-    finished: false,
-    sort: 4,
-    closedForStaking: false,
-  },
-}
+
 
 export const bankDefinitions: { [contractName: string]: BankInfo } = {
   /*

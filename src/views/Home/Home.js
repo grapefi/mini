@@ -61,15 +61,15 @@ const Home = () => {
   let tomb;
   let tShare;
  
-    tomb = tombProd;
-    tShare = tShareProd;
+  tomb = tombProd;
+  tShare = tShareProd;
   
 
   const buyTombAddress = 'https://spookyswap.finance/swap?outputCurrency=0x7a6e4e3cc2ac9924605dca4ba31d1831c84b44ae'
   const buyTShareAddress = 'https://spookyswap.finance/swap?outputCurrency=' + tShare.address;
 
   const tombLPStats = useMemo(() => (tombFtmLpStats ? tombFtmLpStats : null), [tombFtmLpStats]);
-  console.log(tombLPStats);
+
   const tshareLPStats = useMemo(() => (tShareFtmLpStats ? tShareFtmLpStats : null), [tShareFtmLpStats]);
   const tombPriceInDollars = useMemo(
     () => (tombStats ? Number(tombStats.priceInDollars).toFixed(2) : null),
@@ -197,8 +197,8 @@ const Home = () => {
           <Card>
             <CardContent align="center">
               <h2>Total Value Locked</h2>
-              -.--
-              {/*<CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />*/}
+             
+              <CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />
             </CardContent>
           </Card>
         </Grid>
@@ -255,9 +255,9 @@ const Home = () => {
                 </span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: ${/*(tombCirculatingSupply * tombPriceInDollars).toFixed(2)*/} -.--<br />
-                Circulating Supply: {/*tombCirculatingSupply*/} <br />
-                Total Supply: {/*tombTotalSupply*/}
+                Market Cap: ${(tombCirculatingSupply * tombPriceInDollars).toFixed(2)} <br />
+                Circulating Supply: {tombCirculatingSupply} <br />
+                Total Supply: {tombTotalSupply}
               </span>
             </CardContent>
           </Card>
@@ -352,14 +352,14 @@ const Home = () => {
             </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
-                  {/*tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'*/}-.-- MvDOLLAR /{' '}
-                  {/*tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'*/}-.-- USDC
+                  {tombLPStats?.tokenAmount ? tombLPStats?.tokenAmount : '-.--'} MvDOLLAR /{' '}
+                  {tombLPStats?.ftmAmount ? tombLPStats?.ftmAmount : '-.--'} USDC
                 </span>
               </Box>
-              <Box>${/*tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'*/}</Box>
+              <Box>${tombLPStats?.priceOfOne ? tombLPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '17px' }}>
-                Liquidity: ${/*tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'*/}-.-- <br />
-                Total supply: {/*tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'*/}-.--
+                Liquidity: ${tombLPStats?.totalLiquidity ? tombLPStats.totalLiquidity : '-.--'} <br />
+                Total supply: {tombLPStats?.totalSupply ? tombLPStats.totalSupply : '-.--'}
               </span>
             </CardContent>
           </Card>
