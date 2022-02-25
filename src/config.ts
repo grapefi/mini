@@ -20,8 +20,8 @@ const configurations: { [env: string]: Configuration } = {
       FANG: ['0x49894fcc07233957c35462cfc3418ef0cc26129f', 18],
       'USDT-FTM-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
       'MVDOLLAR-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
-      'MVSHARE-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
-      'MVDOLLAR-MVSHARE-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18]
+      'MVSHARE-USDC-LP': ['0x92A7b2A9ca7D70573E3a0B0BF9e5232c70db8a89', 18],
+      'MVDOLLAR-MVSHARE-LP': ['0x85E8DcBc11eF5C5F98277B20A041C8ab90E0e2f7', 18]
     },
     baseLaunchDate: new Date('2021-06-02 13:00:00Z'),
     bondLaunchesAt: new Date('2020-12-03T15:00:00Z'),
@@ -99,19 +99,19 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
   /*shares*/
   LPRewardPool1ShareRewardPool: {
     name: 'Stake MvDOLLAR-USDC LP, earn MvSHARE',
-    poolId: 0,
+    poolId: 2,
     sectionInUI: 2,
     contract: 'LPRewardPool1ShareRewardPool',
     depositTokenName: 'MVDOLLAR-USDC-LP',
     earnTokenName: 'MvSHARE',
     multiplier: "100x",
-    finished: false,
+    finished: true,
     sort: 1,
     closedForStaking: true,
   },
   LPRewardPool2ShareRewardPool: {
-    name: 'Stake MvDOLLAR-USDC LP, earn MvSHARE',
-    poolId: 1,
+    name: 'Stake MvSHARE-USDC LP, earn MvSHARE',
+    poolId: 0,
     sectionInUI: 2,
     contract: 'LPRewardPool2ShareRewardPool',
     depositTokenName: 'MVSHARE-USDC-LP',
@@ -119,11 +119,11 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 2,
-    closedForStaking: true,
+    closedForStaking: false,
   },
   LPRewardPool3ShareRewardPool: {
     name: 'Stake MvDOLLAR-MVSHARE LP, earn MvSHARE',
-    poolId: 2,
+    poolId: 1,
     sectionInUI: 2,
     contract: 'LPRewardPool3ShareRewardPool',
     depositTokenName: 'MVDOLLAR-MVSHARE-LP',
@@ -131,7 +131,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 3,
-    closedForStaking: true,
+    closedForStaking: false,
   },
 
 

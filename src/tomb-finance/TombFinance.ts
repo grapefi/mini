@@ -310,7 +310,7 @@ export class TombFinance {
       }
       return await poolContract.epochTombPerSecond(0);
     }
-    const rewardPerSecond = await poolContract.tSharePerSecond();
+    const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
       return rewardPerSecond.mul(30000).div(59500);
     } else if (depositTokenName.startsWith('MVSHARE-USDC')) {
