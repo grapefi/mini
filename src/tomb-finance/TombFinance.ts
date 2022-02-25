@@ -194,19 +194,21 @@ export class TombFinance {
    * CirculatingSupply (always equal to total supply for bonds)
    */
   async getShareStat(): Promise<TokenStat> {
-    const { TombFtmLPTShareRewardPool } = this.contracts;
+    const { LPRewardPool1ShareRewardPool } = this.contracts;
 
     const supply = await this.TSHARE.totalSupply();
 
-    const priceInFTM = await this.getTokenPriceFromPancakeswap(this.TSHARE);
-    const tombRewardPoolSupply = await this.TSHARE.balanceOf(TombFtmLPTShareRewardPool.address);
+    const priceInFTM = await this.getTokenPriceFromPancakeswapUSDC(this.TSHARE);
+    
+    const tombRewardPoolSupply = await this.TSHARE.balanceOf(LPRewardPool1ShareRewardPool.address);
+    
     const tShareCirculatingSupply = supply.sub(tombRewardPoolSupply);
     const priceOfOneFTM = await this.getWFTMPriceFromPancakeswap();
     const priceOfSharesInDollars = (Number(priceInFTM) * Number(priceOfOneFTM)).toFixed(2);
 
     return {
       tokenInFtm: priceInFTM,
-      priceInDollars: priceOfSharesInDollars,
+      priceInDollars: priceInFTM,
       totalSupply: getDisplayBalance(supply, this.TSHARE.decimal, 0),
       circulatingSupply: getDisplayBalance(tShareCirculatingSupply, this.TSHARE.decimal, 0),
     };
@@ -250,8 +252,9 @@ export class TombFinance {
     const depositTokenPrice = await this.getDepositTokenPriceInDollars(bank.depositTokenName, depositToken);
 
     const stakeInPool = await depositToken.balanceOf(bank.address);
-
+    
     const TVL = Number(depositTokenPrice) * Number(getDisplayBalance(stakeInPool, depositToken.decimal));
+    
     const stat = bank.earnTokenName === 'MvDOLLAR' ? await this.getTombStat() : await this.getShareStat();
     const tokenPerSecond = await this.getTokenPerSecond(
       bank.earnTokenName,
@@ -259,10 +262,12 @@ export class TombFinance {
       poolContract,
       bank.depositTokenName,
     );
-
+    
     const tokenPerHour = tokenPerSecond.mul(60).mul(60);
     const totalRewardPricePerYear =
       Number(stat.priceInDollars) * Number(getDisplayBalance(tokenPerHour.mul(24).mul(365)));
+      
+
     const totalRewardPricePerDay = Number(stat.priceInDollars) * Number(getDisplayBalance(tokenPerHour.mul(24)));
     const totalStakingTokenInPool =
       Number(depositTokenPrice) * Number(getDisplayBalance(stakeInPool, depositToken.decimal));
@@ -312,11 +317,11 @@ export class TombFinance {
     }
     const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
-      return rewardPerSecond.mul(30000).div(59500);
+      return rewardPerSecond.mul(18000).div(41000);
     } else if (depositTokenName.startsWith('MVSHARE-USDC')) {
-      return rewardPerSecond.mul(24000).div(59500);
+      return rewardPerSecond.mul(17000).div(41000);
     } else {
-      return rewardPerSecond.mul(5500).div(59500)
+      return rewardPerSecond.mul(6000).div(41000)
     }
   }
 
@@ -340,7 +345,9 @@ export class TombFinance {
         tokenPrice = await this.getLPTokenPrice(token, this.TSHARE, false);
       } else if (tokenName === "MVDOLLAR-USDC-LP") {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
-      } else if (tokenName === 'USDC') {
+      }else if (tokenName === "MVDOLLAR-MVSHARE-LP") {
+        tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
+      }else if (tokenName === 'USDC') {
         tokenPrice = '1';
       }else if (tokenName === 'MvDOLLAR') {
         tokenPrice = await this.getTokenPriceFromPancakeswap(token);
@@ -419,7 +426,7 @@ export class TombFinance {
     const masonrytShareBalanceOf = await this.TSHARE.balanceOf(this.currentMasonry().address);
     const masonryTVL = Number(getDisplayBalance(masonrytShareBalanceOf, this.TSHARE.decimal)) * Number(TSHAREPrice);
 
-    return totalValue;
+    return totalValue + masonryTVL;
   }
 
   /**

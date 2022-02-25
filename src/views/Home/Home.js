@@ -300,12 +300,12 @@ const Home = () => {
                   <TokenSymbol symbol="MvSHARE" />
                 </CardIcon>
 
-                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tSharePriceInDollars ? tSharePriceInDollars : '-.--'*/}-.--</span>
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: ${/*(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)*/} -.--<br />
-                Circulating Supply: {/*tShareCirculatingSupply-balance.toFixed(2)*/} -.--<br />
-                Total Supply: {/*tShareTotalSupply-balance.toFixed(2)*/} -.--
+                Market Cap: ${/*(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)*/} <br />
+                Circulating Supply: {/*tShareCirculatingSupply.toFixed(2)*/} <br />
+                Total Supply: {/*tShareTotalSupply.toFixed(2)*/} 
               </span>
             </CardContent>
           </Card>
