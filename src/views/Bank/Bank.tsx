@@ -118,10 +118,10 @@ const LPTokenHelpText: React.FC<{ bank: BankEntity }> = ({ bank }) => {
     uniswapUrl = 'https://spookyswap.finance/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0x57976c467608983513c9355238dc6de1B1aBbcCA';
   } else if (bank.depositTokenName.startsWith("MVSHARE-USDC")) {
     pairName = 'MVSHARE-USDC pair';
-    uniswapUrl = '#';
+    uniswapUrl = 'https://spookyswap.finance/add/0x04068da6c83afcfa0e13ba15a6696662335d5b75/0xb011EC534d9175cD7a69aFBfc1bcc9990862c462';
   } else {
     pairName = "MVDOLLAR-MVSHARE pair";
-    uniswapUrl = '#';
+    uniswapUrl = 'https://spookyswap.finance/add/0x57976c467608983513c9355238dc6de1B1aBbcCA/0xb011EC534d9175cD7a69aFBfc1bcc9990862c462';
   }
  
   return (

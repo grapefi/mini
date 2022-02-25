@@ -201,6 +201,7 @@ const Nav = () => {
                 <ListItem button component="a" href="https://mvfinance.club/miniland">
                   <ListItemText>MINI LAND</ListItemText>
                 </ListItem>
+                
                 <ListItemLink primary="BONDS" to="/bonds" />
         
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">

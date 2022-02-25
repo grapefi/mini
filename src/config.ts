@@ -105,9 +105,9 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'MVDOLLAR-USDC-LP',
     earnTokenName: 'MvSHARE',
     multiplier: "100x",
-    finished: true,
+    finished: false,
     sort: 1,
-    closedForStaking: true,
+    closedForStaking: false,
   },
   LPRewardPool2ShareRewardPool: {
     name: 'Stake MvSHARE-USDC LP, earn MvSHARE',
