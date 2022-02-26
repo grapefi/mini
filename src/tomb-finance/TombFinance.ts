@@ -50,7 +50,7 @@ export class TombFinance {
       this.externalTokens[symbol] = new ERC20(address, provider, symbol, decimal);
     }
     this.TOMB = new ERC20(deployments.tomb.address, provider, 'MvDOLLAR');
-    this.TSHARE = new ERC20(deployments.tShare.address, provider, 'MvSHARE');
+    this.TSHARE = new ERC20(deployments.tShare.address, provider, 'MSHARE');
     this.TBOND = new ERC20(deployments.tBond.address, provider, 'MvBOND');
     this.FTM = this.externalTokens['WFTM'];
     this.USDC = this.externalTokens['USDC'];

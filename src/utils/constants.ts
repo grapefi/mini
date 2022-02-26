@@ -1,5 +1,5 @@
 export const TOMB_TICKER = 'MvDOLLAR';
-export const TSHARE_TICKER = 'MvSHARES';
+export const TSHARE_TICKER = 'MSHARE';
 export const TBOND_TICKER = 'MvBOND';
 export const FTM_TICKER = 'FTM';
 export const WFTM_TICKER = 'WFTM';

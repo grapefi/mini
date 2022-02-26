@@ -228,13 +228,13 @@ const Home = () => {
                 Buy 2SHARE
               </Button> */}
               <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
-                Buy MvSHARES
+                Buy MSHARE
               </Button>
              {/* <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" style={{ marginRight: '25px' }}>
               MvDOLLAR Chart
               </Button>
               <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xc54A1684fD1bef1f077a336E6be4Bd9a3096a6Ca" variant="contained" style={{ marginRight: '25px' }}>
-              MvSHARES Chart
+              MSHARE Chart
             </Button>*/}
             </CardContent>
           </Card>
@@ -294,10 +294,10 @@ const Home = () => {
         <Grid item xs={12} sm={4}>
           <Card>
             <CardContent align="center" style={{ position: 'relative' }}>
-              <h2>MvSHARES</h2>
+              <h2>MSHARE</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="MvSHARE" />
+                  <TokenSymbol symbol="MSHARE" />
                 </CardIcon>
 
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
@@ -363,7 +363,7 @@ const Home = () => {
         <Grid item xs={12} sm={6}>
           <Card>
             <CardContent align="center">
-              <h2>MvSHARES-USDC LP</h2>
+              <h2>MSHARE-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
                   <TokenSymbol symbol="MVSHARE-USDC-LP" />
@@ -376,7 +376,7 @@ const Home = () => {
           </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
-                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} MvSHARES /{' '}
+                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} MSHARE /{' '}
                   {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} USDC
                 </span>
               </Box>

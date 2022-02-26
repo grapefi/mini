@@ -17,7 +17,7 @@ const useEstimateTShare = (tbondAmount: string) => {
 
   useEffect(() => {
     if (account) {
-      estimateAmountOfTShare().catch((err) => console.error(`Failed to get estimateAmountOfMvShares: ${err.stack}`));
+      estimateAmountOfTShare().catch((err) => console.error(`Failed to get estimateAmountOfMShare: ${err.stack}`));
     }
   }, [account, estimateAmountOfTShare]);
 

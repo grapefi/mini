@@ -38,12 +38,12 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
           <TokenSymbol symbol="TSHAREPNG" />
           <StyledBalance>
             <StyledValue>{displayTshareBalance}</StyledValue>
-            <Label text="MvSHARES Available" color='primary'/>
+            <Label text="MSHARE Available" color='primary'/>
           </StyledBalance>
         </StyledBalanceWrapper>
 
         <StyledBalanceWrapper>
-          <TokenSymbol symbol="2BOND" />
+          <TokenSymbol symbol="MvBOND" />
           <StyledBalance>
             <StyledValue>{displayTbondBalance}</StyledValue>
             <Label text="MvBOND Available" color='primary' />

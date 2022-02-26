@@ -107,7 +107,7 @@ const Masonry = () => {
               <Grid item xs={12} md={2} lg={2}>
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
-                    <Typography>MvSHARES Staked</Typography>
+                    <Typography>MSHARE Staked</Typography>
                     <Typography>{getDisplayBalance(totalStaked)}</Typography>
                   </CardContent>
                 </Card>
@@ -117,7 +117,7 @@ const Masonry = () => {
             <Grid container justify="center">
               <Box mt={3} style={{ width: '600px' }}>
                 <Alert variant="filled" severity="warning">
-                  Staked MvSHARES can only be withdrawn after 4 epochs (24hrs) since deposit and claims made every 2 epochs (12hrs). Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
+                  Staked MSHARE can only be withdrawn after 4 epochs (24hrs) since deposit and claims made every 2 epochs (12hrs). Any time tokens are harvested, deposited, or withdrawn, the lockup timer gets reset.
                 </Alert>
               </Box>
             </Grid>

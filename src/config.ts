@@ -98,7 +98,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
 
   /*shares*/
   LPRewardPool1ShareRewardPool: {
-    name: 'Stake MvDOLLAR-USDC LP, earn MvSHARE',
+    name: 'Stake MvDOLLAR-USDC LP, earn MSHARE',
     poolId: 2,
     sectionInUI: 2,
     contract: 'LPRewardPool1ShareRewardPool',
@@ -110,7 +110,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     closedForStaking: false,
   },
   LPRewardPool2ShareRewardPool: {
-    name: 'Stake MvSHARE-USDC LP, earn MvSHARE',
+    name: 'Stake MSHARE-USDC LP, earn MSHARE',
     poolId: 0,
     sectionInUI: 2,
     contract: 'LPRewardPool2ShareRewardPool',
@@ -122,7 +122,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     closedForStaking: false,
   },
   LPRewardPool3ShareRewardPool: {
-    name: 'Stake MvDOLLAR-MVSHARE LP, earn MvSHARE',
+    name: 'Stake MvDOLLAR-MSHARE LP, earn MSHARE',
     poolId: 1,
     sectionInUI: 2,
     contract: 'LPRewardPool3ShareRewardPool',

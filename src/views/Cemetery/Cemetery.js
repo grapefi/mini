@@ -42,7 +42,7 @@ const Cemetery = () => {
               <Box mt={5}>
                 <div hidden={activeBanks.filter((bank) => bank.sectionInUI === 2).length === 0}>
                   <Typography color="textPrimary" variant="h4" gutterBottom>
-                    MvSHARE Rewards Pools
+                    MSHARE Rewards Pools
                   </Typography>
                   <Alert variant="filled" severity="warning">
                     Share reward pools start soon.
