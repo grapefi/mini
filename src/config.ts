@@ -57,7 +57,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 1,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   USDCRewardPool: {
     name: 'Stake USDC, earn MvDOLLAR',
@@ -69,7 +69,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "50x",
     finished: false,
     sort: 2,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   FANGRewardPool: {
     name: 'Stake FANG, earn MvDOLLAR',
@@ -81,7 +81,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "25x",
     finished: false,
     sort: 3,
-    closedForStaking: false,
+    closedForStaking: true,
   },
   LPRewardPool: {
     name: 'Stake MvDOLLAR-USDC LP, earn MvDOLLAR',
@@ -93,7 +93,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 4,
-    closedForStaking: false,
+    closedForStaking: true,
   },
 
   /*shares*/

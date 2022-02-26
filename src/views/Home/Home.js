@@ -227,7 +227,7 @@ const Home = () => {
               {/* <Button variant="contained" target="_blank" href={buyTShareAddress} className={classes.button}>
                 Buy 2SHARE
               </Button> */}
-              <Button color="primary" target="_blank" href="#" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+              <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MvSHARES
               </Button>
              {/* <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" style={{ marginRight: '25px' }}>
@@ -303,10 +303,10 @@ const Home = () => {
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tSharePriceInDollars ? tSharePriceInDollars : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: ${/*(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)*/} <br />
-                Circulating Supply: {/*tShareCirculatingSupply.toFixed(2)*/} <br />
-                Total Supply: {/*tShareTotalSupply.toFixed(2)*/} 
-              </span>
+                Market Cap: ${(tShareCirculatingSupply * tSharePriceInDollars).toFixed(2)} <br />
+                Circulating Supply: {tShareCirculatingSupply} <br />
+                Total Supply: {tShareTotalSupply} 
+      </span>
             </CardContent>
           </Card>
         </Grid>
@@ -321,18 +321,14 @@ const Home = () => {
                   <TokenSymbol symbol="MvBOND" />
                 </CardIcon>
 
-                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${/*tBondPriceInDollars ? tBondPriceInDollars : '-.--'*/}-.--</span>
+                <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-                Market Cap: $-.-- <br />
-                Circulating Supply: ------ <br />
-                Total Supply: ------
-              </span>
-              {/* <span style={{ fontSize: '12px' }}>
-                Market Cap: ${(tBondCirculatingSupply * tBondPriceInDollars).toFixed(2)} <br />
+              Market Cap: ${(tBondCirculatingSupply * tBondPriceInDollars).toFixed(2)} <br />
                 Circulating Supply: {tBondCirculatingSupply} <br />
                 Total Supply: {tBondTotalSupply}
-              </span> */}
+              </span>
+
             </CardContent>
           </Card>
         </Grid>
@@ -380,15 +376,15 @@ const Home = () => {
           </Box>*/}
               <Box mt={2}>
                 <span style={{ fontSize: '26px', color: '#BBA14F'  }}>
-                  {/*tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'*/}-.-- MvSHARES /{' '}
-                  {/*tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'*/}-.-- USDC
+                  {tshareLPStats?.tokenAmount ? tshareLPStats?.tokenAmount : '-.--'} MvSHARES /{' '}
+                  {tshareLPStats?.ftmAmount ? tshareLPStats?.ftmAmount : '-.--'} USDC
                 </span>
               </Box>
-              <Box>${/*tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'*/}</Box>
+              <Box>${tshareLPStats?.priceOfOne ? tshareLPStats.priceOfOne : '-.--'}</Box>
               <span style={{ fontSize: '17px' }}>
-                Liquidity: ${/*tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'*/}-.--
+                Liquidity: ${tshareLPStats?.totalLiquidity ? tshareLPStats.totalLiquidity : '-.--'}
                 <br />
-                Total supply: {/*tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'*/}-.--
+                Total supply: {tshareLPStats?.totalSupply ? tshareLPStats.totalSupply : '-.--'}
               </span>
             </CardContent>
           </Card>

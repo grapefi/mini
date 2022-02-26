@@ -110,7 +110,7 @@ export class TombFinance {
       .sub(tombRewardPoolSupply2)
       .sub(tombRewardPoolSupply3)
       .sub(tombRewardPoolSupply4)
-      console.log(tombCirculatingSupply);
+   
 
     const priceInFTM = await this.getTokenPriceFromPancakeswapUSDC(this.TOMB);
 
@@ -158,7 +158,7 @@ export class TombFinance {
       ftmAmount: ftmAmountInOneLP.toFixed(2).toString(),
       priceOfOne: lpTokenPriceFixed,
       totalLiquidity: liquidity,
-      totalSupply: Number(lpTokenSupply).toFixed(2).toString(),
+      totalSupply: Number(lpTokenSupply).toFixed(6).toString(),
     };
   }
 
@@ -174,6 +174,7 @@ export class TombFinance {
     const { Treasury } = this.contracts;
     const tombStat = await this.getTombStat();
     const bondTombRatioBN = await Treasury.getBondPremiumRate();
+
     const modifier = bondTombRatioBN / 1e18 > 1 ? bondTombRatioBN / 1e18 : 1;
     const bondPriceInFTM = (Number(tombStat.tokenInFtm) * modifier).toFixed(2);
     const priceOfTBondInDollars = (Number(tombStat.priceInDollars) * modifier).toFixed(2);
@@ -202,10 +203,15 @@ export class TombFinance {
     
     const tombRewardPoolSupply = await this.TSHARE.balanceOf(LPRewardPool1ShareRewardPool.address);
     
-    const tShareCirculatingSupply = supply.sub(tombRewardPoolSupply);
+    const tShareRewardPoolSupply1 = await this.TSHARE.balanceOf('0x78ee91ea69132e5838699c42f0c07fa98da90161');
+    const tShareCirculatingSupply = supply
+      .sub(tShareRewardPoolSupply1)
+      .sub(tombRewardPoolSupply)
+
     const priceOfOneFTM = await this.getWFTMPriceFromPancakeswap();
     const priceOfSharesInDollars = (Number(priceInFTM) * Number(priceOfOneFTM)).toFixed(2);
 
+    const circ = (Number(tShareCirculatingSupply)/1e18).toString();
     return {
       tokenInFtm: priceInFTM,
       priceInDollars: priceInFTM,
@@ -217,13 +223,17 @@ export class TombFinance {
   async getTombStatInEstimatedTWAP(): Promise<TokenStat> {
     const { SeigniorageOracle, TombFtmRewardPool } = this.contracts;
     const expectedPrice = await SeigniorageOracle.twap(this.TOMB.address, ethers.utils.parseEther('1'));
-
+    
     const supply = await this.TOMB.totalSupply();
+    
     const tombRewardPoolSupply = await this.TOMB.balanceOf(TombFtmRewardPool.address);
+    
     const tombCirculatingSupply = supply.sub(tombRewardPoolSupply);
+    console.log(Number(tombCirculatingSupply));
+    const price = (Number(expectedPrice)/1e6).toString();
     return {
-      tokenInFtm: getDisplayBalance(expectedPrice),
-      priceInDollars: getDisplayBalance(expectedPrice),
+      tokenInFtm: price,
+      priceInDollars: price,
       totalSupply: getDisplayBalance(supply, this.TOMB.decimal, 0),
       circulatingSupply: getDisplayBalance(tombCirculatingSupply, this.TOMB.decimal, 0),
     };
@@ -231,12 +241,12 @@ export class TombFinance {
 
   async getTombPriceInLastTWAP(): Promise<BigNumber> {
     const { Treasury } = this.contracts;
-    return Treasury.getTombUpdatedPrice();
+    return Treasury.getMvDOLLARUpdatedPrice();
   }
 
   async getBondsPurchasable(): Promise<BigNumber> {
     const { Treasury } = this.contracts;
-    return Treasury.getBurnableTombLeft();
+    return Treasury.getBurnableMvDOLLARLeft();
   }
 
   /**
@@ -380,7 +390,7 @@ export class TombFinance {
    */
   async buyBonds(amount: string | number): Promise<TransactionResponse> {
     const { Treasury } = this.contracts;
-    const treasuryTombPrice = await Treasury.getTombPrice();
+    const treasuryTombPrice = await Treasury.getMvDOLLARPrice();
     return await Treasury.buyBonds(decimalToBalance(amount), treasuryTombPrice);
   }
 
@@ -390,7 +400,7 @@ export class TombFinance {
    */
   async redeemBonds(amount: string): Promise<TransactionResponse> {
     const { Treasury } = this.contracts;
-    const priceForTomb = await Treasury.getTombPrice();
+    const priceForTomb = await Treasury.getMvDOLLARPrice();
     return await Treasury.redeemBonds(decimalToBalance(amount), priceForTomb);
   }
 
@@ -425,7 +435,7 @@ export class TombFinance {
     const TSHAREPrice = (await this.getShareStat()).priceInDollars;
     const masonrytShareBalanceOf = await this.TSHARE.balanceOf(this.currentMasonry().address);
     const masonryTVL = Number(getDisplayBalance(masonrytShareBalanceOf, this.TSHARE.decimal)) * Number(TSHAREPrice);
-
+    console.log('oiu', totalValue);
     return totalValue + masonryTVL;
   }
 
@@ -526,9 +536,7 @@ export class TombFinance {
   }
 
   currentMasonry(): Contract {
-    if (!this.masonryVersionOfUser) {
-      //throw new Error('you must unlock the wallet to continue.');
-    }
+    
     return this.contracts.Masonry;
   }
 
@@ -626,17 +634,20 @@ export class TombFinance {
 
   async getMasonryAPR() {
     const Masonry = this.currentMasonry();
+    
     const latestSnapshotIndex = await Masonry.latestSnapshotIndex();
-    const lastHistory = await Masonry.masonryHistory(latestSnapshotIndex);
-
+    
+    const lastHistory = await Masonry.boardroomHistory(latestSnapshotIndex);
+   
     const lastRewardsReceived = lastHistory[1];
-
+    
     const TSHAREPrice = (await this.getShareStat()).priceInDollars;
     const TOMBPrice = (await this.getTombStat()).priceInDollars;
     const epochRewardsPerShare = lastRewardsReceived / 1e18;
-
+    
     //Mgod formula
     const amountOfRewardsPerDay = epochRewardsPerShare * Number(TOMBPrice) * 4;
+ 
     const masonrytShareBalanceOf = await this.TSHARE.balanceOf(Masonry.address);
     const masonryTVL = Number(getDisplayBalance(masonrytShareBalanceOf, this.TSHARE.decimal)) * Number(TSHAREPrice);
     const realAPR = ((amountOfRewardsPerDay * 100) / masonryTVL) * 365;
@@ -851,7 +862,7 @@ export class TombFinance {
 
     const treasuryDaoFundedFilter = Treasury.filters.DaoFundFunded();
     const treasuryDevFundedFilter = Treasury.filters.DevFundFunded();
-    const treasuryMasonryFundedFilter = Treasury.filters.MasonryFunded();
+    const treasuryMasonryFundedFilter = Treasury.filters.BoardroomFunded();
     const boughtBondsFilter = Treasury.filters.BoughtBonds();
     const redeemBondsFilter = Treasury.filters.RedeemedBonds();
 
