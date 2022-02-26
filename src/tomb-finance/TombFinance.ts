@@ -359,6 +359,9 @@ export class TombFinance {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
       }else if (tokenName === 'USDC') {
         tokenPrice = '1';
+      }else if (tokenName === 'MvSHARE') {
+        const price = await this.getShareStat();
+        tokenPrice = price.priceInDollars;
       }else if (tokenName === 'MvDOLLAR') {
         tokenPrice = await this.getTokenPriceFromPancakeswap(token);
       } else {
