@@ -327,11 +327,11 @@ export class TombFinance {
     }
     const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
-      return rewardPerSecond.mul(18000).div(41000);
+      return rewardPerSecond.mul(21000).div(41000);
     } else if (depositTokenName.startsWith('MVSHARE-USDC')) {
-      return rewardPerSecond.mul(17000).div(41000);
+      return rewardPerSecond.mul(19000).div(41000);
     } else {
-      return rewardPerSecond.mul(6000).div(41000)
+      return rewardPerSecond.mul(1000).div(41000)
     }
   }
 
