@@ -7,7 +7,7 @@ const useHarvestFromMasonry = () => {
   const handleTransactionReceipt = useHandleTransactionReceipt();
 
   const handleReward = useCallback(() => {
-    handleTransactionReceipt(tombFinance.harvestCashFromMasonry(), 'Claim 2OMB from BOARDROOM');
+    handleTransactionReceipt(tombFinance.harvestCashFromMasonry(), 'Claim MSHARE from BOARDROOM');
   }, [tombFinance, handleTransactionReceipt]);
 
   return { onReward: handleReward };
