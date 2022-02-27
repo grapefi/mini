@@ -45,7 +45,7 @@ const Cemetery = () => {
                     MSHARE Rewards Pools
                   </Typography>
                   <Alert variant="filled" severity="warning">
-                    Share reward pools start soon.
+                    Share reward pools are open and will run for 1 year until Feb 2023.
                   </Alert>
                   <Grid container spacing={3} style={{ marginTop: '20px' }}>
                     {activeBanks
@@ -81,7 +81,7 @@ const Cemetery = () => {
                     Genesis Pools
                   </Typography>
                   <Alert variant="filled" severity="warning">
-                    Genesis Pools have started.
+                    Genesis Pools have finished please withdraw from below pools.
                   </Alert>
                   {/* <Typography color="textPrimary" variant="h4" gutterBottom>
                     Decentralized Initial Supply Distribution
