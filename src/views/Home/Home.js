@@ -18,7 +18,7 @@ import usetShareStats from '../../hooks/usetShareStats';
 import useBurned2SHARES from '../../hooks/useBurned2SHARES.js';
 import useTotalValueLocked from '../../hooks/useTotalValueLocked';
 import { tomb as tombProd, tShare as tShareProd } from '../../tomb-finance/deployments/deployments.mainnet.json';
-
+import kyc from '../../assets/img/kyc.png';
 import MetamaskFox from '../../assets/img/metamask-fox.svg';
 
 import { Box, Button, Card, CardContent, Grid, Paper } from '@material-ui/core';
@@ -177,6 +177,7 @@ const Home = () => {
                 </a>{' '}
                 to find out more!
               </p>
+              <a href="https://www.apeoclock.com/launch/miniverse-finance-launch/" target="_blank"><img src={kyc} width="150px"/></a>
             </Box>
           </Paper>
 
