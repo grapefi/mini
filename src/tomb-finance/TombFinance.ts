@@ -249,6 +249,45 @@ export class TombFinance {
     return Treasury.getBurnableMvDOLLARLeft();
   }
 
+  async sendDollar(amount: string | number): Promise<TransactionResponse> {
+    const {tomb} = this.contracts;
+    const recepient = '0xBC958504Ef63D6A496E911F1c79e51bFD1C01959'; //raffle address
+    return await tomb.transfer(recepient, decimalToBalance(amount));
+  }
+
+  async getRaffleStat(account: string): Promise<TokenStat> {
+    let total = 0;
+    const {tomb} = this.contracts;
+
+    const recepient = '0xBC958504Ef63D6A496E911F1c79e51bFD1C01959'; //raffle address
+
+    const priceInBTC = await this.getTokenPriceFromPancakeswapUSDC(this.TOMB);
+
+    const balOfRaffle = await tomb.balanceOf(recepient);
+
+    const currentBlockNumber = await this.provider.getBlockNumber();
+
+    const filterTo = tomb.filters.Transfer(account, recepient);
+
+    const logsTo = await tomb.queryFilter(filterTo, -200000, currentBlockNumber);
+
+    if (logsTo.length !== 0 && account !== null) {
+      for (let i = 0; i < logsTo.length; i++) {
+        total = total + Number(logsTo[i].args.value);
+      }
+      total = total / 1e18;
+    } else {
+      total = 0;
+    }
+
+    return {
+      tokenInFtm: priceInBTC.toString(),
+      priceInDollars: total.toString(),
+      totalSupply: getDisplayBalance(balOfRaffle, 18, 0),
+      circulatingSupply: recepient.toString(),
+    };
+  }
+
   /**
    * Calculates the TVL, APR and daily APR of a provided pool/bank
    * @param bank
