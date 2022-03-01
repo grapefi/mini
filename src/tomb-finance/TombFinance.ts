@@ -328,7 +328,7 @@ export class TombFinance {
     const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
       return rewardPerSecond.mul(21000).div(41000);
-    } else if (depositTokenName.startsWith('MVSHARE-USDC')) {
+    } else if (depositTokenName.startsWith('MSHARE-USDC')) {
       return rewardPerSecond.mul(19000).div(41000);
     } else {
       return rewardPerSecond.mul(1000).div(41000)
@@ -351,15 +351,15 @@ export class TombFinance {
     } else {
       if (tokenName === '2OMB-FTM-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
-      } else if (tokenName === 'MVSHARE-USDC-LP') {
+      } else if (tokenName === 'MSHARE-USDC-LP') {
         tokenPrice = await this.getLPTokenPrice(token, this.TSHARE, false);
       } else if (tokenName === "MVDOLLAR-USDC-LP") {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
-      }else if (tokenName === "MVDOLLAR-MVSHARE-LP") {
+      }else if (tokenName === "MVDOLLAR-MSHARE-LP") {
         tokenPrice = await this.getLPTokenPrice(token, this.TOMB, true);
       }else if (tokenName === 'USDC') {
         tokenPrice = '1';
-      }else if (tokenName === 'MvSHARE') {
+      }else if (tokenName === 'MSHARE') {
         const price = await this.getShareStat();
         tokenPrice = price.priceInDollars;
       }else if (tokenName === 'MvDOLLAR') {

@@ -38,8 +38,8 @@ const logosBySymbol: { [title: string]: string } = {
   FANG: fang,
   
   'MVDOLLAR-USDC-LP': tombFtmLpLogo,
-  'MVSHARE-USDC-LP': tshareFtmLpLogo,
-  'MVDOLLAR-MVSHARE-LP': mvsmvd,
+  'MSHARE-USDC-LP': tshareFtmLpLogo,
+  'MVDOLLAR-MSHARE-LP': mvsmvd,
   'USDC': usdc,
 };
 

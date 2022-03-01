@@ -21,7 +21,7 @@ const DepositModal: React.FC<DepositModalProps> = ({ max, decimals, onConfirm, o
   const [val, setVal] = useState('');
 
   const fullBalance = useMemo(() => {
-    if(tokenName === 'MVDOLLAR-USDC-LP'|| tokenName === 'MVSHARE-USDC-LP' || tokenName === 'MVDOLLAR-MVSHARE-LP'){
+    if(tokenName === 'MVDOLLAR-USDC-LP'|| tokenName === 'MSHARE-USDC-LP' || tokenName === 'MVDOLLAR-MSHARE-LP'){
       return getFullDisplayBalance1(max, decimals, false);
     }else{
       return getFullDisplayBalance(max, decimals, false);

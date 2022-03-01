@@ -38,7 +38,7 @@ const Stake: React.FC = () => {
   const stakedBalance = useStakedBalanceOnMasonry();
   const { from, to } = useUnstakeTimerMasonry();
 
-  const stakedTokenPriceInDollars = useStakedTokenPriceInDollars('MvSHARE', tombFinance.TSHARE);
+  const stakedTokenPriceInDollars = useStakedTokenPriceInDollars('MSHARE', tombFinance.TSHARE);
 
   const tokenPriceInDollars = useMemo(
     () =>

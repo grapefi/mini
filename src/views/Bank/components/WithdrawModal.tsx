@@ -21,7 +21,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
   const [val, setVal] = useState('');
 
   const fullBalance = useMemo(() => {
-    if(tokenName === 'MVDOLLAR-USDC-LP' || tokenName === 'MVSHARE-USDC-LP' || tokenName === 'MVDOLLAR-MVSHARE-LP'){
+    if(tokenName === 'MVDOLLAR-USDC-LP' || tokenName === 'MSHARE-USDC-LP' || tokenName === 'MVDOLLAR-MSHARE-LP'){
       return getFullDisplayBalance1(max, decimals, false);
     }else{
       return getFullDisplayBalance(max, decimals, false);

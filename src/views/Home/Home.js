@@ -51,7 +51,7 @@ const Home = () => {
   const classes = useStyles();
   const TVL = useTotalValueLocked();
   const tombFtmLpStats = useLpStats('MVDOLLAR-USDC-LP');
-  const tShareFtmLpStats = useLpStats('MVSHARE-USDC-LP');
+  const tShareFtmLpStats = useLpStats('MSHARE-USDC-LP');
   const tombStats = useTombStats();
   const tShareStats = usetShareStats();
   const tBondStats = useBondStats();
@@ -367,7 +367,7 @@ const Home = () => {
               <h2>MSHARE-USDC LP</h2>
               <Box mt={2}>
                 <CardIcon>
-                  <TokenSymbol symbol="MVSHARE-USDC-LP" />
+                  <TokenSymbol symbol="MSHARE-USDC-LP" />
                 </CardIcon>
               </Box>
              {/* <Box mt={2}>
