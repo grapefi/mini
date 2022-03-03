@@ -99,14 +99,12 @@ export class TombFinance {
   async getTombStat(): Promise<TokenStat> {
     const { LPRewardPool} = this.contracts;
     const supply = await this.TOMB.totalSupply();
-    const tombRewardPoolSupply = await this.TOMB.balanceOf(LPRewardPool.address);
-    const tombRewardPoolSupply1 = await this.TOMB.balanceOf('0x35bed1e2f3033395a05cd0b1b5900209ece42774');
+    const tombRewardPoolSupply = await this.TOMB.balanceOf(LPRewardPool.address); 
     const tombRewardPoolSupply2 = await this.TOMB.balanceOf('0xda2a4abc17a87f6f7b532a37ab8b707343a97334');
     const tombRewardPoolSupply3 = await this.TOMB.balanceOf('0x4c5b4f27bc268594ecacc3dfce68ad70bd21487c');
     const tombRewardPoolSupply4 = await this.TOMB.balanceOf('0x78ee91ea69132e5838699c42f0c07fa98da90161');
     const tombCirculatingSupply = supply
       .sub(tombRewardPoolSupply)
-      .sub(tombRewardPoolSupply1)
       .sub(tombRewardPoolSupply2)
       .sub(tombRewardPoolSupply3)
       .sub(tombRewardPoolSupply4)
