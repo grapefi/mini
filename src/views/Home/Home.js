@@ -325,9 +325,9 @@ const Home = () => {
                 <span style={{ fontSize: '30px', color: '#BBA14F' }}>${tBondPriceInDollars ? tBondPriceInDollars : '-.--'}</span>
               </Box>
               <span style={{ fontSize: '17px' }}>
-              Market Cap: ${(tBondCirculatingSupply * tBondPriceInDollars).toFixed(2)} <br />
-                Circulating Supply: {tBondCirculatingSupply} <br />
-                Total Supply: {tBondTotalSupply}
+              Market Cap: ${/*(tBondCirculatingSupply * tBondPriceInDollars).toFixed(2)*/} 0<br />
+                Circulating Supply: {/*tBondCirculatingSupply*/} 0<br />
+                Total Supply: {/*tBondTotalSupply*/}0
               </span>
 
             </CardContent>

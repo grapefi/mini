@@ -56,7 +56,7 @@ const Pit: React.FC = () => {
   );
   const isBondRedeemable = useMemo(() => cashPrice.gt(BOND_REDEEM_PRICE_BN), [cashPrice]);
   const isBondPurchasable = useMemo(() => Number(bondStat?.priceInDollars) < 1.01, [bondStat]);
-  const bondScale = (Number(cashPrice) / 1e6).toFixed(2); 
+  const bondScale = (Number(cashPrice) / 1e18).toFixed(2); 
   return (
     <Switch>
       <Page>

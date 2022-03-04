@@ -227,8 +227,8 @@ export class TombFinance {
     const tombRewardPoolSupply = await this.TOMB.balanceOf(TombFtmRewardPool.address);
     
     const tombCirculatingSupply = supply.sub(tombRewardPoolSupply);
-    console.log(Number(tombCirculatingSupply));
-    const price = (Number(expectedPrice)/1e6).toString();
+   
+    const price = (Number(expectedPrice)/1e18).toString();
     return {
       tokenInFtm: price,
       priceInDollars: price,
