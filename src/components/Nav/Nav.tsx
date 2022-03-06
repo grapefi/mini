@@ -130,9 +130,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/strategies" className={classes.link}>
                 Strategy
               </Link>
-            {/*  <Link color="textPrimary" to="/raffle" className={classes.link}>
+              <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
-        </Link>*/}
+              </Link>
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
                 Dividends
               </Link> */}
@@ -208,7 +208,7 @@ const Nav = () => {
                 
                {/* <ListItemLink primary="BONDS" to="/bonds" />*/}
                 <ListItemLink primary="STRATEGY" to="/strategy" />
-                {/*<ListItemLink primary="RAFFLE" to="/raffle" />*/}
+                <ListItemLink primary="RAFFLE" to="/raffle" />
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>DOCS</ListItemText>
                 </ListItem>

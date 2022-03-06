@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Bond: React.FC = () => {
 
-  const startDate = new Date('2022-3-1 11:00:00Z');
-  const endDate = new Date('2022-3-5 15:00:00Z');
+  const startDate = new Date('2022-3-6 11:00:00Z');
+  const endDate = new Date('2022-3-9 11:00:00Z');
   const raffleAddress = '0xBC958504Ef63D6A496E911F1c79e51bFD1C01959';
 
   const {path} = useRouteMatch();
