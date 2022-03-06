@@ -97,7 +97,7 @@ const Nav = () => {
           <>
             <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
     
-              <Link to="https://mvfinance.club/" color="inherit" className={classes.brandLink}>
+              <Link to="#" color="inherit" className={classes.brandLink}>
               <img alt="MiniVerse" src={mvLogo} height="60px" style={{marginTop: '20px'}} />
               </Link>
             </Typography>
