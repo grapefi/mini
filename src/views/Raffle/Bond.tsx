@@ -66,16 +66,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Bond: React.FC = () => {
+
+  const startDate = new Date('2022-3-1 11:00:00Z');
+  const endDate = new Date('2022-3-5 15:00:00Z');
+  const raffleAddress = '0xBC958504Ef63D6A496E911F1c79e51bFD1C01959';
+
   const {path} = useRouteMatch();
   const {account} = useWallet();
   const classes = useStyles();
   const tombFinance = useTombFinance();
   const addTransaction = useTransactionAdder();
-  const raffleStats = useRaffleStats(account);
-
-  const startDate = new Date('2022-3-1 11:00:00Z');
-  const endDate = new Date('2022-3-4 15:00:00Z');
-  const raffleAddress = '0xBC958504Ef63D6A496E911F1c79e51bFD1C01959';
+  const raffleStats = useRaffleStats(account, raffleAddress);
 
   const startTime = Number(startDate); 
   const endTime = Number(endDate); 
@@ -97,7 +98,7 @@ const Bond: React.FC = () => {
 
   const handleBuyBonds = useCallback( 
     async (amount: string) => { 
-      const tx = await tombFinance.sendDollar(amount);
+      const tx = await tombFinance.sendDollar(amount, raffleAddress);
         addTransaction(tx, {
           summary: `Send ${Number(amount).toFixed(2)} MvDOLLAR to the raffle ${amount} `,
         });
@@ -118,7 +119,7 @@ const Bond: React.FC = () => {
         <p style={{ fontSize: '20px', textAlign:'center', color: '#fff' }}>Every week we'll run a raffle for our community where you have the chance to win MSHARE just by sending in your freely earned MvDOLLAR.<br></br> <br></br> 1 MvDOLLAR =  1 entry, unlimited entries per address, the more MvDOLLAR you send the more chance you have to win. The winner will be chosen at random.</p>                
         <p style={{fontSize: '20px', textAlign:'center', color: '#fff' }}>Raffle address: {raffleAddress}</p>
       </Grid>
-
+      {Date.now() > endTime ? <h2 style={{ fontSize: '60px', textAlign:'center' }}>Raffle Closed</h2> : <h2 style={{ fontSize: '60px', textAlign:'center' }}>Raffle Open</h2>}
       {Date.now() < startTime ? <LaunchCountdown deadline={startDate} description={'Raffle Starts In'} descriptionLink={''}></LaunchCountdown> : <LaunchCountdown deadline={endDate} description={'Raffle Closes In'} descriptionLink={''}></LaunchCountdown>}
      
     <Grid container justify="center" spacing={3} style={{marginTop: '10px'}}>
