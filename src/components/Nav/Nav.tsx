@@ -95,11 +95,8 @@ const Nav = () => {
       <Toolbar className={classes.toolbar}>
         {matches ? (
           <>
-            <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
-    
-              <Link to="#" color="inherit" className={classes.brandLink}>
+            <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>      
               <img alt="MiniVerse" src={mvLogo} height="60px" style={{marginTop: '20px'}} />
-              </Link>
             </Typography>
             
             <Box mr={5}>
@@ -192,21 +189,16 @@ const Nav = () => {
                 <ListItemLink primary="HOME" to="/" />
                 <ListItemLink primary="FARMS" to="/farms" />
                 <ListItemLink primary="BOARDROOM" to="/boardroom" />
-               
-
                 <ListItem button component="a" href="https://mvfinance.club/minichilla">
                   <ListItemText>MINICHILLA</ListItemText>
                 </ListItem>
-
                 <ListItem button component="a" href="https://mvfinance.club/miniguinea">
                   <ListItemText>MINIGUINEA</ListItemText>
-                </ListItem>
-                
+                </ListItem>    
                 <ListItem button component="a" href="https://mvfinance.club/miniland">
                   <ListItemText>MINI LAND</ListItemText>
-                </ListItem>
-                
-               {/* <ListItemLink primary="BONDS" to="/bonds" />*/}
+                </ListItem>    
+                {/*<ListItemLink primary="BONDS" to="/bonds" />*/}
                 <ListItemLink primary="STRATEGY" to="/strategy" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
