@@ -365,7 +365,9 @@ export class TombFinance {
       return rewardPerSecond.mul(23000).div(41000);
     } else if (depositTokenName.startsWith('MSHARE-USDC')) {
       return rewardPerSecond.mul(17500).div(41000);
-    } else {
+    }else if (depositTokenName.startsWith('MvDOLLAR')) {
+      return rewardPerSecond.mul(500).div(41000);
+    }else {
       return rewardPerSecond.mul(500).div(41000)
     }
   }
@@ -398,7 +400,8 @@ export class TombFinance {
         const price = await this.getShareStat();
         tokenPrice = price.priceInDollars;
       }else if (tokenName === 'MvDOLLAR') {
-        tokenPrice = await this.getTokenPriceFromPancakeswap(token);
+        const price = await this.getTombStat();
+        tokenPrice = price.priceInDollars;
       } else {
         tokenPrice = await this.getTokenPriceFromPancakeswap(token);
         tokenPrice = (Number(tokenPrice) * Number(priceOfOneFtmInDollars)).toString();

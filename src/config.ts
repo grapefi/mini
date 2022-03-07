@@ -18,6 +18,7 @@ const configurations: { [env: string]: Configuration } = {
       TOMB: ['0x6c021ae822bea943b2e66552bde1d2696a53fbb7', 18], // ZOO: 0x09e145a1d53c0045f41aeef25d8ff982ae74dd56 0
       USDC: ['0x04068da6c83afcfa0e13ba15a6696662335d5b75', 6], // SHIBA: 0x9ba3e4f84a34df4e08c112e1a0ff148b81655615 9
       FANG: ['0x49894fcc07233957c35462cfc3418ef0cc26129f', 18],
+      MvDOLLAR: ['0x57976c467608983513c9355238dc6de1B1aBbcCA', 18],
       'USDT-FTM-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
       'MVDOLLAR-USDC-LP': ['0x35bED1E2f3033395a05CD0b1b5900209ECe42774', 18],
       'MSHARE-USDC-LP': ['0x92A7b2A9ca7D70573E3a0B0BF9e5232c70db8a89', 18],
@@ -131,6 +132,18 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     multiplier: "100x",
     finished: false,
     sort: 3,
+    closedForStaking: false,
+  },
+  mvdollarShareRewardPool: {
+    name: 'Stake MvDOLLAR, earn MSHARE',
+    poolId: 3,
+    sectionInUI: 2,
+    contract: 'mvdollarShareRewardPool',
+    depositTokenName: 'MvDOLLAR',
+    earnTokenName: 'MSHARE',
+    multiplier: "100x",
+    finished: false,
+    sort: 4,
     closedForStaking: false,
   },
 

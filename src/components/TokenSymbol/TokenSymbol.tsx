@@ -51,7 +51,7 @@ type LogoProps = {
 const TokenSymbol: React.FC<LogoProps> = ({ symbol, size = 64 }) => {
 
   if(symbol === 'TOMB' || symbol === 'TOMBPNG' || symbol === '2OMB' || symbol === 'MvDOLLAR' || symbol === '2SHARES'){
-    return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={70} height={55} />;
+    return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={75} height={55} />;
   }else{
     return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={size} height={size} />;
   }
