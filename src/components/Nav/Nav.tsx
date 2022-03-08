@@ -109,21 +109,22 @@ const Nav = () => {
            {/*   <a href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
                 Land Mint
         </a>*/}
-              <a rel="noopener noreferrer" href="https://mvfinance.club/minichilla" className={classes.link}>
+              <Link color="textPrimary" to="/minichilla" className={classes.link}>
               Minichilla
-              </a>
-              <a rel="noopener noreferrer" href="https://mvfinance.club/miniguinea" className={classes.link}>
+              </Link>
+              <Link color="textPrimary" to="/miniguinea" className={classes.link}>
               Miniguinea
-              </a>
-              <a rel="noopener noreferrer" href="https://mvfinance.club/miniland" className={classes.link}>
+              </Link>
+              <Link color="textPrimary" to="/miniland" className={classes.link}>
               Miniland
-              </a>      
+              </Link>
+    
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
                 Boardroom
               </Link>
-            {/*  <Link color="textPrimary" to="/bonds" className={classes.link}>
+              <Link color="textPrimary" to="/bonds" className={classes.link}>
                 Bonds
-      </Link>*/}
+              </Link>
               <Link color="textPrimary" to="/strategies" className={classes.link}>
                 Strategy
               </Link>
@@ -192,17 +193,11 @@ const Nav = () => {
                 <ListItemLink primary="HOME" to="/" />
                 <ListItemLink primary="FARMS" to="/farms" />
                 <ListItemLink primary="BOARDROOM" to="/boardroom" />
-                <ListItem button component="a" href="https://mvfinance.club/minichilla">
-                  <ListItemText>MINICHILLA</ListItemText>
-                </ListItem>
-                <ListItem button component="a" href="https://mvfinance.club/miniguinea">
-                  <ListItemText>MINIGUINEA</ListItemText>
-                </ListItem>    
-                <ListItem button component="a" href="https://mvfinance.club/miniland">
-                  <ListItemText>MINI LAND</ListItemText>
-                </ListItem>    
+                <ListItemLink primary="MiniChilla" to="/minichilla" />
+                <ListItemLink primary="MiniGuinea" to="/miniguinea" />
+                <ListItemLink primary="MiniLand" to="/miniland" />
                 
-                {/*<ListItemLink primary="BONDS" to="/bonds" />*/}
+                <ListItemLink primary="BONDS" to="/bonds" />
                 <ListItemLink primary="STRATEGY" to="/strategy" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
                 <ListItem button component="a" href="https://yieldwolf.finance/fantom">

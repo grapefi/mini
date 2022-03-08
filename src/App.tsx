@@ -25,6 +25,11 @@ const Pit = lazy(() => import('./views/Pit'));
 const SBS = lazy(() => import('./views/Sbs'));
 const Strategies = lazy(() => import('./views/Strategies'));
 const Raffle = lazy(() => import('./views/Raffle'));
+const Minichilla = lazy(() => import('./views/Minichilla'));
+const Miniguinea = lazy(() => import('./views/Miniguinea'));
+const Miniland = lazy(() => import('./views/Miniland'));
+
+
 const NoMatch = () => (
   <h3 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
     URL Not Found. <a href="/">Go back home.</a>
@@ -51,6 +56,15 @@ const App: React.FC = () => {
             </Route>
             <Route path="/farms">
               <Cemetery />
+            </Route>
+            <Route path="/minichilla">
+              <Minichilla />
+            </Route>
+            <Route path="/miniguinea">
+              <Miniguinea />
+            </Route>
+            <Route path="/miniland">
+              <Miniland />
             </Route>
             <Route path="/boardroom">
               <Masonry />
