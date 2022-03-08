@@ -131,7 +131,7 @@ const Nav = () => {
               <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
               </Link>
-              <a rel="noopener noreferrer" href="https://yieldwolf.finance/fantom" className={classes.link}>
+              <a rel="noopener noreferrer" href="https://yieldwolf.finance/fantom/mvfinance" className={classes.link}>
               Yield Wolf
               </a>  
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
@@ -200,7 +200,7 @@ const Nav = () => {
                 <ListItemLink primary="BONDS" to="/bonds" />
                 <ListItemLink primary="STRATEGY" to="/strategy" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
-                <ListItem button component="a" href="https://yieldwolf.finance/fantom">
+                <ListItem button component="a" href="https://yieldwolf.finance/fantom/mvfinance">
                   <ListItemText>Yield Wolf</ListItemText>
                 </ListItem>  
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
