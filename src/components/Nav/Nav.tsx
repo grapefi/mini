@@ -204,12 +204,13 @@ const Nav = () => {
                 <ListItem button component="a" href="https://mvfinance.club/miniland">
                   <ListItemText>MINI LAND</ListItemText>
                 </ListItem>    
-                <ListItem button component="a" href="https://yieldwolf.finance/fantom">
-                  <ListItemText>Yield Wolf</ListItemText>
-                </ListItem>  
+                
                 {/*<ListItemLink primary="BONDS" to="/bonds" />*/}
                 <ListItemLink primary="STRATEGY" to="/strategy" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
+                <ListItem button component="a" href="https://yieldwolf.finance/fantom">
+                  <ListItemText>Yield Wolf</ListItemText>
+                </ListItem>  
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>DOCS</ListItemText>
                 </ListItem>
