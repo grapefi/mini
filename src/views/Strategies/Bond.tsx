@@ -10,12 +10,11 @@ import Spacer from '../../components/Spacer';
 import strat from '../../assets/img/strat.jpg';
 import { Grid , Box, Container } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
-
-
+import PitImage from '../../assets/img/background.png';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;
@@ -60,7 +59,7 @@ const Bond: React.FC = () => {
 <Page>
   <BackgroundImage />  
      <Grid item xs={12} md={12} lg={12} >     
-                  <h2 style={{ fontSize: '80px', textAlign:'center' }}>50/50 Strategy</h2>   
+                  <h2 style={{ fontSize: '80px', textAlign:'center' }}>Strategy</h2>   
                   <img src={strat} width={'100%'} />     
  
               </Grid>  

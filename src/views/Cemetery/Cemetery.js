@@ -13,15 +13,16 @@ import Page from '../../components/Page';
 import CemeteryCard from './CemeteryCard';
 import CemeteryImage from '../../assets/img/background.png';
 import { createGlobalStyle } from 'styled-components';
-
+import PitImage from '../../assets/img/background.png';
 import useBanks from '../../hooks/useBanks';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;
+
 
 const Cemetery = () => {
   const [banks] = useBanks();

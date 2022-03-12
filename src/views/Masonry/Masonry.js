@@ -28,13 +28,16 @@ import useWithdrawCheck from '../../hooks/masonry/useWithdrawCheck';
 import ProgressCountdown from './components/ProgressCountdown';
 import MasonryImage from '../../assets/img/background.png';
 import { createGlobalStyle } from 'styled-components';
+import PitImage from '../../assets/img/background.png';
 
 const BackgroundImage = createGlobalStyle`
-  body, html {
-    background-color: #1D2951;
+  body {
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;
+
+
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {

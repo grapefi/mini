@@ -96,7 +96,7 @@ const Nav = () => {
         {matches ? (
           <>
             <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>      
-              <img alt="MiniVerse" src={mvLogo} height="60px" style={{marginTop: '20px'}} />
+              <img alt="MiniVerse" src={mvLogo} height="50px" style={{marginTop: '15px'}} />
             </Typography>
             
             <Box mr={5}>

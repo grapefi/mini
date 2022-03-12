@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
 import Page from '../../components/Page';
-import PitImage from '../../assets/img/background.png';
 import { createGlobalStyle } from 'styled-components';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useWallet } from 'use-wallet';
@@ -18,14 +17,14 @@ import useTokenBalance from '../../hooks/useTokenBalance';
 import useBondsPurchasable from '../../hooks/useBondsPurchasable';
 import { getDisplayBalance } from '../../utils/formatBalance';
 import { BOND_REDEEM_PRICE, BOND_REDEEM_PRICE_BN } from '../../tomb-finance/constants';
+import PitImage from '../../assets/img/background.png';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;
-
 const Pit: React.FC = () => {
   const { path } = useRouteMatch();
   const { account } = useWallet();

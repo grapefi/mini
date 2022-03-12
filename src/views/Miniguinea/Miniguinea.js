@@ -13,9 +13,11 @@ import { createGlobalStyle } from 'styled-components';
 //import useBanks from '../../hooks/useBanks';
 import useTombFinance from '../../hooks/useTombFinance';
 
+import PitImage from '../../assets/img/background.png';
+
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;
@@ -135,7 +137,8 @@ const Cemetery = () => {
         <Route exact path={path}>
           <BackgroundImage />
           <div style={{ textAlign: 'center', color: 'white' }}>
-            <span style={{ fontSize: '96px', display: 'block' }}>MiniGuineas NFT Staking</span>
+          <h2 style={{ fontSize: '80px', textAlign:'center', marginBottom: '50px'  }}>MiniGuineas NFT Staking</h2>
+          
             <span style={{ fontSize: '36px' }}>
               { parseInt(nftStakedTotalSupply * 100 / nftTotalSupply) } % MiniGuineas STAKED
             </span>

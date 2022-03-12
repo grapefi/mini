@@ -20,7 +20,7 @@ import useTotalValueLocked from '../../hooks/useTotalValueLocked';
 import { tomb as tombProd, tShare as tShareProd } from '../../tomb-finance/deployments/deployments.mainnet.json';
 import kyc from '../../assets/img/kyc.png';
 import MetamaskFox from '../../assets/img/metamask-fox.svg';
-
+import PitImage from '../../assets/img/background.png';
 import { Box, Button, Card, CardContent, Grid, Paper } from '@material-ui/core';
 import ZapModal from '../Bank/components/ZapModal';
 
@@ -29,7 +29,8 @@ import useTombFinance from '../../hooks/useTombFinance';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
+    background-size: cover !important;
   }
 `;
 
@@ -147,7 +148,7 @@ const Home = () => {
           sm={4}
           style={{display: 'flex', justifyContent: 'center', verticalAlign: 'middle', overflow: 'hidden'}}
         >
-          <img src={CashImage} style={{maxHeight: '160px', marginTop: '60px'}} />
+          <img src={CashImage} style={{maxHeight: '250px', marginTop: '40px'}} />
         </Grid>
         {/* Explanation text */}
         <Grid item xs={12} sm={8}>
@@ -207,7 +208,7 @@ const Home = () => {
         {/* Wallet */}
         <Grid item xs={12} sm={8}>
           <Card style={{ height: '100%' }}>
-            <CardContent align="center" style={{ marginTop: '2.5%', backgroundColor: '#2c3e50' }}>
+            <CardContent align="center" style={{ }}>
 
               <Button color="primary" href="/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
                 Stake NOW

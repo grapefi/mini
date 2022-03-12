@@ -4,13 +4,14 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 
 import Page from '../../components/Page';
-import RegulationsImage from '../../assets/img/regulations_bg.png';
+
 import { createGlobalStyle } from 'styled-components';
 import useTombFinance from '../../hooks/useTombFinance';
+import PitImage from '../../assets/img/background.png';
 
 const BackgroundImage = createGlobalStyle`
-  body, html {
-    background: url(${RegulationsImage}) no-repeat !important;
+  body {
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;

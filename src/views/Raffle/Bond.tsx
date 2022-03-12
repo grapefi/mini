@@ -23,10 +23,11 @@ import { Box, Container, Card, CardContent, Typography, Grid } from '@material-u
 import {makeStyles} from '@material-ui/core/styles';
 import { Stats } from 'fs';
 import LaunchCountdown from '../../components/LaunchCountdown';
+import PitImage from '../../assets/img/background.png';
 
 const BackgroundImage = createGlobalStyle`
   body {
-    background-color: #1D2951;
+    background: url(${PitImage}) no-repeat !important;
     background-size: cover !important;
   }
 `;

@@ -3,7 +3,6 @@ import React from 'react';
 //Graveyard ecosystem logos
 import tombLogo from '../../assets/img/MvDOLLAR.png';
 import tShareLogo from '../../assets/img/MvSHARE.png';
-import tombLogoPNG from '../../assets/img/2omb-01.png';
 import tShareLogoPNG from '../../assets/img/MvSHARE.png';
 import tBondLogo from '../../assets/img/MvBOND.png';
 
@@ -12,11 +11,8 @@ import tshareFtmLpLogo from '../../assets/img/MvS-USDC.png';
 import mvsmvd from '../../assets/img/MvD-MvS.png';
 import wftmLogo from '../../assets/img/ftm_logo_blue.svg';
 import wethLogo from '../../assets/img/weth.png';
-import rtombLogo from '../../assets/img/crypto_tomb_cash.svg';
 import shibaLogo from '../../assets/img/mimlogo.png';
 import fang from '../../assets/img/FANG.png';
-import tombtshares from '../../assets/img/2OMB-2SHARES.png';
-
 import usdc from '../../assets/img/USDC.png';
 
 const logosBySymbol: { [title: string]: string } = {
@@ -48,9 +44,9 @@ type LogoProps = {
   size?: number;
 };
 
-const TokenSymbol: React.FC<LogoProps> = ({ symbol, size = 64 }) => {
+const TokenSymbol: React.FC<LogoProps> = ({ symbol, size = 75 }) => {
 
-  if(symbol === 'TOMB' || symbol === 'TOMBPNG' || symbol === '2OMB' || symbol === 'MvDOLLAR' || symbol === '2SHARES'){
+  if(symbol === 'TOMB' || symbol === 'TOMBPNG' || symbol === '2SHARES'){
     return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={75} height={55} />;
   }else{
     return <img src={logosBySymbol[symbol]} alt={`${symbol} Logo`} width={size} height={size} />;
