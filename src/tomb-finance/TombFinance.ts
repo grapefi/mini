@@ -365,10 +365,10 @@ export class TombFinance {
       return rewardPerSecond.mul(23000).div(41000);
     } else if (depositTokenName.startsWith('MSHARE-USDC')) {
       return rewardPerSecond.mul(17500).div(41000);
-    }else if (depositTokenName.startsWith('MvDOLLAR')) {
-      return rewardPerSecond.mul(500).div(41000);
+    }else if (depositTokenName.startsWith('MVDOLLAR-MSHARE-LP')) {
+      return rewardPerSecond.mul(100).div(41000);
     }else {
-      return rewardPerSecond.mul(500).div(41000)
+      return rewardPerSecond.mul(900).div(41000)
     }
   }
 

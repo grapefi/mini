@@ -154,7 +154,7 @@ const Home = () => {
         <Grid item xs={12} sm={8}>
           <Paper>
             <Box p={4} style={{textAlign: 'center'}}>
-            <h2>Welcome to MiniVerse</h2>
+            <h2>Welcome to The MiniVerse</h2>
               <p style={{fontSize: '17px'}}>
                 <b>MvDOLLAR is an algorithmic stable coin designed to maintain a 1:1 peg to USDC</b>
               </p>
