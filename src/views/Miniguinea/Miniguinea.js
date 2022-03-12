@@ -191,9 +191,9 @@ const Cemetery = () => {
                 }}>
                   {
                     indexOfSelectedNft > -1 && <>
-                      <h1>
+                      <p style={{fontSize: '18px', fontWeight: 'bold'}}>
                         { nftsStaked[indexOfSelectedNft].name }
-                      </h1>
+                      </p>
                       <Box style={{
                         display: 'flex',
                         alignItems: 'center',
