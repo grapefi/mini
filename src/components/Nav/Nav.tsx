@@ -95,8 +95,10 @@ const Nav = () => {
       <Toolbar className={classes.toolbar}>
         {matches ? (
           <>
-            <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>      
+            <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>     
+            <a rel="noopener noreferrer" href="https://mvfinance.club/" className={classes.link}>
               <img alt="MiniVerse" src={mvLogo} height="50px" style={{marginTop: '15px'}} />
+              </a> 
             </Typography>
             
             <Box mr={5}>
@@ -169,7 +171,9 @@ const Nav = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
+            <a rel="noopener noreferrer" href="https://mvfinance.club/" className={classes.link}>
               Miniverse Finance
+              </a>
             </Typography>
 
             <Drawer
