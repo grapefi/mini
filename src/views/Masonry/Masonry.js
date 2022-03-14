@@ -102,8 +102,8 @@ const Masonry = () => {
               <Grid item xs={12} md={2} lg={2} className={classes.gridItem}>
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
-                    <Typography>APR</Typography>
-                    <Typography>{masonryAPR.toFixed(2)}%</Typography>
+                    <Typography>APR | Daily</Typography>
+                    <Typography>{masonryAPR.toFixed(2)}% | {(masonryAPR/365).toFixed(2)}%</Typography>
                   </CardContent>
                 </Card>
               </Grid>

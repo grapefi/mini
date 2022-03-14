@@ -19,6 +19,7 @@ import useBurned2SHARES from '../../hooks/useBurned2SHARES.js';
 import useTotalValueLocked from '../../hooks/useTotalValueLocked';
 import { tomb as tombProd, tShare as tShareProd } from '../../tomb-finance/deployments/deployments.mainnet.json';
 import kyc from '../../assets/img/kyc.png';
+import audit from '../../assets/img/audit.jpg';
 import MetamaskFox from '../../assets/img/metamask-fox.svg';
 import PitImage from '../../assets/img/background.png';
 import { Box, Button, Card, CardContent, Grid, Paper } from '@material-ui/core';
@@ -178,7 +179,7 @@ const Home = () => {
                 </a>{' '}
                 to find out more!
               </p>
-              <a href="https://www.apeoclock.com/launch/miniverse-finance-launch/" target="_blank"><img src={kyc} width="150px"/></a>
+              <a href="https://www.apeoclock.com/launch/miniverse-finance-launch/" target="_blank"><img src={kyc} width="150px"/></a><a style={{marginLeft: '10px'}} href="https://github.com/0xGuard-com/audit-reports/blob/master/mini-verse/miniverse-report.pdf" target="_blank"><img src={audit} width="140px"/></a>
             </Box>
           </Paper>
 
@@ -208,13 +209,12 @@ const Home = () => {
         {/* Wallet */}
         <Grid item xs={12} sm={8}>
           <Card style={{ height: '100%' }}>
-            <CardContent align="center" style={{ }}>
-
-              <Button color="primary" href="/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
-                Stake NOW
+            <CardContent align="center" style={{ }}>   
+              <Button color="primary" href="/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
+                Farm
               </Button>
-              <Button color="primary" href="/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
-                Farm NOW
+              <Button color="primary" href="/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
+                Stake
               </Button>
               <Button
                 color="primary"
@@ -232,12 +232,12 @@ const Home = () => {
               <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MSHARE
               </Button>
-             {/* <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" style={{ marginRight: '25px' }}>
+              <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '5px', fontSize: '1px !important' }}>
               MvDOLLAR Chart
               </Button>
-              <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0xc54A1684fD1bef1f077a336E6be4Bd9a3096a6Ca" variant="contained" style={{ marginRight: '25px' }}>
+              <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x92a7b2a9ca7d70573e3a0b0bf9e5232c70db8a89" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '5px' }}>
               MSHARE Chart
-            </Button>*/}
+            </Button>
             </CardContent>
           </Card>
         </Grid>

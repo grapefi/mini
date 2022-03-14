@@ -98,7 +98,7 @@ code {
   padding-bottom: 5px;
   background-color: #BBA14F !important;
   border-radius: 15px;
-  font-size: 1rem !important;
+  font-size: 1rem;
   padding-left: 5px;
   color: #fff !important;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);

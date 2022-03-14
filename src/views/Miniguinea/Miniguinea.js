@@ -224,9 +224,9 @@ const Cemetery = () => {
                   }
                   {
                     indexOfSelectedNftInWallet > -1 && <>
-                      <h1>
+                     <p style={{fontSize: '18px', fontWeight: 'bold'}}>
                         { nftsInWallet[indexOfSelectedNftInWallet].name }
-                      </h1>
+                      </p>
                       <Box style={{
                         display: 'flex',
                         alignItems: 'center',
