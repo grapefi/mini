@@ -7,8 +7,10 @@ import UnlockWallet from '../../components/UnlockWallet';
 import PageHeader from '../../components/PageHeader';
 import styled from 'styled-components';
 import Spacer from '../../components/Spacer';
-import strat from '../../assets/img/strat.jpg';
-import { Grid , Box, Container } from '@material-ui/core';
+import strat from '../../assets/img/1.png';
+import strat2 from '../../assets/img/2.png';
+import strat3 from '../../assets/img/3.png';
+import { Grid , Box, Container, Button } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import PitImage from '../../assets/img/background.png';
 
@@ -58,11 +60,21 @@ const Bond: React.FC = () => {
 <Switch>
 <Page>
   <BackgroundImage />  
-     <Grid item xs={12} md={12} lg={12} >     
-                  <h2 style={{ fontSize: '80px', textAlign:'center' }}>Strategy</h2>   
+     
+                  <h2 style={{ fontSize: '80px', textAlign:'center', marginBottom: '40px' }}>Strategy</h2>   
+                  
+                  <Grid container justify="center" spacing={0} style={{marginTop: '40px', marginBottom: '40px'}}>
+                    
+                      <Button color="primary" href="https://miniversefinance.gitbook.io/docs/protocol/strategies-and-guides" target="_blank" variant="contained" className={'shinyButton '} style={{}}>
+                            View Full Strategy Guides
+                      </Button>
+                    
+                    </Grid>    
                   <img src={strat} width={'100%'} />     
- 
-              </Grid>  
+                  <img src={strat2} width={'100%'} />   
+                  <img src={strat3} width={'100%'} />   
+              
+             
 </Page>
 </Switch>
   );
