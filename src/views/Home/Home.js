@@ -197,11 +197,11 @@ const Home = () => {
 
         {/* TVL */}
         <Grid item xs={12} sm={4}>
-          <Card>
+          <Card style={{paddingBottom: '20px' }}>
             <CardContent align="center">
-              <h2>Total Value Locked</h2>
+              <h2 style={{marginTop: '10px' }}>Total Value Locked</h2>
              
-              <CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />
+              <CountUp style={{ fontSize: '25px'}} end={TVL} separator="," prefix="$" />
             </CardContent>
           </Card>
         </Grid>
@@ -237,6 +237,9 @@ const Home = () => {
               </Button>
               <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x92a7b2a9ca7d70573e3a0b0bf9e5232c70db8a89" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '5px' }}>
               MSHARE Chart
+            </Button>
+            <Button color="primary" target="_blank" href="https://linktr.ee/miniverseclub3" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '5px' }}>
+              Buy NFT's
             </Button>
             </CardContent>
           </Card>

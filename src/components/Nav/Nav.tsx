@@ -108,6 +108,12 @@ const Nav = () => {
               <Link color="textPrimary" to="/farms" className={classes.link}>
                 Farms
               </Link>
+              <Link color="textPrimary" to="/boardroom" className={classes.link}>
+                Boardroom
+              </Link>
+              <a rel="noopener noreferrer" target='_blank' href="https://linktr.ee/miniverseclub2" className={classes.link}>
+              Auto Compounder
+              </a>  
            {/*   <a href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
                 Land Mint
         </a>*/}
@@ -121,9 +127,7 @@ const Nav = () => {
               Miniland
               </Link>
     
-              <Link color="textPrimary" to="/boardroom" className={classes.link}>
-                Boardroom
-              </Link>
+             
               <Link color="textPrimary" to="/bonds" className={classes.link}>
                 Bonds
               </Link>
@@ -133,9 +137,7 @@ const Nav = () => {
               <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
               </Link>
-              <a rel="noopener noreferrer" href="https://yieldwolf.finance/fantom/mvfinance" className={classes.link}>
-              Yield Wolf
-              </a>  
+            
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
                 Dividends
               </Link> */}
@@ -197,6 +199,9 @@ const Nav = () => {
                 <ListItemLink primary="HOME" to="/" />
                 <ListItemLink primary="FARMS" to="/farms" />
                 <ListItemLink primary="BOARDROOM" to="/boardroom" />
+                <ListItem button target='_blank' component="a" href="https://linktr.ee/miniverseclub2">
+                  <ListItemText>Auto Compounder</ListItemText>
+                </ListItem>  
                 <ListItemLink primary="MiniChilla" to="/minichilla" />
                 <ListItemLink primary="MiniGuinea" to="/miniguinea" />
                 <ListItemLink primary="MiniLand" to="/miniland" />
@@ -204,9 +209,7 @@ const Nav = () => {
                 <ListItemLink primary="BONDS" to="/bonds" />
                 <ListItemLink primary="STRATEGY" to="/strategy" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
-                <ListItem button component="a" href="https://yieldwolf.finance/fantom/mvfinance">
-                  <ListItemText>Yield Wolf</ListItemText>
-                </ListItem>  
+               
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>DOCS</ListItemText>
                 </ListItem>
