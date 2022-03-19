@@ -207,7 +207,7 @@ const Nav = () => {
                 <ListItemLink primary="MiniLand" to="/miniland" />
                 
                 <ListItemLink primary="BONDS" to="/bonds" />
-                <ListItemLink primary="STRATEGY" to="/strategy" />
+                <ListItemLink primary="STRATEGY" to="/strategies" />
                 <ListItemLink primary="RAFFLE" to="/raffle" />
                
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
