@@ -10,6 +10,8 @@ import Spacer from '../../components/Spacer';
 import strat from '../../assets/img/1.png';
 import strat2 from '../../assets/img/2.png';
 import strat3 from '../../assets/img/3.png';
+import strat4 from '../../assets/img/4.png';
+import strat5 from '../../assets/img/5.png';
 import { Grid , Box, Container, Button } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import PitImage from '../../assets/img/background.png';
@@ -73,6 +75,8 @@ const Bond: React.FC = () => {
                   <img src={strat} width={'100%'} />     
                   <img src={strat2} width={'100%'} />   
                   <img src={strat3} width={'100%'} />   
+                  <img src={strat4} width={'100%'} />   
+                  <img src={strat5} width={'100%'} />   
               
              
 </Page>

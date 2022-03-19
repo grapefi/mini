@@ -226,9 +226,7 @@ const Home = () => {
               >
                 Buy MvDOLLAR
               </Button>
-              {/* <Button variant="contained" target="_blank" href={buyTShareAddress} className={classes.button}>
-                Buy 2SHARE
-              </Button> */}
+    
               <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MSHARE
               </Button>
