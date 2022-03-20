@@ -265,7 +265,7 @@ export class TombFinance {
 
     const filterTo = tomb.filters.Transfer(account, raffleAddress);
 
-    const logsTo = await tomb.queryFilter(filterTo, -200000, currentBlockNumber);
+    const logsTo = await tomb.queryFilter(filterTo, -2048, currentBlockNumber);
 
     if (logsTo.length !== 0 && account !== null) {
       for (let i = 0; i < logsTo.length; i++) {

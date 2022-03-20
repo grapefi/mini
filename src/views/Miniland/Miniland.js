@@ -146,7 +146,14 @@ const Cemetery = () => {
           <BackgroundImage />
           <div style={{ textAlign: 'center', color: 'white' }}>
           <h2 style={{ fontSize: '80px', textAlign:'center', marginBottom: '50px' }}>Miniland NFT Staking</h2>
-        
+          <Grid container justify="center" spacing={0} style={{marginTop: '40px', marginBottom: '40px'}}>
+              <Button color="primary" target="_blank" href="https://nftkey.app/collections/miniland/" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+                Buy on NFTKey
+              </Button>
+              <Button color="primary" target="_blank" href="https://paintswap.finance/marketplace/collections/0xc1e87be1055509081ea73a0fd5d3d70f6573dc99" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+                Buy on Paintswap
+              </Button>
+          </Grid>
             <span style={{ fontSize: '36px' }}>
               { parseInt(nftStakedTotalSupply * 100 / nftTotalSupply) } % Miniland STAKED
             </span>
