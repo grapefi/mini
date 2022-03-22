@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textTransform: 'uppercase',
     color: '#fff',
-    fontSize: '18px',
+    fontSize: '16px',
     margin: theme.spacing(1, 2),
     textDecoration: 'none',
     '&:hover': {
@@ -112,7 +112,7 @@ const Nav = () => {
                 Boardroom
               </Link>
               <a rel="noopener noreferrer" target='_blank' href="https://linktr.ee/miniverseclub2" className={classes.link}>
-              Auto Compounder
+              Compounder
               </a>  
            {/*   <a href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
                 Land Mint
@@ -126,8 +126,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/miniland" className={classes.link}>
               Miniland
               </Link>
-    
-             
+              <a rel="noopener noreferrer" target='_blank' href="https://mvdollar-slot.vercel.app/" className={classes.link}>
+              Slots
+              </a>  
               <Link color="textPrimary" to="/bonds" className={classes.link}>
                 Bonds
               </Link>
@@ -137,7 +138,7 @@ const Nav = () => {
               <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
               </Link>
-            
+              
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
                 Dividends
               </Link> */}
@@ -196,22 +197,24 @@ const Nav = () => {
               </div>
               <Divider />
               <List>
-                <ListItemLink primary="HOME" to="/" />
-                <ListItemLink primary="FARMS" to="/farms" />
-                <ListItemLink primary="BOARDROOM" to="/boardroom" />
+                <ListItemLink primary="Home" to="/" />
+                <ListItemLink primary="Farms" to="/farms" />
+                <ListItemLink primary="Boardroom" to="/boardroom" />
                 <ListItem button target='_blank' component="a" href="https://linktr.ee/miniverseclub2">
                   <ListItemText>Auto Compounder</ListItemText>
                 </ListItem>  
                 <ListItemLink primary="MiniChilla" to="/minichilla" />
                 <ListItemLink primary="MiniGuinea" to="/miniguinea" />
                 <ListItemLink primary="MiniLand" to="/miniland" />
-                
-                <ListItemLink primary="BONDS" to="/bonds" />
-                <ListItemLink primary="STRATEGY" to="/strategies" />
-                <ListItemLink primary="RAFFLE" to="/raffle" />
+                <ListItem button target='_blank' component="a" href="https://mvdollar-slot.vercel.app/">
+                  <ListItemText>Slots</ListItemText>
+                </ListItem> 
+                <ListItemLink primary="Bonds" to="/bonds" />
+                <ListItemLink primary="Strategy" to="/strategies" />
+                <ListItemLink primary="Raffle" to="/raffle" />
                
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
-                  <ListItemText>DOCS</ListItemText>
+                  <ListItemText>Docs</ListItemText>
                 </ListItem>
                 <ListItem style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <AccountButton text="Connect" />

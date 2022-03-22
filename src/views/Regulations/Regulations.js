@@ -96,7 +96,7 @@ const Regulations = () => {
           <TableBody>
             {rows?.map((row, index) => (
               <StyledTableRow
-                style={index % 2 ? { background: 'rgba(255,255,255,0.9)' } : { background: 'rgba(255,255,255,0.8)' }}
+                style={index % 2 ? { background: 'rgba(0,0,0,0.9)' } : { background: 'rgba(0,0,0,0.8)' }}
                 key={row.epoch}
               >
                 <StyledTableCell style={{ color: '#2c2560' }} align="center" component="th" scope="row">

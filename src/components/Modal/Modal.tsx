@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Card from '../Card';
+
 import CardContent from '../CardContent';
 import Container from '../Container';
 
@@ -24,6 +24,14 @@ const Modal: React.FC = ({ children }) => {
 const StyledModal = styled.div`
   border-radius: 12px;
   position: relative;
+  color: #fff;
 `;
+
+const Card = styled.div`
+  border-radius: 12px;
+  position: relative;
+  background: #1d2953e0;
+`;
+
 
 export default Modal;
