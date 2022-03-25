@@ -90,6 +90,8 @@ const Nav = () => {
     setOpen(false);
   };
 
+
+
   return (
     <AppBar position="sticky" elevation={0} className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
@@ -114,21 +116,23 @@ const Nav = () => {
               <a rel="noopener noreferrer" target='_blank' href="https://linktr.ee/miniverseclub2" className={classes.link}>
               Compounder
               </a>  
-           {/*   <a href="https://miniverse-mint-dapp.vercel.app/" className={classes.link}>
-                Land Mint
-        </a>*/}
-              <Link color="textPrimary" to="/minichilla" className={classes.link}>
-              Minichilla
-              </Link>
-              <Link color="textPrimary" to="/miniguinea" className={classes.link}>
-              Miniguinea
-              </Link>
-              <Link color="textPrimary" to="/miniland" className={classes.link}>
-              Miniland
-              </Link>
-              <a rel="noopener noreferrer" target='_blank' href="https://mvdollar-slot.vercel.app/" className={classes.link}>
+              <a rel="noopener noreferrer" target='_blank' href="https://slot.mvfinance.club/" className={classes.link}>
               Slots
               </a>  
+              <div className={'dropdown'}>
+                <button className={'dropbtn'}>NFT STAKING</button>
+                  <div className={'dropdown-content'}>
+                    <Link color="textPrimary" to="/minichilla" className={classes.link}>
+                      Minichilla
+                    </Link>
+                    <Link color="textPrimary" to="/miniguinea" className={classes.link}>
+                      Miniguinea
+                    </Link>
+                    <Link color="textPrimary" to="/miniland" className={classes.link}>
+                      Miniland
+                    </Link>
+                  </div>
+              </div>
               <Link color="textPrimary" to="/bonds" className={classes.link}>
                 Bonds
               </Link>
@@ -138,7 +142,7 @@ const Nav = () => {
               <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
               </Link>
-              
+
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
                 Dividends
               </Link> */}
@@ -206,7 +210,7 @@ const Nav = () => {
                 <ListItemLink primary="MiniChilla" to="/minichilla" />
                 <ListItemLink primary="MiniGuinea" to="/miniguinea" />
                 <ListItemLink primary="MiniLand" to="/miniland" />
-                <ListItem button target='_blank' component="a" href="https://mvdollar-slot.vercel.app/">
+                <ListItem button target='_blank' component="a" href="https://slot.mvfinance.club/">
                   <ListItemText>Slots</ListItemText>
                 </ListItem> 
                 <ListItemLink primary="Bonds" to="/bonds" />

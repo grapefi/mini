@@ -19,7 +19,7 @@ import useStakedBalanceOnMasonry from '../../hooks/useStakedBalanceOnMasonry';
 import { getDisplayBalance } from '../../utils/formatBalance';
 import useCurrentEpoch from '../../hooks/useCurrentEpoch';
 import useFetchMasonryAPR from '../../hooks/useFetchMasonryAPR';
-
+import useStakedTokenPriceInDollars from '../../hooks/useStakedTokenPriceInDollars';
 import useCashPriceInEstimatedTWAP from '../../hooks/useCashPriceInEstimatedTWAP';
 import useTreasuryAllocationTimes from '../../hooks/useTreasuryAllocationTimes';
 import useTotalStakedOnMasonry from '../../hooks/useTotalStakedOnMasonry';
@@ -29,6 +29,8 @@ import ProgressCountdown from './components/ProgressCountdown';
 import MasonryImage from '../../assets/img/background.png';
 import { createGlobalStyle } from 'styled-components';
 import PitImage from '../../assets/img/background.png';
+import usebShareStats from '../../hooks/usetShareStats';
+import useTombFinance from '../../hooks/useTombFinance';
 
 const BackgroundImage = createGlobalStyle`
   body {
@@ -49,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Masonry = () => {
+  const tombFinance = useTombFinance();
   const classes = useStyles();
   const { account } = useWallet();
   const { onRedeem } = useRedeemOnMasonry();
@@ -57,11 +60,25 @@ const Masonry = () => {
   const cashStat = useCashPriceInEstimatedTWAP();
   const totalStaked = useTotalStakedOnMasonry();
   const masonryAPR = useFetchMasonryAPR();
-
+  const bShareStats = usebShareStats();
   const canClaimReward = useClaimRewardCheck();
   const canWithdraw = useWithdrawCheck();
   const scalingFactor = useMemo(() => (cashStat ? Number(cashStat.priceInDollars).toFixed(4) : null), [cashStat]);
   const { to } = useTreasuryAllocationTimes();
+
+  const stakedTokenPriceInDollars = useStakedTokenPriceInDollars('MSHARE', tombFinance.TSHARE);
+  const tokenPriceInDollars = useMemo(
+    () =>
+      stakedTokenPriceInDollars
+        ? (Number(stakedTokenPriceInDollars) * Number(getDisplayBalance(stakedBalance))).toFixed(2).toString()
+        : null,
+    [stakedTokenPriceInDollars, stakedBalance],
+  );
+
+  const rewards = ((masonryAPR.toFixed(2)/365)/100)*tokenPriceInDollars;
+
+  const stake = Number(getDisplayBalance(totalStaked)).toFixed(0);
+  const tvl = stake*stakedTokenPriceInDollars;
 
   return (
     <Page>
@@ -84,18 +101,10 @@ const Masonry = () => {
               <Grid item xs={12} md={2} lg={2} className={classes.gridItem}>
                 <Card className={classes.gridItem}>
                   <CardContent align="center">
-                    <Typography>Current Epoch</Typography>
-                    <Typography>{Number(currentEpoch)}</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={2} lg={2} className={classes.gridItem}>
-                <Card className={classes.gridItem}>
-                  <CardContent align="center">
                     <Typography>
-                      MvDOLLAR (TWAP)
+                      Epoch | TWAP
                     </Typography>
-                    <Typography>{scalingFactor}</Typography>
+                    <Typography>{Number(currentEpoch)} | {scalingFactor}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
@@ -115,7 +124,25 @@ const Masonry = () => {
                   </CardContent>
                 </Card>
               </Grid>
+              <Grid item xs={12} md={2} lg={2}>
+                <Card className={classes.gridItem}>
+                  <CardContent align="center">
+                    <Typography style={{textTransform: 'uppercase'}}>TVL</Typography>
+                    <Typography>${tvl ? (Number((Number(tvl).toFixed(0)))).toLocaleString('en-US') : '-.--'}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={2} lg={2}>
+                <Card className={classes.gridItem}>
+                  <CardContent align="center">
+                    <Typography style={{textTransform: 'uppercase'}}>Est Reward/Day</Typography>
+                    <Typography>~${rewards ? Number(rewards).toLocaleString('en-US') : '0.00'}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+           
             </Grid>
+            
 
             <Grid container justify="center">
               <Box mt={3} style={{ width: '600px' }}>
