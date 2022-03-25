@@ -23,12 +23,12 @@ const CemeteryCard = ({ bank }) => {
     <Grid item xs={12} md={4} lg={4}>
       <Card variant="outlined">
         <CardContent>
-       {/* <AprModal
+       <AprModal
             open={modalOpen}
             handleClose={handleCloseModal}
             statsOnPool={statsOnPool}
             coin={bank.depositTokenName}
-       />*/}
+       />
           <Box style={{ position: 'relative' }}>
           <Box
               style={{
@@ -57,9 +57,9 @@ const CemeteryCard = ({ bank }) => {
             <b>Daily APR:</b> {bank.closedForStaking ? '0.00' : statsOnPool?.dailyAPR}%<br></br>
             <b>Yearly APR:</b> {bank.closedForStaking ? '0.00' : statsOnPool?.yearlyAPR}%
             </Typography>
-          {/* <Box
+           <Box
               onClick={handleOpenModal}
-              sx={{
+              style={{
                 display: 'flex',
                 alignItems: 'center',
                 gap: '5px',
@@ -67,7 +67,7 @@ const CemeteryCard = ({ bank }) => {
               }}
             >
               <Typography><b><u>APR Calc</u></b></Typography> <SwapVerticalCircleIcon />
-            </Box>*/}
+            </Box>
           </Box>
         </CardContent>
         <CardActions style={{ justifyContent: 'flex-end' }}>

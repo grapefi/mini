@@ -56,8 +56,8 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 'min(90%, 450px)',
-  bgcolor: '#fff',
-  p: '24px',
+  backgroundColor: '#fff',
+  padding: '24px',
   display: 'flex',
   flexDirection: 'column',
   outline: 'none',
@@ -92,14 +92,14 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
 
   return (
     <Modal open={open} >
-      <Box sx={style}>
-        <Box sx={{
+      <Box style={style}>
+        <Box style={{
             display: 'flex',
             justifyContent: 'flex-end',
           }}        
         >
           <Box
-            sx={{
+            style={{
               cursor: 'pointer',
             }}
             onClick={() => {
@@ -111,23 +111,23 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
           </Box>
         </Box>
         <Box
-          sx={{
+          style={{
             display: 'flex',
             flexDirection: 'column',
           }}
         >
           <Typography className={classes.text}>{coin} Deposited:</Typography>
           <Box
-            sx={{
+            style={{
               borderRadius: '10px',
               bgcolor: '#eff2f4',
               border: '1px solid #d0d3d4',
-              p: '10px',
+              padding: '10px',
               mt: '10px',
             }}
           >
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
@@ -150,42 +150,42 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
             </button>
           </Box>
           <Box
-            sx={{
+            style={{
               display: 'flex',
               flexDirection: 'column',
               marginTop: '20px',
             }}
           >
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
               }}
             >
-              <Box sx={{width: '50px'}}>
+              <Box style={{width: '50px'}}>
                 <Typography className={classes.subTitle}>Time</Typography>
               </Box>
-              <Box sx={{width: '75px'}}>
+              <Box style={{width: '75px'}}>
                 <Typography className={classes.subTitle}>APR</Typography>
               </Box>
               <Typography className={classes.subTitle}>MSHARE Per ${aprAmount}</Typography>
             </Box>
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
               }}
             >
-              <Box sx={{width: '50px'}}>
+              <Box style={{width: '50px'}}>
                 <Typography className={classes.text}>1d</Typography>
               </Box>
-              <Box sx={{width: '75px'}}>
+              <Box style={{width: '75px'}}>
                 <Typography className={classes.text}>{statsOnPool?.dailyAPR}%</Typography>
               </Box>
               <Box
-                sx={{
+                style={{
                   display: 'flex',
                   gap: '4px',
                   alignItems: 'baseline',
@@ -198,20 +198,20 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
               </Box>
             </Box>
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
               }}
             >
-              <Box sx={{width: '50px'}}>
+              <Box style={{width: '50px'}}>
                 <Typography className={classes.text}>7d</Typography>
               </Box>
-              <Box sx={{width: '75px'}}>
+              <Box style={{width: '75px'}}>
                 <Typography className={classes.text}>{(statsOnPool?.dailyAPR * 7).toFixed(2)}%</Typography>
               </Box>
               <Box
-                sx={{
+                style={{
                   display: 'flex',
                   gap: '4px',
                   alignItems: 'baseline',
@@ -224,20 +224,20 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
               </Box>
             </Box>
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
               }}
             >
-              <Box sx={{width: '50px'}}>
+              <Box style={{width: '50px'}}>
                 <Typography className={classes.text}>30d</Typography>
               </Box>
-              <Box sx={{width: '75px'}}>
+              <Box style={{width: '75px'}}>
                 <Typography className={classes.text}>{(statsOnPool?.dailyAPR * 30).toFixed(2)}%</Typography>
               </Box>
               <Box
-                sx={{
+                style={{
                   display: 'flex',
                   gap: '4px',
                   alignItems: 'baseline',
@@ -252,20 +252,20 @@ const AprModal = ({open, handleClose, statsOnPool, coin}) => {
               </Box>
             </Box>
             <Box
-              sx={{
+              style={{
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
               }}
             >
-              <Box sx={{width: '50px'}}>
+              <Box style={{width: '50px'}}>
                 <Typography className={classes.text}>365d</Typography>
               </Box>
-              <Box sx={{width: '75px'}}>
+              <Box style={{width: '75px'}}>
                 <Typography className={classes.text}>{statsOnPool?.yearlyAPR}%</Typography>
               </Box>
               <Box
-                sx={{
+                style={{
                   display: 'flex',
                   gap: '4px',
                   alignItems: 'baseline',
