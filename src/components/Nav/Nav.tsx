@@ -113,9 +113,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
                 Boardroom
               </Link>
-              <a rel="noopener noreferrer" target='_blank' href="https://linktr.ee/miniverseclub2" className={classes.link}>
-              Compounder
-              </a>  
+              <a rel="noopener noreferrer" target='_blank' href="https://minivip-pass-mint.vercel.app/" className={classes.link}>
+              VIP Mint
+              </a>          
               <a rel="noopener noreferrer" target='_blank' href="https://slot.mvfinance.club/" className={classes.link}>
               Slots
               </a>  
@@ -204,6 +204,9 @@ const Nav = () => {
                 <ListItemLink primary="Home" to="/" />
                 <ListItemLink primary="Farms" to="/farms" />
                 <ListItemLink primary="Boardroom" to="/boardroom" />
+                <ListItem button target='_blank' component="a" href="https://minivip-pass-mint.vercel.app/">
+                  <ListItemText>VIP Mint</ListItemText>
+                </ListItem>  
                 <ListItem button target='_blank' component="a" href="https://linktr.ee/miniverseclub2">
                   <ListItemText>Auto Compounder</ListItemText>
                 </ListItem>  
