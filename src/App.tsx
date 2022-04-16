@@ -28,7 +28,7 @@ const Raffle = lazy(() => import('./views/Raffle'));
 const Minichilla = lazy(() => import('./views/Minichilla'));
 const Miniguinea = lazy(() => import('./views/Miniguinea'));
 const Miniland = lazy(() => import('./views/Miniland'));
-
+const Nodes = lazy(() => import('./views/Nodes'));
 
 const NoMatch = () => (
   <h3 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
@@ -68,6 +68,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/boardroom">
               <Masonry />
+            </Route>
+            <Route path="/nodes">
+              <Nodes />
             </Route>
             <Route path="/bonds">
               <Pit />

@@ -113,6 +113,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
                 Boardroom
               </Link>
+              <Link color="textPrimary" to="/nodes/MSHARENode" className={classes.link}>
+                Node
+              </Link>
               <a rel="noopener noreferrer" target='_blank' href="https://minivip-pass-mint.vercel.app/" className={classes.link}>
               VIP Mint
               </a>          
@@ -133,6 +136,7 @@ const Nav = () => {
                     </Link>
                   </div>
               </div>
+              
               <Link color="textPrimary" to="/bonds" className={classes.link}>
                 Bonds
               </Link>
@@ -204,6 +208,7 @@ const Nav = () => {
                 <ListItemLink primary="Home" to="/" />
                 <ListItemLink primary="Farms" to="/farms" />
                 <ListItemLink primary="Boardroom" to="/boardroom" />
+                <ListItemLink primary="Node" to="/nodes/MSHARENode" />
                 <ListItem button target='_blank' component="a" href="https://minivip-pass-mint.vercel.app/">
                   <ListItemText>VIP Mint</ListItemText>
                 </ListItem>  
