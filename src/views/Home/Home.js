@@ -165,7 +165,7 @@ const Home = () => {
               </p>
               <p>
                 Join our{' '}
-                <a href="https://discord.com/invite/CxRWUGSyRv" rel="noopener noreferrer" target="_blank" style={{color: '#BBA14F'}}>
+                <a href="https://discord.gg/fr4w38NXX5" rel="noopener noreferrer" target="_blank" style={{color: '#BBA14F'}}>
                   Discord
                 </a>{' '}
                 & {' '}
