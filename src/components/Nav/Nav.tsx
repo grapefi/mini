@@ -116,6 +116,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/nodes/MSHARENode" className={classes.link}>
                 Node
               </Link>
+              <a rel="noopener noreferrer" target='_blank' href="https://breeding.mvfinance.club/" className={classes.link}>
+              Gamified NFT Nodes
+              </a>    
               <a rel="noopener noreferrer" target='_blank' href="https://minivip-pass-mint.vercel.app/" className={classes.link}>
               VIP Mint
               </a>          
@@ -143,9 +146,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/strategies" className={classes.link}>
                 Strategy
               </Link>
-              <Link color="textPrimary" to="/raffle" className={classes.link}>
+             {/* <Link color="textPrimary" to="/raffle" className={classes.link}>
                 Raffle
-              </Link>
+        </Link>*/}
 
               {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
                 Dividends
@@ -209,6 +212,9 @@ const Nav = () => {
                 <ListItemLink primary="Farms" to="/farms" />
                 <ListItemLink primary="Boardroom" to="/boardroom" />
                 <ListItemLink primary="Node" to="/nodes/MSHARENode" />
+                <ListItem button target='_blank' component="a" href="https://breeding.mvfinance.club/">
+                  <ListItemText>Gamified NFT Nodes</ListItemText>
+                </ListItem>  
                 <ListItem button target='_blank' component="a" href="https://minivip-pass-mint.vercel.app/">
                   <ListItemText>VIP Mint</ListItemText>
                 </ListItem>  
@@ -223,7 +229,7 @@ const Nav = () => {
                 </ListItem> 
                 <ListItemLink primary="Bonds" to="/bonds" />
                 <ListItemLink primary="Strategy" to="/strategies" />
-                <ListItemLink primary="Raffle" to="/raffle" />
+                
                
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>Docs</ListItemText>
