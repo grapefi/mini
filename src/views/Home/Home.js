@@ -67,8 +67,8 @@ const Home = () => {
   tShare = tShareProd;
   
 
-  const buyTombAddress = 'https://spookyswap.finance/swap?outputCurrency=0x7a6e4e3cc2ac9924605dca4ba31d1831c84b44ae'
-  const buyTShareAddress = 'https://spookyswap.finance/swap?outputCurrency=' + tShare.address;
+  const buyTombAddress = 'https://spooky.fi/#/swap?outputCurrency=0x7a6e4e3cc2ac9924605dca4ba31d1831c84b44ae'
+  const buyTShareAddress = 'https://spooky.fi/#/swap?outputCurrency=' + tShare.address;
 
   const tombLPStats = useMemo(() => (tombFtmLpStats ? tombFtmLpStats : null), [tombFtmLpStats]);
 
@@ -219,7 +219,7 @@ const Home = () => {
               <Button
                 color="primary"
                 target="_blank"
-                href="https://spookyswap.finance/swap?outputCurrency=0x57976c467608983513c9355238dc6de1B1aBbcCA&inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75"
+                href="https://spooky.fi/#/swap?outputCurrency=0x57976c467608983513c9355238dc6de1B1aBbcCA&inputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75"
                 variant="contained"
                 style={{ marginRight: '10px' }}
                 className={'shinyButton ' + classes.button}
@@ -227,7 +227,7 @@ const Home = () => {
                 Buy MvDOLLAR
               </Button>
     
-              <Button color="primary" target="_blank" href="https://spookyswap.finance/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
+              <Button color="primary" target="_blank" href="https://spooky.fi/#/swap?outputCurrency=0x04068da6c83afcfa0e13ba15a6696662335d5b75&inputCurrency=0xb011EC534d9175cD7a69aFBfc1bcc9990862c462" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '10px' }}>
                 Buy MSHARE
               </Button>
               <Button color="primary" target="_blank" href="https://dexscreener.com/fantom/0x35bed1e2f3033395a05cd0b1b5900209ece42774" variant="contained" className={'shinyButton ' + classes.button} style={{ marginRight: '5px', fontSize: '1px !important' }}>
