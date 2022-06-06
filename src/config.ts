@@ -9,7 +9,7 @@ const configurations: { [env: string]: Configuration } = {
     chainId: ChainId.MAINNET,
     networkName: 'Fantom Opera Mainnet',
     ftmscanUrl: 'https://ftmscan.com',
-    defaultProvider: 'https://speedy-nodes-nyc.moralis.io/c08b37a3229dc8b77831e710/fantom/mainnet',
+    defaultProvider: 'https://rpc.ftm.tools/',
     deployments: require('./tomb-finance/deployments/deployments.mainnet.json'),
     externalTokens: {
       WFTM: ['0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83', 18],
