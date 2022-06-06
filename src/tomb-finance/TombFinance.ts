@@ -520,7 +520,7 @@ export class TombFinance {
     const TSHAREPrice = (await this.getShareStat()).priceInDollars;
     const masonrytShareBalanceOf = await this.TSHARE.balanceOf(this.currentMasonry().address);
     const masonryTVL = Number(getDisplayBalance(masonrytShareBalanceOf, this.TSHARE.decimal)) * Number(TSHAREPrice);
-    console.log('oiu', totalValue);
+
     return totalValue + masonryTVL;
   }
 

@@ -9,15 +9,15 @@ const configurations: { [env: string]: Configuration } = {
     chainId: ChainId.MAINNET,
     networkName: 'Fantom Opera Mainnet',
     ftmscanUrl: 'https://ftmscan.com',
-    defaultProvider: 'https://rpc.ftm.tools/',
+    defaultProvider: 'https://speedy-nodes-nyc.moralis.io/c08b37a3229dc8b77831e710/fantom/mainnet',
     deployments: require('./tomb-finance/deployments/deployments.mainnet.json'),
     externalTokens: {
-      WFTM: ['0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83', 18],
+      WFTM: ['0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83', 18],
       FUSDT: ['0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6], // This is actually usdc on mainnet not fusdt
       WETH: ['0x74b23882a30290451A17c44f4F05243b6b58C76d', 18], // BOO: 0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE 18
       TOMB: ['0x6c021ae822bea943b2e66552bde1d2696a53fbb7', 18], // ZOO: 0x09e145a1d53c0045f41aeef25d8ff982ae74dd56 0
-      USDC: ['0x04068da6c83afcfa0e13ba15a6696662335d5b75', 6], // SHIBA: 0x9ba3e4f84a34df4e08c112e1a0ff148b81655615 9
-      FANG: ['0x49894fcc07233957c35462cfc3418ef0cc26129f', 18],
+      USDC: ['0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6], // SHIBA: 0x9ba3e4f84a34df4e08c112e1a0ff148b81655615 9
+      FANG: ['0x49894fCC07233957c35462cfC3418Ef0CC26129f', 18],
       MvDOLLAR: ['0x57976c467608983513c9355238dc6de1B1aBbcCA', 18],
       MSHARE: ['0xb011EC534d9175cD7a69aFBfc1bcc9990862c462', 18],
       'USDT-FTM-LP': ['0x2b4C76d0dc16BE1C31D4C1DC53bF9B45987Fc75c', 18],
@@ -57,7 +57,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'WFTM',
     earnTokenName: 'MvDOLLAR',
     multiplier: "100x",
-    finished: false,
+    finished: true,
     sort: 1,
     closedForStaking: true,
   },
@@ -69,7 +69,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'USDC',
     earnTokenName: 'MvDOLLAR',
     multiplier: "50x",
-    finished: false,
+    finished: true,
     sort: 2,
     closedForStaking: true,
   },
@@ -81,7 +81,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'FANG',
     earnTokenName: 'MvDOLLAR',
     multiplier: "25x",
-    finished: false,
+    finished: true,
     sort: 3,
     closedForStaking: true,
   },
@@ -93,7 +93,7 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     depositTokenName: 'MVDOLLAR-USDC-LP',
     earnTokenName: 'MvDOLLAR',
     multiplier: "100x",
-    finished: false,
+    finished: true,
     sort: 4,
     closedForStaking: true,
   },
