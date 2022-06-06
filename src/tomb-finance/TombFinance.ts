@@ -306,7 +306,6 @@ export class TombFinance {
     const poolContract = this.contracts[bank.contract];
 
     if (bank.sectionInUI === 3) {
-      if (bank.sectionInUI === 3) {
         const [depositTokenPrice, points, totalPoints, tierAmount, poolBalance, totalBalance, dripRate, dailyUserDrip] = await Promise.all([
           this.getDepositTokenPriceInDollars(bank.depositTokenName, depositToken),
           poolContract.tierAllocPoints(bank.poolId),
@@ -318,7 +317,6 @@ export class TombFinance {
           poolContract.getDayDripEstimate(this.myAccount),
         ]);
         const stakeAmount = Number(getDisplayBalance(tierAmount))
-        // const userStakePrice = Number(depositTokenPrice) * Number(getDisplayBalance(user.total_deposits))
   
         const dailyDrip = totalPoints && +totalPoints > 0 
           ? getDisplayBalance(poolBalance.mul(BigNumber.from(86400)).mul(points).div(totalPoints).div(dripRate)) 
@@ -328,10 +326,7 @@ export class TombFinance {
         
         const dailyDripUser = Number(getDisplayBalance(dailyUserDrip));
         const yearlyDripUser = Number(dailyDripUser) * 365;
-        // const dailyDripUserPricePerYear = Number(empStat.priceInDollars) * Number(dailyDripUser);
-        // const yearlyDripUserPricePerYear = Number(empStat.priceInDollars) * Number(yearlyDripUser);
-        // const dailyDripUserAPR = (dailyDripUserPricePerYear / userStakePrice) * 100;
-        // const yearlyDripUserAPR = (yearlyDripUserPricePerYear / userStakePrice) * 100;
+  
         
         const TVL = Number(depositTokenPrice) * Number(getDisplayBalance(totalBalance, depositToken.decimal));
   
@@ -342,7 +337,6 @@ export class TombFinance {
           yearlyAPR: yearlyDripAPR.toFixed(2).toString(),
           TVL: TVL.toFixed(2).toString(),
         };
-      }
     } else {
     const depositTokenPrice = await this.getDepositTokenPriceInDollars(bank.depositTokenName, depositToken);
 
@@ -412,13 +406,13 @@ export class TombFinance {
     }
     const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
-      return rewardPerSecond.mul(23000).div(41000);
+      return rewardPerSecond.mul(9500).div(41000);
     } else if (depositTokenName.startsWith('MSHARE-USDC')) {
-      return rewardPerSecond.mul(10500).div(41000);
+      return rewardPerSecond.mul(1500).div(41000);
     }else if (depositTokenName.startsWith('MVDOLLAR-MSHARE-LP')) {
       return rewardPerSecond.mul(50).div(41000);
     }else {
-      return rewardPerSecond.mul(7900).div(41000)
+      return rewardPerSecond.mul(30000).div(41000)
     }
   }
 
