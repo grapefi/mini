@@ -210,10 +210,10 @@ const Home = () => {
         <Grid item xs={12} sm={8}>
           <Card style={{ height: '100%' }}>
             <CardContent align="center" style={{ }}>   
-              <Button color="primary" href="/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
+              <Button color="primary" href="#/farms" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '0px' }}>
                 Farm
               </Button>
-              <Button color="primary" href="/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
+              <Button color="primary" href="#/boardroom" variant="contained" className={'shinyButton ' + classes.button} style={{ margin: '10px' }}>
                 Stake
               </Button>
               <Button
