@@ -406,13 +406,15 @@ export class TombFinance {
     }
     const rewardPerSecond = await poolContract.MvSHAREPerSecond();
     if (depositTokenName.startsWith('MVDOLLAR-USDC')) {
-      return rewardPerSecond.mul(9500).div(41000);
+      return rewardPerSecond.mul(9000).div(41000);
     } else if (depositTokenName.startsWith('MSHARE-USDC')) {
       return rewardPerSecond.mul(1450).div(41000);
     }else if (depositTokenName.startsWith('MVDOLLAR-MSHARE-LP')) {
       return rewardPerSecond.mul(50).div(41000);
+    }else if (depositTokenName.startsWith('MvBOND')) {
+      return rewardPerSecond.mul(20000).div(41000);
     }else {
-      return rewardPerSecond.mul(30000).div(41000)
+      return rewardPerSecond.mul(10500).div(41000)
     }
   }
 
@@ -442,6 +444,9 @@ export class TombFinance {
         tokenPrice = '1';
       }else if (tokenName === 'MSHARE') {
         const price = await this.getShareStat();
+        tokenPrice = price.priceInDollars;
+      }else if (tokenName === 'MvBOND') {
+        const price = await this.getBondStat();
         tokenPrice = price.priceInDollars;
       }else if (tokenName === 'MvDOLLAR') {
         const price = await this.getTombStat();
