@@ -122,8 +122,8 @@ const Nav = () => {
               <a rel="noopener noreferrer" target='_blank' href="https://minivip-pass-mint.vercel.app/" className={classes.link}>
               VIP Mint
               </a>          
-              <a rel="noopener noreferrer" target='_blank' href="https://slot.mvfinance.club/" className={classes.link}>
-              Slots
+              <a rel="noopener noreferrer" target='_blank' href="https://mv-casino.vercel.app/" className={classes.link}>
+              Casino
               </a>  
               <div className={'dropdown'}>
                 <button className={'dropbtn'}>NFT STAKING</button>
@@ -224,8 +224,8 @@ const Nav = () => {
                 <ListItemLink primary="MiniChilla" to="/minichilla" />
                 <ListItemLink primary="MiniGuinea" to="/miniguinea" />
                 <ListItemLink primary="MiniLand" to="/miniland" />
-                <ListItem button target='_blank' component="a" href="https://slot.mvfinance.club/">
-                  <ListItemText>Slots</ListItemText>
+                <ListItem button target='_blank' component="a" href="https://mv-casino.vercel.app/">
+                  <ListItemText>Casino</ListItemText>
                 </ListItem> 
                 <ListItemLink primary="Bonds" to="/bonds" />
                 <ListItemLink primary="Strategy" to="/strategies" />
