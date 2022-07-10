@@ -169,7 +169,7 @@ const Nav = () => {
               <a target="_blank" href="https://miniversefinance.gitbook.io/docs/" className={classes.link}>
                 Docs
               </a>
-              <a target="_blank" href="https://miniversefinance.gitbook.io/docs/" className={classes.link}>
+              <a target="_blank" href="https://miniverse.liquidcapital.finance/" className={classes.link}>
                 LC Presale (3% CASHBACK)
               </a>
             </Box>
