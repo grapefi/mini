@@ -234,6 +234,9 @@ const Nav = () => {
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>Docs</ListItemText>
                 </ListItem>
+                <ListItem button target='_blank' component="a" href="https://miniverse.liquidcapital.finance/">
+                  <ListItemText>LC Presale</ListItemText>
+                </ListItem>  
                 <ListItem style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <AccountButton text="Connect" />
                 </ListItem>
