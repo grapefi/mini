@@ -107,6 +107,9 @@ const Nav = () => {
               <Link color="textPrimary" to="/" className={classes.link}>
                 Home
               </Link>
+              <a target="_blank" href="https://miniverse.liquidcapital.finance/" className={classes.link}>
+                LC Presale(3% CASHBACK)
+              </a>
               <Link color="textPrimary" to="/farms" className={classes.link}>
                 Farms
               </Link>
@@ -169,9 +172,7 @@ const Nav = () => {
               <a target="_blank" href="https://miniversefinance.gitbook.io/docs/" className={classes.link}>
                 Docs
               </a>
-              <a target="_blank" href="https://miniverse.liquidcapital.finance/" className={classes.link}>
-                LC Presale (3% CASHBACK)
-              </a>
+              
             </Box>
             <AccountButton text="Connect" />
           </>
