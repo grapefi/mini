@@ -18,8 +18,9 @@ import useStatsForPool from '../../hooks/useStatsForPool';
 import {Context} from '../../contexts/TombFinanceProvider';
 import useGrapeStats from '../../hooks/useTombStats';
 import useStakedTokenPriceInDollars from '../../hooks/useStakedTokenPriceInDollars';
-
+import useNodePrice from '../../hooks/useNodePrice';
 import {Alert} from '@material-ui/lab';
+import {getDisplayBalance} from '../../utils/formatBalance';
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {
@@ -36,7 +37,7 @@ const MshareNode = () => {
   const bank = useBank(bankId);
   const { getNodeText } = useNodeText();
   const { account } = useWallet();
-
+  const nodePrice = useNodePrice(bank?.contract, bank.poolId, bank.sectionInUI);
   const classes = useStyles();
   const [poolId, setPoolId] = useState(0);
   const LOCK_ID = 'LOCK_ID';
@@ -74,7 +75,10 @@ const MshareNode = () => {
                           <b style={{ color: '#FFF', marginRight: '0px' }}>
                             {nodes[0].toString()}
                           </b> |  <b style={{ color: '#FFF', marginRight: '0px' }}>
-                            ${bank.depositTokenName === 'MvDOLLAR' ? (nodes[0] * (tokenPriceInDollars*50)).toFixed(0) : (nodes[0] * (tokenPriceInDollars*0.5)).toFixed(0)}
+                            ${(
+                          nodes[0] *
+                          (tokenPriceInDollars * getDisplayBalance(nodePrice, bank.depositToken.decimal, 1))
+                        ).toFixed(0)}
                            
                           </b>
                           

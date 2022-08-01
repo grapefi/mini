@@ -561,6 +561,9 @@ export class TombFinance {
       if (earnTokenName === 'MSHARE' && poolName.includes('Node')) {
         return await pool.getTotalRewards(account);
       }
+      if (earnTokenName === 'MvDOLLAR' && poolName.includes('Node')) {
+        return await pool.getTotalRewards(account);
+      }
       if (earnTokenName === 'MvDOLLAR') {
         return await pool.pendingMvDOLLAR(poolId, account);
       } else {

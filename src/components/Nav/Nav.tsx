@@ -101,22 +101,18 @@ const Nav = () => {
             <a rel="noopener noreferrer" href="https://mvfinance.club/" className={classes.link}>
               <img alt="MiniVerse" src={mvLogo} height="50px" style={{marginTop: '15px'}} />
               </a> 
-            </Typography>
-            
+            </Typography>        
             <Box mr={5}>
               <Link color="textPrimary" to="/" className={classes.link}>
                 Home
-              </Link>
-              <a target="_blank" href="https://miniverse.liquidcapital.finance/" className={classes.link}>
-                LC Presale(3% CASHBACK)
-              </a>
+              </Link>            
               <Link color="textPrimary" to="/farms" className={classes.link}>
                 Farms
               </Link>
               <Link color="textPrimary" to="/boardroom" className={classes.link}>
                 Boardroom
               </Link>
-              <Link color="textPrimary" to="/nodes/MSHARENode" className={classes.link}>
+              <Link color="textPrimary" to="/nodes" className={classes.link}>
                 Node
               </Link>
              <a rel="noopener noreferrer" target='_blank' href="https://breeding.mvfinance.club/" className={classes.link}>
@@ -149,26 +145,6 @@ const Nav = () => {
               <Link color="textPrimary" to="/strategies" className={classes.link}>
                 Strategy
               </Link>
-             {/* <Link color="textPrimary" to="/raffle" className={classes.link}>
-                Raffle
-        </Link>*/}
-
-              {/* <Link color="textPrimary" to="/dividends" className={classes.link}>
-                Dividends
-              </Link> */}
-              {/* <Link color="textPrimary" to="/sbs" className={classes.link}>
-                SBS
-              </Link>
-              <Link color="textPrimary" to="/liquidity" className={classes.link}>
-                Liquidity
-              </Link>
-              <Link color="textPrimary" to="/regulations" className={classes.link}>
-                Regulations
-              </Link> */}
-             
-              {/* <a target="_blank" href="https://docs.2omb.finance/contracts/tokens" className={classes.link}>
-                Contracts
-              </a> */}
               <a target="_blank" href="https://miniversefinance.gitbook.io/docs/" className={classes.link}>
                 Docs
               </a>
@@ -214,7 +190,7 @@ const Nav = () => {
                 <ListItemLink primary="Home" to="/" />
                 <ListItemLink primary="Farms" to="/farms" />
                 <ListItemLink primary="Boardroom" to="/boardroom" />
-                <ListItemLink primary="Node" to="/nodes/MSHARENode" />
+                <ListItemLink primary="Node" to="/nodes" />
                 <ListItem button target='_blank' component="a" href="https://breeding.mvfinance.club/">
                   <ListItemText>Gamified NFT Nodes</ListItemText>
                 </ListItem>  
@@ -237,9 +213,6 @@ const Nav = () => {
                 <ListItem button component="a" href="https://miniversefinance.gitbook.io/docs/">
                   <ListItemText>Docs</ListItemText>
                 </ListItem>
-                <ListItem button target='_blank' component="a" href="https://miniverse.liquidcapital.finance/">
-                  <ListItemText>LC Presale (3% CASHBACK)</ListItemText>
-                </ListItem>  
                 <ListItem style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <AccountButton text="Connect" />
                 </ListItem>

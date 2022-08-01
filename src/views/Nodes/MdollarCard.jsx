@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 import {Box, Button, Card, CardActions, CardContent, Typography, Grid} from '@material-ui/core';
 import {useParams} from 'react-router-dom';
 import TokenSymbol from '../../components/TokenSymbol';
-import useBank from '../../hooks/useBank';
 import useStatsForPool from '../../hooks/useStatsForPool';
+import useBank from '../../hooks/useBank';
 
-const MshareCard = ({}) => {
-  const tombBank = useBank('MSHARENode');
+const MdollarCard = ({}) => {
+  const tombBank = useBank('MVDOLLARNode');
   const statsOnPool = useStatsForPool(tombBank);
+
   return (
     <Grid item xs={12} md={4} lg={4}>
       <Card variant="outlined">
@@ -28,20 +29,20 @@ const MshareCard = ({}) => {
                 justifyContent: 'center',
               }}
             >
-              <TokenSymbol size={32} symbol={'MSHARE'} />
+              <TokenSymbol size={32} symbol={'MvDOLLAR'} />
             </Box>
             <Typography variant="h5" component="h2">
-            Mshare Node
+            MvDollar Node
             </Typography>
             <Typography color="#322f32">
-              Lock your Mshare to earn daily yields<br></br>
+              Lock your MvDollar to earn daily yields<br></br>
               <b>Daily APR:</b> {statsOnPool?.dailyAPR}%<br></br>
               <b>Yearly APR:</b> {statsOnPool?.yearlyAPR}%
             </Typography>
           </Box>
         </CardContent>
         <CardActions style={{justifyContent: 'flex-end'}}>
-          <Button className="shinyButtonSecondary" component={Link} to={'/nodes/MSHARENode'}>
+          <Button className="shinyButtonSecondary" component={Link} to={'/nodes/MVDOLLARNode'}>
             View
           </Button>
         </CardActions>
@@ -50,4 +51,4 @@ const MshareCard = ({}) => {
   );
 };
 
-export default MshareCard;
+export default MdollarCard;

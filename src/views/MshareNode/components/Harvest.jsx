@@ -16,21 +16,22 @@ import TokenSymbol from '../../../components/TokenSymbol';
 import {Bank} from '../../../tomb-finance';
 import useGrapeStats from '../../../hooks/useTombStats';
 import useShareStats from '../../../hooks/usetShareStats';
+import useNodePrice from '../../../hooks/useNodePrice';
 
 const Harvest = ({bank}) => {
   const earnings = useEarnings(bank.contract, bank.earnTokenName, bank.poolId);
   const grapeStats = useGrapeStats();
   const tShareStats = useShareStats();
   const tokenStats = bank.earnTokenName === 'MSHARE' ? tShareStats : grapeStats;
-  
+  const nodePrice = useNodePrice(bank.contract, bank.poolId, bank.sectionInUI);
   const tokenPriceInDollars = useMemo(
     () => (tokenStats ? Number(tokenStats.priceInDollars).toFixed(2) : null),
     [tokenStats],
   );
-  const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earnings))).toFixed(2);
+  const earnedInDollars = (Number(tokenPriceInDollars) * Number(getDisplayBalance(earnings))).toFixed(4);
   const { onReward } = useHarvest(bank);
   const { onCompound } = useCompound(bank);
-
+console.log(earnedInDollars)
   return (
     <Card>
       <CardContent>
@@ -54,23 +55,15 @@ const Harvest = ({bank}) => {
               Claim
             </Button>
           </StyledCardActions>
-          {bank.earnTokenName === 'MSHARE' ?
+
           <Button
           style={{marginTop: '20px'}}
               onClick={onCompound}
-              disabled={earnings < 0.5*1e18}
-              className={earnings < 0.5*1e18 ? 'shinyButtonDisabled' : 'shinyButton'}
+              disabled={Number(earnings) < Number(nodePrice)}
+              className={Number(earnings) < Number(nodePrice) ? 'shinyButtonDisabled' : 'shinyButton'}
             >
-              Compound {(earnings/(0.5*1e18))|0} Nodes
-          </Button>:
-          <Button
-          style={{marginTop: '20px'}}
-              onClick={onCompound}
-              disabled={earnings < 50*1e18}
-              className={earnings < 50*1e18 ? 'shinyButtonDisabled' : 'shinyButton'}
-            >
-              Compound {(earnings/(50*1e18))|0} Nodes
-          </Button>}
+              Compound {(Number(earnings)/Number(nodePrice))|0} Nodes
+          </Button>
 
         </StyledCardContentInner>
       </CardContent>

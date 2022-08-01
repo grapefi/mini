@@ -74,7 +74,7 @@ const Stake = ({bank}) => {
         <StyledCardContentInner>
           <StyledCardHeader>
             <CardIcon>
-              <TokenSymbol symbol={'MSHARE'} size={54} />
+            {bank.earnTokenName === 'MSHARE' ? <TokenSymbol symbol={'MSHARE'} size={54} /> : <TokenSymbol symbol={'MvDOLLAR'} size={54} />}
             </CardIcon>
             <Typography style={{textTransform: 'uppercase', color: '#fff'}}>
               <Value value={getDisplayBalance(nodePrice, bank.depositToken.decimal, 1)} />

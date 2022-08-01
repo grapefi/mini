@@ -172,6 +172,18 @@ export const bankDefinitions: { [contractName: string]: BankInfo } = {
     sort: 4,
     closedForStaking: false,
   },
+  MVDOLLARNode: {
+    name: 'Generate MvDollar with Nodes',
+    poolId: 0,
+    sectionInUI: 3,
+    contract: 'MVDOLLARNode',
+    depositTokenName: 'MvDOLLAR',
+    earnTokenName: 'MvDOLLAR',
+    multiplier: "100x",
+    finished: false,
+    sort: 4,
+    closedForStaking: false,
+  },
 
 };
 
