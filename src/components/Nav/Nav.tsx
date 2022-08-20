@@ -117,10 +117,7 @@ const Nav = () => {
               </Link>
              <a rel="noopener noreferrer" target='_blank' href="https://breeding.mvfinance.club/" className={classes.link}>
               Gamified NFT Nodes
-            </a>    
-              <a rel="noopener noreferrer" target='_blank' href="https://minivip-pass-mint.vercel.app/" className={classes.link}>
-              VIP Mint
-              </a>          
+            </a>     
               <a rel="noopener noreferrer" target='_blank' href="https://mvcasino.mvfinance.club/#/" className={classes.link}>
               Casino
               </a>  
@@ -193,9 +190,6 @@ const Nav = () => {
                 <ListItemLink primary="Node" to="/nodes" />
                 <ListItem button target='_blank' component="a" href="https://breeding.mvfinance.club/">
                   <ListItemText>Gamified NFT Nodes</ListItemText>
-                </ListItem>  
-                <ListItem button target='_blank' component="a" href="https://minivip-pass-mint.vercel.app/">
-                  <ListItemText>VIP Mint</ListItemText>
                 </ListItem>  
                 <ListItem button target='_blank' component="a" href="https://linktr.ee/miniverseclub2">
                   <ListItemText>Auto Compounder</ListItemText>
