@@ -18,8 +18,6 @@ import usetShareStats from '../../hooks/usetShareStats';
 import useBurned2SHARES from '../../hooks/useBurned2SHARES.js';
 import useTotalValueLocked from '../../hooks/useTotalValueLocked';
 import { tomb as tombProd, tShare as tShareProd } from '../../tomb-finance/deployments/deployments.mainnet.json';
-import kyc from '../../assets/img/kyc.png';
-import audit from '../../assets/img/audit.jpg';
 import MetamaskFox from '../../assets/img/metamask-fox.svg';
 import PitImage from '../../assets/img/background.png';
 import { Box, Button, Card, CardContent, Grid, Paper } from '@material-ui/core';
