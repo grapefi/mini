@@ -177,7 +177,6 @@ const Home = () => {
                 </a>{' '}
                 to find out more!
               </p>
-              <a href="https://www.apeoclock.com/launch/miniverse-finance-launch/" target="_blank"><img src={kyc} width="150px"/></a><a style={{marginLeft: '10px'}} href="https://github.com/0xGuard-com/audit-reports/blob/master/mini-verse/miniverse-report.pdf" target="_blank"><img src={audit} width="140px"/></a>
             </Box>
           </Paper>
 
