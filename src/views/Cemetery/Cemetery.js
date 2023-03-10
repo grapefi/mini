@@ -46,7 +46,7 @@ const Cemetery = () => {
                     MSHARE Rewards Pools
                   </Typography>
                   <Alert variant="filled" severity="warning">
-                  Follow the <a href="https://app.mvfinance.club/strategies" >Strategies guide here</a>. Sticking to the current strategy helps support the protocol which in turn helps you to continue to earn rewards!
+                  Follow the <a href="https://app.miniverse.finance/strategies" >Strategies guide here</a>. Sticking to the current strategy helps support the protocol which in turn helps you to continue to earn rewards!
                   </Alert>
                   <Grid container spacing={3} style={{ marginTop: '20px' }}>
                     {activeBanks

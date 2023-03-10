@@ -98,7 +98,7 @@ const Nav = () => {
         {matches ? (
           <>
             <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>     
-            <a rel="noopener noreferrer" href="https://mvfinance.club/" className={classes.link}>
+            <a rel="noopener noreferrer" href="https://miniverse.finance/" className={classes.link}>
               <img alt="MiniVerse" src={mvLogo} height="50px" style={{marginTop: '15px'}} />
               </a> 
             </Typography>        
@@ -115,12 +115,12 @@ const Nav = () => {
               <Link color="textPrimary" to="/nodes" className={classes.link}>
                 Node
               </Link>
-             <a rel="noopener noreferrer" target='_blank' href="https://breeding.mvfinance.club/" className={classes.link}>
+             <a rel="noopener noreferrer" target='_blank' href="https://breeding.miniverse.finance/" className={classes.link}>
               Gamified NFT Nodes
             </a>     
-              <a rel="noopener noreferrer" target='_blank' href="https://mvcasino.mvfinance.club/#/" className={classes.link}>
+              {/*<a rel="noopener noreferrer" target='_blank' href="https://mvcasino.miniverse.finance/#/" className={classes.link}>
               Casino
-              </a>  
+        </a>  */}
               <div className={'dropdown'}>
                 <button className={'dropbtn'}>NFT STAKING</button>
                   <div className={'dropdown-content'}>
@@ -161,7 +161,7 @@ const Nav = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-            <a rel="noopener noreferrer" href="https://mvfinance.club/" className={classes.link}>
+            <a rel="noopener noreferrer" href="https://miniverse.finance/" className={classes.link}>
               Miniverse Finance
               </a>
             </Typography>
@@ -188,7 +188,7 @@ const Nav = () => {
                 <ListItemLink primary="Farms" to="/farms" />
                 <ListItemLink primary="Boardroom" to="/boardroom" />
                 <ListItemLink primary="Node" to="/nodes" />
-                <ListItem button target='_blank' component="a" href="https://breeding.mvfinance.club/">
+                <ListItem button target='_blank' component="a" href="https://breeding.miniverse.finance/">
                   <ListItemText>Gamified NFT Nodes</ListItemText>
                 </ListItem>  
                 <ListItem button target='_blank' component="a" href="https://linktr.ee/miniverseclub2">
@@ -197,9 +197,9 @@ const Nav = () => {
                 <ListItemLink primary="MiniChilla" to="/minichilla" />
                 <ListItemLink primary="MiniGuinea" to="/miniguinea" />
                 <ListItemLink primary="MiniLand" to="/miniland" />
-                <ListItem button target='_blank' component="a" href="https://mvcasino.mvfinance.club/#/">
+                {/*<ListItem button target='_blank' component="a" href="https://mvcasino.miniverse.finance/#/">
                   <ListItemText>Casino</ListItemText>
-                </ListItem> 
+            </ListItem> */}
                 <ListItemLink primary="Bonds" to="/bonds" />
                 <ListItemLink primary="Strategy" to="/strategies" />
                 
