@@ -959,7 +959,7 @@ export class TombFinance {
       return { from: fromDate, to: endDate };
     }
   }
-
+/*allo*/
   async watchAssetInMetamask(assetName: string): Promise<boolean> {
     const { ethereum } = window as any;
     if (ethereum && ethereum.networkVersion === config.chainId.toString()) {
